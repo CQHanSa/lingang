@@ -1,2 +1,0 @@
-INSERT INTO `lgsc_user_coupon` VALUES('13','6','0','1442202815','2');
-INSERT INTO `lgsc_user_coupon` VALUES('12','6','0','1442202791','1');

@@ -264,7 +264,8 @@ $price_v = array(
                             <dd>￥[!--salesprice--]</dd>
                         </dl>
                 </a></li>';
-				$total = $_SESSION['total'];
+				$r = MysqlOneSelect("lgsc_goods","count(*) as total"," id != ''");
+				$total = $r['total'];
 				$rand = array();
 				$randID = 'id in (';
 				if($total > 5)

@@ -1,3 +1,0 @@
-INSERT INTO `lgsc_integral` VALUES('1','6','1','100','1442049180');
-INSERT INTO `lgsc_integral` VALUES('2','6','1','100','1442049180');
-INSERT INTO `lgsc_integral` VALUES('3','6','2','100','1442049180');

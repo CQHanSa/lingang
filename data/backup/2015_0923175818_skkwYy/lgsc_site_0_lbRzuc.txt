@@ -1,1 +1,0 @@
-INSERT INTO `lgsc_site` VALUES('1','默认站点','zh_CN','zh_CN');

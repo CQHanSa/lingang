@@ -7,3 +7,14 @@
 可信网站 中网验证可信网站编码： 123456789111254000000<br />
 企业法人营业执照注册号：000000000000000<br />
     </div>
+
+
+<div style="position:fixed; bottom:0px; right:0px; background#646464;" class="socketSroll">
+	<div class="socketSroll-title"><img src="/images/cm.png" /><span>有新消息</span> <b onclick="socketShow(this)">-收缩</b></div>
+    <div class="socketSroll-content">
+    <ul>
+			
+	</ul>
+    <div class="divclear"></div>
+    </div>
+</div>
