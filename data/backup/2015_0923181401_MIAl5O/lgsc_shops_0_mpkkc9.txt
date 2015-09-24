@@ -1,1 +1,0 @@
-INSERT INTO `lgsc_shops` VALUES('1','6','萌果果旗舰店','萌果果有限公司','8000','8001','8001.1','上青寺','true','uploads/image/20150906/1441520071.jpg','uploads/image/20150827/1440668476.png','uploads/image/20150827/1440668156.png','陈先生','13800138001','3,2,4','images/seller_m.png','images/images/spxx_03.png','images/images/spxx_04.png','true');

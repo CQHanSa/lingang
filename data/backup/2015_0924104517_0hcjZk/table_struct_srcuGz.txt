@@ -15,7 +15,7 @@ CREATE TABLE `lgsc_admanage` (
   `posttime` int(10) unsigned NOT NULL COMMENT '提交时间',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `lgsc_admin`;
 
@@ -854,7 +854,7 @@ CREATE TABLE `lgsc_sysevent` (
   `posttime` int(10) NOT NULL COMMENT '操作时间',
   `ip` varchar(20) NOT NULL COMMENT '操作ip',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=618 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=646 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `lgsc_uploads`;
 

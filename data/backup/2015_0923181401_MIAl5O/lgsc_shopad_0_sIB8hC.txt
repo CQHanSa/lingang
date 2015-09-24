@@ -1,5 +1,0 @@
-INSERT INTO `lgsc_shopad` VALUES('1','1','1','店招','uploads/image/20150827/1440668476.png','','1','1442827563','true','_self');
-INSERT INTO `lgsc_shopad` VALUES('2','1','2','店铺banner01','uploads/image/20150827/1440668156.png','','2','1442827986','true','_self');
-INSERT INTO `lgsc_shopad` VALUES('3','1','3','店铺中间广告01','images/seller_m.png','','3','1442828017','true','_self');
-INSERT INTO `lgsc_shopad` VALUES('4','1','4','店铺左侧广告01','images/images/spxx_03.png','','4','1442828045','true','_self');
-INSERT INTO `lgsc_shopad` VALUES('5','1','4','店铺左侧广告02','images/images/spxx_04.png','','5','1442828064','true','_self');

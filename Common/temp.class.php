@@ -78,7 +78,7 @@ function ListPage($page='1',$num,$total='',$showPageFigure='4')
 	//echo $total;
 	$v =  empty($_GET) || ( count($_GET) == 1 && isset($_GET['page']) )  ? '?' : '&'; 
 	if($page == ''){ $page == 1; }
-	if($total ==''){ $total = $_SESSION['total']; session_destroy(); }
+	if($total ==''){ $total = $_SESSION['total']; unset($_SESSION['total']); }
 	if($total == 0){ return '';}
 	$allPage = ceil( $total / $num );
 	if($page > $allPage){ message('请选择正确的页码','javascript:history.go(-1)');exit();}

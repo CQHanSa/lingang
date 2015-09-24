@@ -129,10 +129,9 @@ function GetAllType($tbname='', $tbname2='', $colname='', $id=0, $i=0)
 
 
 	//商品分类与商品品牌不区分站点
-	if($tbname != '#@__goodstype' &&
-	   $tbname != '#@__goodsbrand')
-		$sql = "SELECT * FROM `$tbname` WHERE `siteid`='$cfg_siteid' AND `parentid`=$id ORDER BY orderid ASC";
-	else
+	//if($tbname != '#@__goodstype' &&  $tbname != '#@__goodsbrand' &&  $tbname != '#@__goodsaddress')
+	//	$sql = "SELECT * FROM `$tbname` WHERE `siteid`='$cfg_siteid' AND `parentid`=$id ORDER BY orderid ASC";
+	//else
 		$sql = "SELECT * FROM `$tbname` WHERE `parentid`=$id ORDER BY orderid ASC";
 
 
