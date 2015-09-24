@@ -325,28 +325,31 @@ if($tid > 0){
 <?php require_once(dirname(__FILE__).'/public/footer.php'); ?>
 
 <?php
-$socket = MysqlRowSelect('lgsc_socket','userid,toshopid',"touserid = '$user[userid]' and state = '0' group by userid",'1000');
-if($socket != '-1')
+if(!empty($user))
 {
+	$socket = MysqlRowSelect('lgsc_socket','userid,toshopid',"touserid = '$user[userid]' and state = '0' group by userid",'1000');
+	if($socket != '-1')
+	{
 ?>
 <div style="position:fixed; bottom:0px; right:0px; background#646464;">
 	<span>有新消息</span>
     <ul>
-    	<?php
-		for($i=0,$n=count($socket);$i<$n;$i++)
-		{
-			$socketUser = MysqlOneSelect('lgsc_member','username,cnname',"id=".$socket[$i]['userid']);
-			$socketShop = MysqlOneSelect('lgsc_shops','shopname',"id=".$socket[$i]['userid']);
-			$name =  $socketUser['cnname'] != '' ? $socketUser['cnname']  : $socketUser['username'];
-			if($socketShop != '-1'){ $name = $socketShop['shopname'];}
-		?>
-        <li><a class="hand" onclick="Open('socket.php?sid=<?=$socket[$i]['toshopid']?>&uid=<?=$socket[$i]['userid']?>')"><?=$name?></a></li>
-        <?php
-		}
-		?>
+			<?php
+            for($i=0,$n=count($socket);$i<$n;$i++)
+            {
+                $socketUser = MysqlOneSelect('lgsc_member','username,cnname',"id=".$socket[$i]['userid']);
+                $socketShop = MysqlOneSelect('lgsc_shops','shopname',"id=".$socket[$i]['userid']);
+                $name =  $socketUser['cnname'] != '' ? $socketUser['cnname']  : $socketUser['username'];
+                if($socketShop != '-1'){ $name = $socketShop['shopname'];}
+            ?>
+            <li><a class="hand" onclick="Open('socket.php?sid=<?=$socket[$i]['toshopid']?>&uid=<?=$socket[$i]['userid']?>')"><?=$name?></a></li>
+            <?php
+            }
+            ?>
 	</ul>
 </div>
 <?php
+	}
 }
 ?>
 </body>
