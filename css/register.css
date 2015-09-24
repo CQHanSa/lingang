@@ -1,0 +1,174 @@
+/* CSS Document */
+
+body{ background:#ffffff; width:100%; height:auto; margin:0px; padding:0px; color:#595959; font-family:"微软雅黑";}
+*{ margin:0px; padding:0px; font-size:12px; font-family:"微软雅黑";}
+a{ text-decoration:none; color:#595959;}
+.divclear{ clear:both;}
+li{ list-style:none;}
+img{ border:0px;}
+i,em{ font-style:normal;}
+.t_left{ float:left;}
+.t_right{ float:right;}
+.align_left{ text-align:left;}
+.align_right{ text-align:right;}
+.align_center{ text-align:center;}
+#navmenu{ padding:0px;}
+#bord_b{ border:none; padding-left:0px;}
+
+.fl{ float:left;}
+.fr{ float:right;}
+.mt20{ margin-top:20px;}
+.mt40{ margin-top:40px;}
+.bgf7{ width:100%; background-color:#f7f7f7;}
+
+.itop_login{ width:100%; height:40px; min-width:1200px; margin-top:-4px; background:#f3f3f3;}
+.itop_loginc{ width:1200px; margin:0 auto;}
+.itop_loginc .t_left{ display:inline-block; line-height:20px; padding-top:10px;}
+.send_address{ display:inline-block; padding:0 20px 0 10px; height:20px; border:1px solid #cdcdcd; background:url(../images/arrow1.png) no-repeat #fff right center; cursor:pointer;}
+.itop_loginc .t_right{ padding-top:10px; line-height:20px; color:#8d8d8d;}
+.itop_loginc .t_right *{ color:#8d8d8d;}
+.itop_loginc .t_right i{ color:#c30000;}
+.itop_loginc .t_right a{ padding-right:8px;}
+.itop_loginc .t_right ul li{ float:left; padding-left:8px;}
+.itop_loginc .t_right b{ color:#43b51f;}
+
+.ifooter{ width:100%;}
+.ifooter_c{ width:1200px; margin:0 auto;}
+.bq_c{ padding:50px 0 30px; text-align:center; color:#9f9f9f }
+.bq_c a{ display:inline-block; padding-right:7px; color:#9f9f9f}
+
+.warpper{ width:1195px; margin:0 auto;}
+.top_logo{ padding:35px 0px;}
+
+.registerbox{}
+
+
+a.blue_link {
+    color: #0083CE;
+}
+.reg_form span a {color:#0083ce;}
+.reg_form .right{ color:#333;}
+.reg_form .two_week {line-height:12px;}
+
+.lg_title { height:35px;
+ z-index:888; position:relative; }
+.reg_form { margin: 30px 0px;}
+.lg_title ul{  display:inline-block; height:33px; position:relative; z-index:888;}
+
+.registerform{ background-color:#fff; border:solid 1px #e0e0e0; position:relative;  top:-1px; z-index:1;}
+
+.lg_title ul li{ float:left; width:130px; margin-right:5px;
+text-align:center; height:34px; border:solid 1px #e0e0e0;  line-height:34px;background:#fff;}
+.lg_title ul li a{ font-size:18px; text-align:center;}
+
+.lg_title ul li.cur{ border-bottom:solid 1px #fff;border-bottom:none;}
+.lg_title ul li.cur a{ color:#dc251f;}
+
+.reg_form{ padding-left:340px; width:auto; }
+.lg_title { font-weight:normal;}
+.lg_title span {
+    float: right;
+    font-size: 12px;
+    margin-top: 7px;
+    font-family: 宋体;
+}
+.form-control { float:left;
+    width: 286px;
+    height: 26px;
+    padding: 6px 40px 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid #E6E6E6;
+}
+input.error {
+    border: 1px solid #E72418;
+}
+.u_name {
+    background-position: 320px -114px;
+}
+.login_wrap .reg_form .gray { color:#a5a5a5;}
+.login_wrap .reg_form .gray:hover { color:#0083ce;}
+
+
+.reg_row {
+    min-height: 70px;
+    width: auto;
+    position: relative;
+    z-index: 1; display:block;
+}
+.reg_row label{ width:100px; float:left; text-align:right; line-height:40px; font-size:14px; color:#B0B0B0;}
+
+.u_name{ background:url(../images/regest.png) no-repeat right center;}
+.u_ps,.u_ps2{ background:url(../images/up.jpg) no-repeat;}
+.u_ps2 {
+    background-color: #F3F3F3;
+}
+.u_name {
+    background-position: 300px -114px;
+}
+.u_ps {
+    background-position:305px ;
+}
+
+.u_tel{ background:url(../images/ut.jpg) no-repeat 305px; }
+.u_telcode{ width:100px; float:left}
+.gettelcode{width:100px; height:38px; line-height:34px; margin-left:10px; background:#f4f4f4; text-align:center; float:left; display:inline-block; border: 1px solid #E6E6E6; color:#666;}
+.u_verify {
+    width: 135px;
+    margin-right: 10px;
+    padding-left: 9px;
+    padding-right: 9px;
+    float: left;
+}
+.verifyimg {
+    margin-left: 10px;
+    float: left;
+}
+.checkemail{ float:left; margin-left:10px; line-height:40px;}
+.checkemail a{  margin-left:5px; text-decoration:underline;}
+.verifylink {
+    float: left;
+    margin-left: 10px;
+ line-height:40px;
+    color: #0083CE;
+}
+
+
+.verify_box span{ float:left; display:inline-block; line-height:40px;}
+
+.checkbox {
+    display: block;
+    min-height: 20px;
+    margin-top: 0px;
+    margin-bottom: 6px;
+    padding-left: 120px;
+    vertical-align: middle;
+}
+.checkbox input[type="checkbox"] {
+    float: left;
+    margin-left: -20px;
+}
+
+.btn{
+border-width: 1px 1px 2px;
+border-style: solid;
+border-color:#55960f;
+
+display: inline-block;
+margin-bottom: 0px;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+width: 340px;
+color: #FFF;
+font: 18px "microsoft yahei";
+background-color: #519409;
+white-space: nowrap;
+padding: 6px 12px;
+}
+
+
+.reg_form span.Validform_checktip{float:left;  height:40px; line-height:40px;}
+.btn_reg{margin-left:100px;}

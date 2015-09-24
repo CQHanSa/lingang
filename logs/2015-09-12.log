@@ -1,0 +1,727 @@
+2015-09-12 15:55:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[18]------ ============处理前台请求开始=============== 
+2015-09-12 15:55:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 15:55:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=08&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/FrontReceive.php&merId=888888888888888&orderId=20150912155549&reqReserved= 透传信息&signMethod=01&txnAmt=100&txnSubType=01&txnTime=20150912155549&txnType=01&version=5.0.0 
+2015-09-12 15:55:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >2b006ee3411bad2202098a9bf30aaa47f08f6d5c 
+2015-09-12 15:55:50, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >WWYkumh41Q+7a1hQsRPpPhSwEf0o2h33Mo1BhGCi11NVaU8VXM2WEp+foQrCZE2UZt3r/Av7e1b0ZDZ9r8WjGHS+Jr2bvgMuJ+Y0r7nfo5LWuBJpRoOAu1rtNvQ08yfYCwgTxW26toL1NeMk28PCeyp1KebylphtxLzNe4eKn3k= 
+2015-09-12 15:55:50, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 15:55:50, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[49]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 15:55:50, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[53]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 15:55:50, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[54]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="08" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="888888888888888" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912155549" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912155549" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="100" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 透传信息" />
+    <input type="hidden" name="signature" id="signature" value="WWYkumh41Q+7a1hQsRPpPhSwEf0o2h33Mo1BhGCi11NVaU8VXM2WEp+foQrCZE2UZt3r/Av7e1b0ZDZ9r8WjGHS+Jr2bvgMuJ+Y0r7nfo5LWuBJpRoOAu1rtNvQ08yfYCwgTxW26toL1NeMk28PCeyp1KebylphtxLzNe4eKn3k=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 15:55:50, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[55]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 15:55:50, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[56]------ ============处理前台请求 结束=========== 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[18]------ ============处理前台请求开始=============== 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/FrontReceive.php&merId=888888888888888&orderId=20150912160435&reqReserved= 透传信息&signMethod=01&txnAmt=100&txnSubType=01&txnTime=20150912160435&txnType=01&version=5.0.0 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >768ede70bfbaf4ca0fd12f2419c520340bc8a8c8 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >isPfAv9G2ND9s/xqmZLfW6WbP2PXJi2zyQLNa/UdWcQm4j444hbr128Y+6JuYuHqAJ2mcq5BkUYuZ19qfldmPrxiRMGV6hXjkzsvS3q3db4wwIYLwwaHg2ELot7qNU6mYo3ZQzvcwHDdQpU+6kfBEVO++aX/4GknSQAvs2hnIQo= 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[49]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[53]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[54]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="888888888888888" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912160435" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912160435" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="100" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 透传信息" />
+    <input type="hidden" name="signature" id="signature" value="isPfAv9G2ND9s/xqmZLfW6WbP2PXJi2zyQLNa/UdWcQm4j444hbr128Y+6JuYuHqAJ2mcq5BkUYuZ19qfldmPrxiRMGV6hXjkzsvS3q3db4wwIYLwwaHg2ELot7qNU6mYo3ZQzvcwHDdQpU+6kfBEVO++aX/4GknSQAvs2hnIQo=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[55]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:04:35, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[56]------ ============处理前台请求 结束=========== 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[18]------ ============处理前台请求开始=============== 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/FrontReceive.php&merId=777290058112538&orderId=20150912160803&reqReserved= 透传信息&signMethod=01&txnAmt=100&txnSubType=01&txnTime=20150912160803&txnType=01&version=5.0.0 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >38ee09d661630ef4cfde4a734905e63632b6902e 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >FBYiccTPNtMhfOY5ay2WKAEu8kYp2NuFcP9rbozJULntKjrrnXixC5f/oxuVHg2HveDag7Wm/BEnY1wnJIMRN3RTrCmaaJKSCPla2b7DkafSV/7tImpnJRG+kSLEplJFnk4X+vzh0tcggdiVszmEaTop3OkhnXbq+buVTJrH2Nc= 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[49]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[53]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[54]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912160803" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912160803" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="100" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 透传信息" />
+    <input type="hidden" name="signature" id="signature" value="FBYiccTPNtMhfOY5ay2WKAEu8kYp2NuFcP9rbozJULntKjrrnXixC5f/oxuVHg2HveDag7Wm/BEnY1wnJIMRN3RTrCmaaJKSCPla2b7DkafSV/7tImpnJRG+kSLEplJFnk4X+vzh0tcggdiVszmEaTop3OkhnXbq+buVTJrH2Nc=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[55]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:08:03, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[56]------ ============处理前台请求 结束=========== 
+2015-09-12 16:17:06, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[76]------ 报文返回的证书ID>3474813271258769001041842579301293446 
+2015-09-12 16:17:06, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[79]------ 验证签名证书目录 :>E:/wamp/www/data/api/unionpay/ 
+2015-09-12 16:17:06, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[89]------ 加载验签证书成功 
+2015-09-12 16:17:06, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[58]------ 报文去[signature] key=val&串>accNo=6216***********0018&accessType=0&bizType=000201&certId=3474813271258769001041842579301293446&currencyCode=156&encoding=utf-8&merId=777290058112538&orderId=20150912160803&queryId=201509121608036780808&reqReserved=透传信息&respCode=00&respMsg=success&settleAmt=100&settleCurrencyCode=156&settleDate=0912&signMethod=01&traceNo=678080&traceTime=0912160803&txnAmt=100&txnSubType=01&txnTime=20150912160803&txnType=01&version=5.0.0 
+2015-09-12 16:17:06, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[62]------ 摘要shax16>b2df6823d993b3a13a75d048d9b8a6212f6281b5 
+2015-09-12 16:17:06, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[64]------ 验签成功 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[28]------ ============处理前台请求开始=============== 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/FrontReceive.php&merId=777290058112538&orderId=20150912162505&reqReserved= 透传信息&signMethod=01&txnAmt=100000&txnSubType=01&txnTime=20150912162505&txnType=01&version=5.0.0 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >c296f64dc72045614fa5128bd6b1a296eb10d176 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >GI96VumIP1fF6qbL8wwpZNMdn8FsGvagTR40P42r6eUHo6MDbZpmwVAd7p9G0eJvUIP3Yw3W6F1n/0NTyBrdwkLjCFbYZk4oL7tapYImp4RY3GowbwD3ytoWn0nrdAbiD+IRLDsiMvkxIfGFUqkMvcTzmX57JK6vKTpHR2cRT6E= 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[59]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[63]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[64]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912162505" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912162505" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="100000" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 透传信息" />
+    <input type="hidden" name="signature" id="signature" value="GI96VumIP1fF6qbL8wwpZNMdn8FsGvagTR40P42r6eUHo6MDbZpmwVAd7p9G0eJvUIP3Yw3W6F1n/0NTyBrdwkLjCFbYZk4oL7tapYImp4RY3GowbwD3ytoWn0nrdAbiD+IRLDsiMvkxIfGFUqkMvcTzmX57JK6vKTpHR2cRT6E=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[65]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:25:05, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[66]------ ============处理前台请求 结束=========== 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[28]------ ============处理前台请求开始=============== 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/FrontReceive.php&merId=777290058112538&orderId=20150912162532&reqReserved= 透传信息&signMethod=01&txnAmt=12300&txnSubType=01&txnTime=20150912162532&txnType=01&version=5.0.0 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >41a812e5339e29335703ecbd186e4755655b93d1 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >aWTXj+71Qjd9F3zI9vadHEcYHTwOKOHjBiRT9WGEteqnqCY0l+6goRkfUmWTWiT6RMg+qgZ83VvazQIvOMr4wxu2M+hh4E4jpq9WFNN+YF9gqwRbTf2UixN2VAnUPaOXAPh1TCPCjCyi07aYJcaLLKd4njtL6SE4zdyxxjcqyNs= 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[59]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[63]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[64]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912162532" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912162532" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="12300" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 透传信息" />
+    <input type="hidden" name="signature" id="signature" value="aWTXj+71Qjd9F3zI9vadHEcYHTwOKOHjBiRT9WGEteqnqCY0l+6goRkfUmWTWiT6RMg+qgZ83VvazQIvOMr4wxu2M+hh4E4jpq9WFNN+YF9gqwRbTf2UixN2VAnUPaOXAPh1TCPCjCyi07aYJcaLLKd4njtL6SE4zdyxxjcqyNs=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[65]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:25:32, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[66]------ ============处理前台请求 结束=========== 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[28]------ ============处理前台请求开始=============== 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive2.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive1.php&merId=777290058112538&orderId=20150912163414&reqReserved= 透传信息&signMethod=01&txnAmt=10000&txnSubType=01&txnTime=20150912163414&txnType=01&version=5.0.0 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >3436354ffe7c24758ba9b0c2c6957edaf1b5620e 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >PETPhO81JFqP+rplmsX3AZ+xmL35dJrLT9evjcoZ6q91ugmWOTaFJY9IReSOSEwRLD6nK1aoIn7Drz8ABt57IyVfThv0IeR13y4EbRdYS2WwlOApmBxh41f9GSl+RDdyhxjYZsU80SGQ8nkMXdG4yCZa8VSTGmBJjlDUnNcd5ZY= 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[59]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[63]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[64]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive1.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive2.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912163414" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912163414" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="10000" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 透传信息" />
+    <input type="hidden" name="signature" id="signature" value="PETPhO81JFqP+rplmsX3AZ+xmL35dJrLT9evjcoZ6q91ugmWOTaFJY9IReSOSEwRLD6nK1aoIn7Drz8ABt57IyVfThv0IeR13y4EbRdYS2WwlOApmBxh41f9GSl+RDdyhxjYZsU80SGQ8nkMXdG4yCZa8VSTGmBJjlDUnNcd5ZY=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[65]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:34:14, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[66]------ ============处理前台请求 结束=========== 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[28]------ ============处理前台请求开始=============== 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=20150912163513&reqReserved= 透传信息&signMethod=01&txnAmt=10000&txnSubType=01&txnTime=20150912163513&txnType=01&version=5.0.0 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >22f7faa8c3698e7f466dc7b8a7a0e3c1990985f6 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >Xg2mXgHXmEwjb2k5fKDqzOKYc2tRvAlApnFYYzfp+tkQCvuwQWdpv8spDIYOJTgXDKP/lh2d40zzu/UScmwZSmAhREj7PsRoX4WJJXu3xF4XNTVMHbVLZ+y5CGNBFAOLnLjV+Rq+gcsgPuit8HXqe0Imx072oPlFUIZ8uLEL084= 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[59]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[63]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[64]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912163513" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912163513" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="10000" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 透传信息" />
+    <input type="hidden" name="signature" id="signature" value="Xg2mXgHXmEwjb2k5fKDqzOKYc2tRvAlApnFYYzfp+tkQCvuwQWdpv8spDIYOJTgXDKP/lh2d40zzu/UScmwZSmAhREj7PsRoX4WJJXu3xF4XNTVMHbVLZ+y5CGNBFAOLnLjV+Rq+gcsgPuit8HXqe0Imx072oPlFUIZ8uLEL084=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[65]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:35:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[66]------ ============处理前台请求 结束=========== 
+2015-09-12 16:35:38, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[76]------ 报文返回的证书ID>3474813271258769001041842579301293446 
+2015-09-12 16:35:38, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[79]------ 验证签名证书目录 :>E:/wamp/www/data/api/unionpay/ 
+2015-09-12 16:35:38, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[89]------ 加载验签证书成功 
+2015-09-12 16:35:38, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[58]------ 报文去[signature] key=val&串>accNo=6216***********0018&accessType=0&bizType=000201&certId=3474813271258769001041842579301293446&currencyCode=156&encoding=utf-8&merId=777290058112538&orderId=20150912163513&queryId=201509121635136803048&reqReserved=透传信息&respCode=00&respMsg=success&settleAmt=10000&settleCurrencyCode=156&settleDate=0912&signMethod=01&traceNo=680304&traceTime=0912163513&txnAmt=10000&txnSubType=01&txnTime=20150912163513&txnType=01&version=5.0.0 
+2015-09-12 16:35:38, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[62]------ 摘要shax16>fb80b6029800c63d58229cbeeeb066e21560a415 
+2015-09-12 16:35:38, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[64]------ 验签成功 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[35]------ ============处理前台请求开始=============== 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=591eN0tYE6QOe4xz9MLFPz/c+726H10igSuJnfE2&reqReserved= 帐户充值&signMethod=01&txnAmt=12300&txnSubType=01&txnTime=20150912164858&txnType=01&version=5.0.0 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >b6d88fda81782d9063e13a6c90456d1ee29cebbb 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >ACFXz9W6fC+fPMMpBTT2djW2X6I8sb11qAYT9V0vIqZjjWsMyaTx4jqeOaQNhvmlqOghVeRasmbhPhu1vNv4/YbQQIyIKK6xU13I8Bemjod1MSvjURoYMTwZ9wl665ACfgydNPR6473MkVmAiuGZmgkW/5jHDVjxuojpfQeF4ag= 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[66]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[70]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="591eN0tYE6QOe4xz9MLFPz/c+726H10igSuJnfE2" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912164858" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="12300" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 帐户充值" />
+    <input type="hidden" name="signature" id="signature" value="ACFXz9W6fC+fPMMpBTT2djW2X6I8sb11qAYT9V0vIqZjjWsMyaTx4jqeOaQNhvmlqOghVeRasmbhPhu1vNv4/YbQQIyIKK6xU13I8Bemjod1MSvjURoYMTwZ9wl665ACfgydNPR6473MkVmAiuGZmgkW/5jHDVjxuojpfQeF4ag=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:48:58, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ ============处理前台请求 结束=========== 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[35]------ ============处理前台请求开始=============== 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=25afLCox2OKkY4v8Jspw7+78CHrSXhYqDa1WKFUm&reqReserved= 帐户充值&signMethod=01&txnAmt=100&txnSubType=01&txnTime=20150912164925&txnType=01&version=5.0.0 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >796a29cd220002140f0bb947a4bc344b3f4ec129 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >JuQmgRjHoFqsKSLUaQqApSFgjg4cQP2OlP0IDj2KN6MoM6hhrZQjEft9PXwhfhueXTOn/XQSpgtGKoSwF/B6UaK3S8Nj79VJQ4FkoTDZeB71pRWIL6/dgV8LAXihT/2HYoqTbSgTi7SDZMzWZXbnsVm1tlr90JBXMhn2J//ZTz4= 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[66]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[70]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="25afLCox2OKkY4v8Jspw7+78CHrSXhYqDa1WKFUm" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912164925" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="100" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 帐户充值" />
+    <input type="hidden" name="signature" id="signature" value="JuQmgRjHoFqsKSLUaQqApSFgjg4cQP2OlP0IDj2KN6MoM6hhrZQjEft9PXwhfhueXTOn/XQSpgtGKoSwF/B6UaK3S8Nj79VJQ4FkoTDZeB71pRWIL6/dgV8LAXihT/2HYoqTbSgTi7SDZMzWZXbnsVm1tlr90JBXMhn2J//ZTz4=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:49:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ ============处理前台请求 结束=========== 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[36]------ ============处理前台请求开始=============== 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=20150912165036&reqReserved= 帐户充值&signMethod=01&txnAmt=10000&txnSubType=01&txnTime=20150912165036&txnType=01&version=5.0.0 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >757c5b803a2824c96e80415a3c8d06a86612c49e 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >T2i/wjKrtrKDZmlPu+6L7L3LC5SvpVxi6L0RDD1s7JsWAq9h/PEqTXB2RqL2ZYCqT9rs/b69AA/TCemX2GJNLo8QcQAO0j9/eirkYiJrR61LPLSHzFzWVeGJlT9Eq91uCGbbTjEhwx49X4tvmtEzj0U+NgCxylBVxOuE9KTWays= 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[67]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912165036" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912165036" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="10000" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 帐户充值" />
+    <input type="hidden" name="signature" id="signature" value="T2i/wjKrtrKDZmlPu+6L7L3LC5SvpVxi6L0RDD1s7JsWAq9h/PEqTXB2RqL2ZYCqT9rs/b69AA/TCemX2GJNLo8QcQAO0j9/eirkYiJrR61LPLSHzFzWVeGJlT9Eq91uCGbbTjEhwx49X4tvmtEzj0U+NgCxylBVxOuE9KTWays=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:50:36, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[74]------ ============处理前台请求 结束=========== 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[36]------ ============处理前台请求开始=============== 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderDesc=订单描述&orderId=20150912165152&reqReserved= 帐户充值&signMethod=01&txnAmt=10002300&txnSubType=01&txnTime=20150912165152&txnType=01&version=5.0.0 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >3434fc2501beedd7749605a47572e9db40e7d901 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >bdo41CH8t7CFOL/zhMGSM85ZySAyvACgeeUMVHN14ryh0ApgLKzacfzA7DLXEKLwntK2pswruClLH9ZdDIHfR8KpodJr10Rv67XZNLkk78XyLHj3Gko1Q+sQHV8ICDXgpxO3PYkHNncdwX/4da4ZTYUn6eDVeekrp769955ldxE= 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[67]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912165152" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912165152" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="10002300" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="orderDesc" id="orderDesc" value="订单描述" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 帐户充值" />
+    <input type="hidden" name="signature" id="signature" value="bdo41CH8t7CFOL/zhMGSM85ZySAyvACgeeUMVHN14ryh0ApgLKzacfzA7DLXEKLwntK2pswruClLH9ZdDIHfR8KpodJr10Rv67XZNLkk78XyLHj3Gko1Q+sQHV8ICDXgpxO3PYkHNncdwX/4da4ZTYUn6eDVeekrp769955ldxE=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:51:52, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[74]------ ============处理前台请求 结束=========== 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[36]------ ============处理前台请求开始=============== 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=20150912165348&reqReserved=080cJDTdv9jEhJ695rIz3m4C4/hKyN8QDRCryROm&signMethod=01&txnAmt=12300&txnSubType=01&txnTime=20150912165348&txnType=01&version=5.0.0 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >c35c0a9bf41c182ebfcb9a1ab9c2a40b123c66dc 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >ZFO3eucxZxknpNIQkypy7m04e1gAgiL/kACsENRSXZsuaIPVba/FlxzR9Je/U24g2+wxXp0I8SyRqRu/PgXzKuSBzKgCR5y8pJWTk/iusRGv1a06yEJHYZjEkr5EidPQGjXDrbOKj9ik+faLEZ6pnUckPKbEqC+BU/xjQUE+Aa0= 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[67]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912165348" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912165348" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="12300" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value="080cJDTdv9jEhJ695rIz3m4C4/hKyN8QDRCryROm" />
+    <input type="hidden" name="signature" id="signature" value="ZFO3eucxZxknpNIQkypy7m04e1gAgiL/kACsENRSXZsuaIPVba/FlxzR9Je/U24g2+wxXp0I8SyRqRu/PgXzKuSBzKgCR5y8pJWTk/iusRGv1a06yEJHYZjEkr5EidPQGjXDrbOKj9ik+faLEZ6pnUckPKbEqC+BU/xjQUE+Aa0=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 16:53:48, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[74]------ ============处理前台请求 结束=========== 
+2015-09-12 17:06:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[76]------ 报文返回的证书ID>3474813271258769001041842579301293446 
+2015-09-12 17:06:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[79]------ 验证签名证书目录 :>E:/wamp/www/data/api/unionpay/ 
+2015-09-12 17:06:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[89]------ 加载验签证书成功 
+2015-09-12 17:06:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[58]------ 报文去[signature] key=val&串>accNo=6216***********0018&accessType=0&bizType=000201&certId=3474813271258769001041842579301293446&currencyCode=156&encoding=utf-8&merId=777290058112538&orderId=20150912165348&queryId=201509121653485475848&reqReserved=080cJDTdv9jEhJ695rIz3m4C4/hKyN8QDRCryROm&respCode=00&respMsg=success&settleAmt=12300&settleCurrencyCode=156&settleDate=0912&signMethod=01&traceNo=547584&traceTime=0912165348&txnAmt=12300&txnSubType=01&txnTime=20150912165348&txnType=01&version=5.0.0 
+2015-09-12 17:06:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[62]------ 摘要shax16>d0020633e839b6666e2a7a2152112aff256b2130 
+2015-09-12 17:06:13, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[64]------ 验签成功 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[36]------ ============处理前台请求开始=============== 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=20150912170747&reqReserved=49ce2NX8MJ6gkT8oELG6ZrhWin7x0QX7u7LOuZJ3&signMethod=01&txnAmt=123400&txnSubType=01&txnTime=20150912170747&txnType=01&version=5.0.0 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >c5a8ec699ca49c0181a8a4826c2585f0ce2af4ce 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >B7c7JF0AcN9ehS8MK14OLXiu+Nu0fR+/CBfVGOpKJIlPZxf0aYDDOu4OfeQdU0x7/aadzp8PikC+BNn1WAMeyoDHLvf0tJqq7zNtRux++eYJ76qZXA1gWWT6CaZwqsk8SHTTnUjtZNB/gvlB0Iy5ZjPA00Iboq3x59cH+gmCJPM= 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[67]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912170747" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912170747" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="123400" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value="49ce2NX8MJ6gkT8oELG6ZrhWin7x0QX7u7LOuZJ3" />
+    <input type="hidden" name="signature" id="signature" value="B7c7JF0AcN9ehS8MK14OLXiu+Nu0fR+/CBfVGOpKJIlPZxf0aYDDOu4OfeQdU0x7/aadzp8PikC+BNn1WAMeyoDHLvf0tJqq7zNtRux++eYJ76qZXA1gWWT6CaZwqsk8SHTTnUjtZNB/gvlB0Iy5ZjPA00Iboq3x59cH+gmCJPM=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 17:07:47, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[74]------ ============处理前台请求 结束=========== 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[36]------ ============处理前台请求开始=============== 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=20150912170925&reqReserved=2d5664LHbN72ITH3mtGiK8e3huet/cNUP7Poat4K&signMethod=01&txnAmt=123400&txnSubType=01&txnTime=20150912170925&txnType=01&version=5.0.0 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >60cc59bf7547fae4cac4a672e1d832708f4e1d63 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >l6QmFMxsCSW3vikR+tJRGGGtaiX6Y+vWV/zinq1kZVtPDNm5gQFs0YPpKBpkmoTH1uE+BPlOrSVDHOLLPBpr546OpyHoy5EVQUe6ZA3q/UEu1y94UiUuCAFGvCNzMiNeylKx6dXqI4uRydn8kZlV+BHY3K2mf9JMno7BuoEQwdw= 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[67]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912170925" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912170925" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="123400" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value="2d5664LHbN72ITH3mtGiK8e3huet/cNUP7Poat4K" />
+    <input type="hidden" name="signature" id="signature" value="l6QmFMxsCSW3vikR+tJRGGGtaiX6Y+vWV/zinq1kZVtPDNm5gQFs0YPpKBpkmoTH1uE+BPlOrSVDHOLLPBpr546OpyHoy5EVQUe6ZA3q/UEu1y94UiUuCAFGvCNzMiNeylKx6dXqI4uRydn8kZlV+BHY3K2mf9JMno7BuoEQwdw=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 17:09:25, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[74]------ ============处理前台请求 结束=========== 
+2015-09-12 17:09:44, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[76]------ 报文返回的证书ID>3474813271258769001041842579301293446 
+2015-09-12 17:09:44, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[79]------ 验证签名证书目录 :>E:/wamp/www/data/api/unionpay/ 
+2015-09-12 17:09:44, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[89]------ 加载验签证书成功 
+2015-09-12 17:09:44, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[58]------ 报文去[signature] key=val&串>accNo=6216***********0018&accessType=0&bizType=000201&certId=3474813271258769001041842579301293446&currencyCode=156&encoding=utf-8&merId=777290058112538&orderId=20150912170925&queryId=201509121709256822408&reqReserved=2d5664LHbN72ITH3mtGiK8e3huet/cNUP7Poat4K&respCode=00&respMsg=success&settleAmt=123400&settleCurrencyCode=156&settleDate=0912&signMethod=01&traceNo=682240&traceTime=0912170925&txnAmt=123400&txnSubType=01&txnTime=20150912170925&txnType=01&version=5.0.0 
+2015-09-12 17:09:44, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[62]------ 摘要shax16>1ffaee03ac3da9421a02ad45ac711a0828889edd 
+2015-09-12 17:09:44, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[64]------ 验签成功 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[36]------ ============处理前台请求开始=============== 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=20150912171239&reqReserved=b06dEa723T3FeepNUIKCSj57DukNDsZYiLUct4rY&signMethod=01&txnAmt=123400&txnSubType=01&txnTime=20150912171239&txnType=01&version=5.0.0 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >59e16f6bc64c848678514bf6cb803f2bb596018c 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >q+g06MpgXZZpa6dfwcKCAgWJIlycUtI7Kxl4iwgCa+P2tzBfWtaf82S03zpaZCkfIG6TLIqQ2OT3EZP549SpnS6Dh1BX1fBPk6MuYzWSAUIS8WhCtRZXr83cpVmsJfY+UWQIdLUdC0OKkuTdHuPj9xjjNvzOt7VtuxanWrnHeNI= 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[67]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912171239" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912171239" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="123400" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value="b06dEa723T3FeepNUIKCSj57DukNDsZYiLUct4rY" />
+    <input type="hidden" name="signature" id="signature" value="q+g06MpgXZZpa6dfwcKCAgWJIlycUtI7Kxl4iwgCa+P2tzBfWtaf82S03zpaZCkfIG6TLIqQ2OT3EZP549SpnS6Dh1BX1fBPk6MuYzWSAUIS8WhCtRZXr83cpVmsJfY+UWQIdLUdC0OKkuTdHuPj9xjjNvzOt7VtuxanWrnHeNI=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 17:12:39, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[74]------ ============处理前台请求 结束=========== 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[36]------ ============处理前台请求开始=============== 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=20150912174649&reqReserved=0502usnYv81v/Hiu/j/c4VoTxLXO5jj48Pvm/mVd&signMethod=01&txnAmt=29800&txnSubType=01&txnTime=20150912174649&txnType=01&version=5.0.0 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >b09f8f3c43c66f023b78f9927dd2c01ff640b56c 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >a7ZmGLujK7AJ5SzuBemChu6o9ajFXHlySmLMfTp8PA2xTSPqwGhzQmgJUQHgHM/rOeqzB2Lj0ZbuvVyrkmVicKes7LA7wB7k1MSUiPhFiEWEAg4rmbxtAWai8qeJAQc1IKwr3tsgiSSMFZmp10SBKv12xh5p2HcB42i3YoVz4/Y= 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[67]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912174649" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912174649" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="29800" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value="0502usnYv81v/Hiu/j/c4VoTxLXO5jj48Pvm/mVd" />
+    <input type="hidden" name="signature" id="signature" value="a7ZmGLujK7AJ5SzuBemChu6o9ajFXHlySmLMfTp8PA2xTSPqwGhzQmgJUQHgHM/rOeqzB2Lj0ZbuvVyrkmVicKes7LA7wB7k1MSUiPhFiEWEAg4rmbxtAWai8qeJAQc1IKwr3tsgiSSMFZmp10SBKv12xh5p2HcB42i3YoVz4/Y=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 17:46:49, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[74]------ ============处理前台请求 结束=========== 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[36]------ ============处理前台请求开始=============== 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=20150912174842&reqReserved=0c443KpN8Rtbvzhn1IiBiunAquz+bBHexWxEz59D&signMethod=01&txnAmt=100000&txnSubType=01&txnTime=20150912174842&txnType=01&version=5.0.0 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >5ec9ba14bba111f6171038920af28cf93efbd6a0 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >mRckUKs+dGrkQY2qxgFJOPI9/JStuyhVjm5PlHq8s1LYM3SxL/8Bf4p11ySGUd5MiQvc1LdFbZegXRZ0U5asdXzyejymi7HWiXtR5e/4ylQaN3DVjGUYLeGvSQXN6/m1PqKqwoxo+mtoyHQMLCo9U0SzwY647VGG5UtrQTDGy7s= 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[67]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912174842" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912174842" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="100000" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value="0c443KpN8Rtbvzhn1IiBiunAquz+bBHexWxEz59D" />
+    <input type="hidden" name="signature" id="signature" value="mRckUKs+dGrkQY2qxgFJOPI9/JStuyhVjm5PlHq8s1LYM3SxL/8Bf4p11ySGUd5MiQvc1LdFbZegXRZ0U5asdXzyejymi7HWiXtR5e/4ylQaN3DVjGUYLeGvSQXN6/m1PqKqwoxo+mtoyHQMLCo9U0SzwY647VGG5UtrQTDGy7s=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 17:48:42, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[74]------ ============处理前台请求 结束=========== 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[36]------ ============处理前台请求开始=============== 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[18]------ =====签名报文开始====== 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[24]------ 签名key=val&...串 >accessType=0&backUrl=http://localhost/data/api/unionpay/Balance_BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=07&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://localhost/data/api/unionpay/Balance_FrontReceive.php&merId=777290058112538&orderId=20150912175027&reqReserved=7e03rZf/eqNFPiNJ+bvHgXy4rXQW/qIZkBmN3LtI&signMethod=01&txnAmt=100000&txnSubType=01&txnTime=20150912175027&txnType=01&version=5.0.0 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[27]------ 摘要sha1x16 >8720711c6546304cb0f5f665a179c424ea0e4e5e 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[35]------ 签名串为 >NIytsUkV69souC4DBzfi3oDNdV5x0Fz2Fucw3cKIED0IO1mn5298wqD1/2tHz1oBKuw9M+jexDz41khn/9ITCZNiVfp2RlWwCEye7CN6Ulmne+57rxbZF3sDXB2X2/Ipz/fPfVxofl9SS+EDRzMYxcgSp1i1euMK6XBATRHQTqY= 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\func\secureUtil.php ], Line[40]------ =====签名报文结束====== 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[67]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[71]------ -------前台交易自动提交表单>--begin---- 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[72]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://localhost/data/api/unionpay/Balance_FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://localhost/data/api/unionpay/Balance_BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="07" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="777290058112538" />
+    <input type="hidden" name="orderId" id="orderId" value="20150912175027" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20150912175027" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="100000" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value="7e03rZf/eqNFPiNJ+bvHgXy4rXQW/qIZkBmN3LtI" />
+    <input type="hidden" name="signature" id="signature" value="NIytsUkV69souC4DBzfi3oDNdV5x0Fz2Fucw3cKIED0IO1mn5298wqD1/2tHz1oBKuw9M+jexDz41khn/9ITCZNiVfp2RlWwCEye7CN6Ulmne+57rxbZF3sDXB2X2/Ipz/fPfVxofl9SS+EDRzMYxcgSp1i1euMK6XBATRHQTqY=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[73]------ -------前台交易自动提交表单>--end------- 
+2015-09-12 17:50:27, INFO, 127.0.0.1, File[ E:\wamp\www\data\api\unionpay\unionpay.config.php ], Line[74]------ ============处理前台请求 结束=========== 

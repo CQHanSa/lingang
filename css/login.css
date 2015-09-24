@@ -1,0 +1,136 @@
+/* CSS Document */
+body{ background:#ffffff; width:100%; height:auto; margin:0px; padding:0px; color:#595959; font-family:"微软雅黑";}
+*{ margin:0px; padding:0px; font-size:12px; font-family:"微软雅黑";}
+a{ text-decoration:none; color:#595959;}
+.divclear{ clear:both;}
+li{ list-style:none;}
+img{ border:0px;}
+i,em{ font-style:normal;}
+.t_left{ float:left;}
+.t_right{ float:right;}
+.align_left{ text-align:left;}
+.align_right{ text-align:right;}
+.align_center{ text-align:center;}
+#navmenu{ padding:0px;}
+#bord_b{ border:none; padding-left:0px;}
+.mb20{margin-bottom:20px;}
+
+.fl{ float:left;}
+.fr{ float:right;}
+.mt40{ margin-top:40px;}
+
+.itop_login{ width:100%; height:40px; min-width:1200px; margin-top:-4px; background:#f3f3f3;}
+.itop_loginc{ width:1200px; margin:0 auto;}
+.itop_loginc .t_left{ display:inline-block; line-height:20px; padding-top:10px;}
+.send_address{ display:inline-block; padding:0 20px 0 10px; height:20px; border:1px solid #cdcdcd; background:url(../images/arrow1.png) no-repeat #fff right center; cursor:pointer;}
+.itop_loginc .t_right{ padding-top:10px; line-height:20px; color:#8d8d8d;}
+.itop_loginc .t_right *{ color:#8d8d8d;}
+.itop_loginc .t_right i{ color:#c30000;}
+.itop_loginc .t_right a{ padding-right:8px;}
+.itop_loginc .t_right ul li{ float:left; padding-left:8px;}
+.itop_loginc .t_right b{ color:#43b51f;}
+
+.ifooter{ width:100%;}
+.ifooter_c{ width:1200px; margin:0 auto;}
+.bq_c{ padding:50px 0 30px; text-align:center; color:#9f9f9f }
+.bq_c a{ display:inline-block; padding-right:7px; color:#9f9f9f}
+
+.warpper{ width:1195px; margin:0 auto;}
+.top_logo{ padding:35px 0px;}
+
+.loginbox{ width:100%; height:472px; background:url(../images/loginleft.png) #8be0d3 no-repeat center top;}
+
+.loginform{ width:420px; height:420px; background:#fff; float:right; margin-top:20px;}
+.loginform h1{ font-weight:normal; height:40px; position:relative; margin:10px 30px;}
+.loginform h1 strong{ font-size:20px; font-weight:normal; position:absolute left:0px; top:0px;}
+.loginform h1 strong,.loginform h1 span a{ color:#dc251f;}
+.loginform h1 span{ font-size:12px; position:absolute; right:0px; top:8px;}
+
+.login_wrap{ 
+ height:473px; 
+}
+.loginbox{}
+.login_wrap .lg_title{ color:#0055a6;}
+.login_wrap .reg_form, .login_wrap .lg_title {
+}
+	.login_wrap .lg_title {
+	font: 20px "microsoft yahei";
+margin: 30px 0px;
+
+padding-right: 18px;
+}
+.lg_title span {
+    float: right;
+    font-size: 12px;
+    margin-top: 7px;
+    font-family: 宋体; color:#5e5e5e;
+}
+a.blue_link {
+    color: #0083CE;
+}
+.reg_form {
+ padding-left:30px;
+    padding-top: 5px; width:360px;
+}
+.login_wrap .reg_form .gray{color: #A5A5A5;}
+.reg_row {
+    min-height: 50px;
+    width: 490px;
+}
+.form-control {
+    display: block;
+    width: 306px;
+    height: 26px;
+    padding: 6px 12px 6px 40px;
+    font-size: 14px;
+    line-height: 1.42857;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid #E6E6E6;
+	color:#b0b0b0;
+}
+.u_name ,.u_ps{ background:url(../images/regest.png) no-repeat}
+.u_name {
+    background-position: 8px -114px;
+}
+.u_ps {
+    background-position: 8px -145px;
+}
+
+.autologin{height:30px; line-height:20px;}
+.autologin input{float:left;}
+.autologin label{float:left; margin-top:-4px; margin-left:5px; display:inline;}
+
+.checkbox {
+    display: block;
+    min-height: 20px;
+    margin-top: 0px;
+    margin-bottom: 6px;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+.checkbox input[type="checkbox"] {
+    float: left;
+    margin-left: -20px;
+}
+
+.btn{
+border-width: 1px 1px 2px;
+border-style: solid;
+border-color:#55960f;
+
+display: inline-block;
+margin-bottom: 0px;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+width: 360px;
+color: #FFF;
+font: 18px "microsoft yahei";
+background-color: #519409;
+white-space: nowrap;
+padding: 6px 12px;
+}
+
+.quicklogin{ margin-top:15px; color:#d8d8d8;}
+.quicklogin img{ position:relative; top:3px;}

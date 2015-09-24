@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+.contain{ width:100%; height:1237px;}
+.conter{ width:1200px; height:1475px; margin:0 auto;}
+.number{ width:1028px; height:30px; margin:0 auto; padding-bottom:60px; padding-top:46px;}
+.number li{ width:195px; height:30px; padding-right:10px; float:left;}
+.number li a:hover{ color:#519409;}
+.num{ width:30px; height:30px; background:#FFF; border-radius:25px; border: 1px solid #b4b4b4; float:left;}
+.num a{ font-size:22px;height:30px; line-height:30px; display:block; color:#b4b4b4; text-align:center;}
+.text{ padding-left:42px; padding-top:6px;}
+.text a{ font-size:16px; color:#6c6c6c;}
+.solid{ height:1px;width:68px; float:right; background:url(../images/solid.png) no-repeat center center;}
+.pingjia{ width:1200px; height:371px;}
+.pingjia_t{ width:1200px; height:44px; background:#f0f0f0; line-height:44px;}
+.pingjia_t p{ color:#6c6c6c; font-size:16px; padding-left:33px;}
+.red{ width:1125px; height:20px; padding-top:26px; padding-bottom:35px; margin:0 auto;}
+.t_right p{ color:#aeaeae;}
+.kuang{ width:717px; height:247px; float:left;padding-left: 35px}
+.kuang_l{ width:717px; height:143px; }
+.kuang_f{ width:721px; height:104px; }
+.kuan_l{ width:119px; height:143px;background:#f2f2f2; float:left; line-height:143px;}
+.kuan_l p{ padding-left:28px;}
+.kuan_f{ width:119px; height:104px;background:#f2f2f2;float:left;line-height:104px;}
+.kuan_f p{ padding-left:28px;}
+.xin{ width:213px; height:153px; float:right; text-align:20px; padding-right:111px; padding-top:49px;}
+.xin li{ width:213px; height:44px; float:right; }
+.xin_l{ padding-top:5px;}
+.txt{ width:1200px; height:734px; padding-top:55px;}
+.txt_t{ width:1200px; height:43px; background:#f0f0f0; line-height:43px;}
+.txt_f{ width:1125px; height:691px; margin:0 auto;}
+.txt_tt{ width:75px; height:7px; padding-left:39px;}
+.txt_tf{width:90px; height:28px; margin:0 auto;}
+.txt_f ul{ float:left; height:75px; width:auto;}
+.txt_f li{ border-bottom:1px dashed #cfcfcf;}
+#first{ height:691px; width:670px;}
+#first li{ height:50px; width:670px; padding-top:24px;}
+#middle{ margin:0 auto; width:63px; height:691px;}
+#middle li{ width:63px; height:50px;padding-top:24px;}
+#bord{ width:392px; height:691px; float:left;}
+#bord li{ width:105px; height:50px; padding-left:301px;padding-top:24px;}
+.txt_f p{ color:#848484;}
+.txt_f font{color:#c0c0c0;}
+.xin font{ color:#F00;}
+.xin li a img：hover{ background:#F00;}
+

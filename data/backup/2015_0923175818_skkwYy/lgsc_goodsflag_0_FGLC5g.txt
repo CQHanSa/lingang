@@ -1,0 +1,4 @@
+INSERT INTO `lgsc_goodsflag` VALUES('1','t','推荐','1');
+INSERT INTO `lgsc_goodsflag` VALUES('2','j','精品','2');
+INSERT INTO `lgsc_goodsflag` VALUES('3','x','新品','3');
+INSERT INTO `lgsc_goodsflag` VALUES('4','r','热销','4');
