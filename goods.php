@@ -213,7 +213,7 @@ $price_v = array(
         	<ul>
             	<?php
 				$temp='
-            	<li><a href="/goodsshow.php?id=[!--id--]">
+            	<li><a href="/goodsshow.php?id=[!--id--]" target="_blank">
                 	<div class="sp_pic"><img src="/[!--picurl--]"></div>
                     <div class="sp_jg">¥[!--salesprice--]</div>
                     <div class="sp_wb">[!--title--]</div>
@@ -257,14 +257,15 @@ $price_v = array(
             <ul style="display:block;">
             	<?php
 				$temp2='
-                <li><a href="/goodsshow.php?id=[!--id--]">
+                <li><a href="/goodsshow.php?id=[!--id--]" target="_blank">
                 	<div><img src="/[!--picurl--]" width="208" height="200"></div>
                     	<dl>
                         	<dt>[!--title--]</dt>
                             <dd>￥[!--salesprice--]</dd>
                         </dl>
                 </a></li>';
-				$total = $_SESSION['total'];
+				$r = MysqlOneSelect("lgsc_goods","count(*) as total"," id != ''");
+				$total = $r['total'];
 				$rand = array();
 				$randID = 'id in (';
 				if($total > 5)

@@ -246,9 +246,9 @@ $r_user = MysqlOneSelect('lgsc_member','avatar',"id='$user[userid]'");
 <div class="im-right-sidebar">
 <div class="im-shop-service">
 <ul class="im-tab im-shop-tab">
-        <!--<li class="im-item current">
+        <li class="im-item current">
             <div class="im-item-content" style="width: 76px;">咨询商品</div>
-        </li>-->
+        </li>
         <li class="im-item">
         	<div class="im-item-content" style="width: 75px;">店铺信息</div>
     	</li>
@@ -261,8 +261,11 @@ $r_user = MysqlOneSelect('lgsc_member','avatar',"id='$user[userid]'");
 </ul>
 <div class="im-tab-contents">
     <!-- 商品咨询 -->
-<!--<div class="im-tab-content" style="display:none;height:320px;overflow:auto;">
-<div class="im-product-info">
+<div class="im-tab-content" style="display:none;height:320px;overflow:auto;">
+<?php if(!isset($_GET['goodsid'])){ ?>
+<div class="im-shop-info" id="j_noShopInfo" ><p class="im-txt-lighter im-txt-center">暂无数据</p></div>
+<?php } ?>
+<div class="im-product-info" <?=isset($_GET['goodsid']) ? '' : 'style="display:none"'?>>
 <div class="im-product-pic">
 <a href="http://item.jd.com/1351586523.html" target="_blank">
 	<img src="http://img10.360buyimg.com/n4/jfs/t601/206/1774498/300457/3b13e1d5/54460496N3797172a.jpg" title='【领券立减60】小狗新一代机皇！买就赠床褥除螨器！'>
@@ -296,57 +299,56 @@ $r_user = MysqlOneSelect('lgsc_member','avatar',"id='$user[userid]'");
         <ul class="im-question-list" style="height:120px;overflow:auto;">
         </ul>
     </div>
-</div>-->
+</div>
 <!-- 店铺信息 -->
 <div class="im-tab-content" style="display:block;">
-    <div class="im-shop-info" id="j_noShopInfo"><p class="im-txt-lighter im-txt-center">暂无数据</p></div>
+    <div class="im-shop-info" id="j_noShopInfo" style="display:none"><p class="im-txt-lighter im-txt-center">暂无数据</p></div>
     <div class="im-shop-info" id="j_shopInfo">
         <p class="im-item">
-            卖&nbsp;&nbsp;&nbsp;&nbsp;家：<a href="#" class="im-txt-link" id="venderName">Amily</a>
+            店铺名称：<?=$shop['shopname']?>
         </p>
         <p class="im-item">
-            综合评分：<span class="im-grade" id='complexScore'><em></em></span><span></span>
+            卖&nbsp;&nbsp;&nbsp;&nbsp;家：<?=$shop['shop_username']?>
+        </p>
+         <p class="im-item">
+            店铺地址：<?=one_cas($shop['shop_prov'])?> <?=one_cas($shop['shop_city'])?> <?=one_cas($shop['shop_town'])?><?=$shop['shop_address']?>
+        </p>
+        <p class="im-item">
+            综合评分：<i class="im-icon-start im-icon-start-5" title="5分"></i>
         </p>
         <p class="im-item" >
-            联系电话：<span id='venderPhone' title='联系电话'></span>
+            联系电话：<?=$shop['shop_tel']?>
         </p>
 
         <table class="im-shop-info-table">
             <tr>
-                <th colspan="2" width="">评分明细</th>
+                <th colspan="2" width="">店铺动态评分</th>
                 <th>与行业相比</th>
             </tr>
             <tr>
-                <td width="60">商品评分：</td>
-                <td width="100" id="productScore"></td>
+                <td width="60">描述相符：</td>
+                <td width="100" id="productScore"><i class="im-icon-start im-icon-start-5" title="5分"></i></td>
                 <!-- 升箭头用class im-txt-rise -->
                 <td width="100" id="productRatio"><span></span></td>
             </tr>
             <tr>
-                <td width="60">服务评分：</td>
-                <td width="100" id="serviceScore"></td>
+                <td width="60">服务态度：</td>
+                <td width="100" id="serviceScore"><i class="im-icon-start im-icon-start-5" title="5分"></i></td>
                 <!-- 降箭头用class im-txt-rise -->
                 <td width="100" id="serviceRatio"><span ></span></td>
             </tr>
             <tr>
-                <td width="60">时效评分：</td>
-                <td width="100" id="timeScore"></td>
+                <td width="60">发货速度：</td>
+                <td width="100" id="timeScore"><i class="im-icon-start im-icon-start-5" title="5分"></i></td>
                 <!-- 升箭头用class im-txt-rise -->
                 <td width="100" id="timeRatio"><span ></span></td>
             </tr>
         </table>
     </div>
-    <div class="im-recommend" style="display: none;">
-        <div class="im-title">店长推荐</div>
-        <div class="no-recommend"><p class="im-txt-lighter im-txt-center">暂无数据</p> </div>
-        <div class="im-recommend-slide">
-            <div class="im-recommend-area" id="jCarouselLite">
-                <ul class="im-recommend-list">
-                </ul>
-            </div>
-            <a href="#" class="im-slid-prev" id="prev"><i class="im-icon-prev-arrow" title="前一页"></i></a>
-            <a href="#" class="im-slid-next" id="next"><i class="im-icon-next-arrow" title="后一页"></i></a>
-        </div>
+    <div class="im-common-question">
+        <div class="im-title">常见问题</div>
+        <ul class="im-question-list" style="height:120px;overflow:auto;">
+        </ul>
     </div>
 </div>
 <div class="im-tab-content" style="display: none;">

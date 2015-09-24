@@ -3,11 +3,10 @@ set_time_limit(30);//无限请求超时时间
 require_once(dirname(dirname(__FILE__)).'/Common/index.php');
 $uid = post('uid');
 $time = time() - 60*5;
-$socket = MysqlRowSelect('lgsc_socket','*'," (  touserid = '$uid' )  and state = '0' order by createTime asc");
+$socket = MysqlRowSelect('lgsc_socket','*'," (  touserid = '$user[userid]'  and userid = '$uid' )  and state = '0' order by createTime asc");
 $issocket = MysqlOneSelect('lgsc_socket','*',"touserid = '$uid' and state = '0' ");
 if($socket == '-1')
 {
-	sleep(1);
 	exit();
 }
 else
@@ -25,7 +24,7 @@ else
 		{
 			$name = $member['username'];
 		}
-		if($socket[$i]['touserid'] != $uid)
+		if($socket[$i]['touserid'] != $user['userid'])
 		{
 			$write .= '<div class="im-item im-me">';
 			$td = '<td class="lm"></td>';

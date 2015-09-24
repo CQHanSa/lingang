@@ -54,6 +54,7 @@ if($tid > 0){
 
 <?php include_once($path.'/Public/js.php'); ?>
 <script type="text/javascript" src="/templates/default/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.flexslider-min.js"></script> 
 <script type="text/javascript" src="/js/click.js"></script>
 </head>
 
@@ -89,9 +90,14 @@ if($tid > 0){
             </span>
         </div>
     </div>
-    <?php 
-	if($r_shop['shop_signs']!=''){
-		echo '<div class="seller_sc"><img src="/'.$r_shop['shop_signs'].'"></div>';	
+    <?php
+	$row = $dosql->GetOne("SELECT linkurl,picurl,target FROM `#@__shopad` WHERE shopid='".$r_shop['id']."' and classid='1' AND picurl !='' AND checkinfo='true' ORDER BY orderid asc, id desc");
+	$gourl = 'javascript:;';
+	if(is_array($row)){
+		if($row['linkurl'] != ''){
+			$gourl = $row['linkurl'];
+		}
+		echo '<div class="seller_sc"><a href="'.$gourl.'" target="'.$row['target'].'"><img src="/'.$row['picurl'].'" /></a></div>';
 	}
 	?>
     <!-- 菜单栏 -->
@@ -115,11 +121,27 @@ if($tid > 0){
     </div>
     
     <!-- 轮播图 -->
-    <?php 
-	if($r_shop['shop_banner']!=''){
-		echo '<div class="banner1"><img src="/'.$r_shop['shop_banner'].'"></div>';	
-	}
-	?>
+    <div class="banner1">
+		<div class="flexslider">
+        <ul class="slides">
+        	<?php
+			$dosql->Execute("SELECT linkurl,picurl,target FROM `#@__shopad` WHERE shopid='".$r_shop['id']."' and classid='2' AND picurl !='' AND checkinfo='true' ORDER BY orderid DESC LIMIT 10");
+			while($row = $dosql->GetArray())
+			{
+				if($row['linkurl'] != ''){
+					$gourl = $row['linkurl'];
+				}else{
+					$gourl = 'javascript:;';
+				}
+			?>
+            <li style="background:url(<?php echo $row['picurl']; ?>) center top no-repeat;"><a href="<?php echo $gourl; ?>" target="<?php echo $row['target']?>"></a></li>
+            <?php
+			}
+			?>
+        </ul>
+		</div>
+      	
+	</div>
     
 </div>
 
@@ -198,14 +220,16 @@ if($tid > 0){
                 </div>
             </div>
             <!-- 广告 -->
-            <?php 
-			if($r_shop['shop_ad2']!=''){
-				echo '<div class="detail_gg"><img src="/'.$r_shop['shop_ad2'].'"></div>';	
-			}
-			?>
-            <?php 
-			if($r_shop['shop_ad3']!=''){
-				echo '<div class="detail_gg"><img src="/'.$r_shop['shop_ad3'].'"></div>';	
+            <?php
+			$dosql->Execute("SELECT linkurl,picurl,target FROM `#@__shopad` WHERE shopid='".$r_shop['id']."' and classid='4' AND picurl !='' AND checkinfo='true' ORDER BY orderid DESC LIMIT 2");
+			while($row = $dosql->GetArray())
+			{
+				if($row['linkurl'] != ''){
+					$gourl = $row['linkurl'];
+				}else{
+					$gourl = 'javascript:;';
+				}
+			echo '<div class="detail_gg"><a href="'.$gourl.'" target="'.$row['target'].'"><img src="/'.$row['picurl'].'"></a></div>';			
 			}
 			?>
             
@@ -214,11 +238,26 @@ if($tid > 0){
         
         	<div class="seller_spt">
             	<span class="t_left">
-				<?php 
-				if($r_shop['shop_ad1']!=''){
-					echo '<img src="/'.$r_shop['shop_ad1'].'">';	
-				}
-				?>
+					<div class="banner2">
+                        <div class="flexslider">
+                        <ul class="slides">
+                            <?php
+                            $dosql->Execute("SELECT linkurl,picurl,target FROM `#@__shopad` WHERE shopid='".$r_shop['id']."' and classid='3' AND picurl !='' AND checkinfo='true' ORDER BY orderid DESC LIMIT 10");
+                            while($row = $dosql->GetArray())
+                            {
+                                if($row['linkurl'] != ''){
+                                    $gourl = $row['linkurl'];
+                                }else{
+                                    $gourl = 'javascript:;';
+                                }
+                            ?>
+                            <li style="background:url(<?php echo $row['picurl']; ?>) center top no-repeat;"><a href="<?php echo $gourl; ?>" target="<?php echo $row['target']?>"></a></li>
+                            <?php
+                            }
+                            ?>
+                        </ul>
+                        </div>
+                    </div>
     			</span>
                 <span class="t_right">
                 	<div class="detail_pft">店铺公告</div>
@@ -324,30 +363,15 @@ if($tid > 0){
 <!-- 底部 -->
 <?php require_once(dirname(__FILE__).'/public/footer.php'); ?>
 
-<?php
-$socket = MysqlRowSelect('lgsc_socket','userid,toshopid',"touserid = '$user[userid]' and state = '0' group by userid",'1000');
-if($socket != '-1')
-{
-?>
-<div style="position:fixed; bottom:0px; right:0px; background#646464;">
-	<span>有新消息</span>
-    <ul>
-    	<?php
-		for($i=0,$n=count($socket);$i<$n;$i++)
-		{
-			$socketUser = MysqlOneSelect('lgsc_member','username,cnname',"id=".$socket[$i]['userid']);
-			$socketShop = MysqlOneSelect('lgsc_shops','shopname',"id=".$socket[$i]['userid']);
-			$name =  $socketUser['cnname'] != '' ? $socketUser['cnname']  : $socketUser['username'];
-			if($socketShop != '-1'){ $name = $socketShop['shopname'];}
-		?>
-        <li><a class="hand" onclick="Open('socket.php?sid=<?=$socket[$i]['toshopid']?>&uid=<?=$socket[$i]['userid']?>')"><?=$name?></a></li>
-        <?php
-		}
-		?>
-	</ul>
-</div>
-<?php
-}
-?>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.flexslider').flexslider({
+    	directionNav: true,
+        pauseOnAction: false
+    });
+});
+</script> 
 </body>
 </html>

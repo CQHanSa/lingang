@@ -99,8 +99,8 @@ if($action == 'delall')
 		<td width="20%">商品名称</td>
 		<td width="13%">商品类型</td>
 		<td width="10%">库存</td>
+        <td width="7%">销量</td>
 		<td width="15%">更新时间</td>
-		<td width="7%">点击</td>
 		<td width="15%" class="endCol">操作</td>
 	</tr>
 	<?php
@@ -286,8 +286,8 @@ if($action == 'delall')
 		<td><span class="title"><?php echo $title; ?></span></td>
 		<td><?php echo $classname; ?></td>
 		<td><?php echo $housenum; ?></td>
+        <td><?php echo $row['salenum']; ?></td>
 		<td class="number"><?php echo GetDateTime($row['posttime']); ?></td>
-		<td><?php echo $row['hits']; ?></td>
 		<td class="action endCol"><span id="check<?php echo $row['id']; ?>"><?php echo $checkStr; ?></span> | <span><?php echo $updateStr; ?></span> | <span class="nb"><?php echo $delStr; ?></span></td>
 	</tr>
 	<?php
@@ -302,7 +302,7 @@ if($dosql->GetTotalRow() == 0)
 	echo '<div class="dataEmpty">暂时没有相关的记录</div>';
 }
 ?>
-<div class="bottomToolbar"> <span class="selArea"><span>选择：</span> <a href="javascript:CheckAll(true);">全部</a> - <a href="javascript:CheckAll(false);">无</a> - <a href="javascript:;" onclick="AjaxClearAll();">删除</a></span> <a href="goods_add.php" class="dataBtn">添加商品信息</a></span> </div>
+<div class="bottomToolbar"> <span class="selArea"><span>选择：</span> <a href="javascript:CheckAll(true);">全部</a> - <a href="javascript:CheckAll(false);">无</a> - <a href="javascript:;" onclick="AjaxClearAll();">删除</a></span><!-- <a href="goods_add.php" class="dataBtn">添加商品信息</a>--></span> </div>
 <div class="page"> <?php echo $dopage->AjaxPage(); ?> </div>
 <?php
 
@@ -312,7 +312,7 @@ if($cfg_quicktool == 'Y')
 ?>
 <div class="quickToolbar">
 	<div class="qiuckWarp">
-		<div class="quickArea"> <span class="selArea"><span>选择：</span> <a href="javascript:CheckAll(true);">全部</a> - <a href="javascript:CheckAll(false);">无</a> - <a href="javascript:;" onclick="AjaxClearAll();">删除</a></span> <a href="goods_add.php" class="dataBtn">添加商品信息</a></span> <span class="pageSmall"><?php echo $dopage->AjaxPageSmall(); ?></span> </div>
+		<div class="quickArea"> <span class="selArea"><span>选择：</span> <a href="javascript:CheckAll(true);">全部</a> - <a href="javascript:CheckAll(false);">无</a> - <a href="javascript:;" onclick="AjaxClearAll();">删除</a></span><!-- <a href="goods_add.php" class="dataBtn">添加商品信息</a>--></span> <span class="pageSmall"><?php echo $dopage->AjaxPageSmall(); ?></span> </div>
 		<div class="quickAreaBg"></div>
 	</div>
 </div>

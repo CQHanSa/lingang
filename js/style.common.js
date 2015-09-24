@@ -1,3 +1,12 @@
+$(function(){
+	
+	//查询是否有新消息
+	if(document.cookie.indexOf("username=") > 0){
+		queryMessage();
+		setInterval("queryMessage()",10000);
+	}
+})
+
 function CheckKeyword()
 {
 	if($("#keyword").val() == "")
@@ -8,7 +17,28 @@ function CheckKeyword()
 	}else{
 		$("#goodsform").submit();
 	}
-	
+}
+
+//查询新消息
+function queryMessage()
+{
+	$.ajax({
+		url:'/Action/member.php',
+		type:'post',
+		data:'type=queryMessage',
+		success: function(data)
+		{
+			if(data != 'error')
+			{
+				$(".socketSroll").css('display','block');
+				$(".socketSroll-content ul").html('');
+				$(".socketSroll-content ul").html(data);
+			}else
+			{
+				$(".socketSroll").css('display','none');
+			}
+		}
+	})
 }
 
 function Open(url)
@@ -46,27 +76,20 @@ function webVersion()
 	}
 }
 
-function getNowFormatDate(){
-    var day = new Date();
-    var Year = 0;
-    var Month = 0;
-    var Day = 0;
-    var CurrentDate = "";
-    Year= day.getFullYear();//支持IE和火狐浏览器.
-    Month= day.getMonth()+1;
-    Day = day.getDate();
-    CurrentDate += Year+'-';
-    if (Month >= 10 ){
-     CurrentDate += '-'+Month;
+function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
     }
-    else{
-     CurrentDate += "0" + Month;
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
     }
-    if (Day >= 10 ){
-     CurrentDate += '-'+Day ;
-    }
-    else{
-     CurrentDate += '-'+"0" + Day ;
-    }
-    return CurrentDate;
- } 
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+            + " " + date.getHours() + seperator2 + date.getMinutes()
+            + seperator2 + date.getSeconds();
+    return currentdate;
+} 

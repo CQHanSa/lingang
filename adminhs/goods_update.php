@@ -38,13 +38,44 @@ $row = $dosql->GetOne("SELECT * FROM `#@__goods` WHERE `id`=$id");
 <div class="formHeader"> <span class="title">修改商品信息</span> <a href="javascript:location.reload();" class="reload">刷新</a> </div>
 <form name="form" id="form" method="post" action="goods_save.php" onsubmit="return cfm_goods();">
 	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="formTable">
-		<tr>
+		<tr style="display:none;">
 			<td width="25%" height="40" align="right">栏　目：</td>
-			<td width="75%"><select name="classid" id="classid">
+			<td width="75%"><!--<select name="classid" id="classid">
 					<option value="-1">请选择所属栏目</option>
 					<?php CategoryType(4); ?>
-				</select>
+				</select>-->
+                <input type="hidden" name="classid" value="27" />
 				<span class="maroon">*</span><span class="cnote">带<span class="maroon">*</span>号表示为必填项</span></td>
+		</tr>
+        <tr>
+			<td width="25%" height="40" align="right">商品名称：</td>
+			<td><input type="text" name="title" id="title" class="input" value="<?php echo $row['title']; ?>" />
+				<span class="maroon">*</span><span class="cnote">带<span class="maroon">*</span>号表示为必填项</span></td>
+		</tr>
+        <tr>
+			<td width="25%" height="40" align="right">商品价格：</td>
+			<td style="line-height:25px;">
+            <?php
+			//分割店铺价格
+			$price = explode(',',$row['price']);
+			$marketprice = explode(',',$row['marketprice']);
+			$promotions_price = explode(',',$row['promotions_price']);
+			$guige = explode(',',$row['guige']);
+            for($i=0,$n=count($price);$i<$n;$i++)
+			{
+			?>
+            价格：<input type="text" name="price[]" class="inputs" style="width:50px;" value="<?=$price[$i]?>" datatype="float" nullmsg="请输入店铺价格！"  placeholder="价格" onkeyup="jsmarkprice(this)" />
+                        市场价：<input type="text" name="marketprice[]" class="inputs" style="width:50px;" value="<?=$marketprice[$i]?>" datatype="float" nullmsg="请输入市场价格！"  placeholder="市场价格" />
+                        促销价格：<input type="text" name="promotions_price[]" class="inputs" style="width:50px;" value="<?=$promotions_price[$i]?>" datatype="float" nullmsg="请输入店铺促销价格！"  placeholder="促销价格" />  
+                        规格：<input type="text" name="guige[]" class="inputs" style="width:50px;" value="<?=$guige[$i]?>" datatype="*" nullmsg="请输入规格！" placeholder="规格" /> <br />
+            <?php
+			}
+			?>
+            </td>
+		</tr>
+        <tr>
+			<td height="40" align="right">库存数量：</td>
+			<td><input type="text" name="housenum" id="housenum" class="input" value="<?php echo $row['housenum']; ?>" /></td>
 		</tr>
 		<tr>
 			<td height="40" align="right">商品分类：</td>
@@ -53,163 +84,52 @@ $row = $dosql->GetOne("SELECT * FROM `#@__goods` WHERE `id`=$id");
 					<?php GetAllType('#@__goodstype','#@__goods','typeid'); ?>
 				</select></td>
 		</tr>
+        
 		<tr>
 			<td height="40" align="right">商品品牌：</td>
-			<td><select name="brandid" id="brandid" onchange="GetAttr(this.value)">
+			<td><select name="brandid" id="brandid">
 					<option value="-1">请选择所属品牌</option>
-					<?php GetAllType('#@__goodsbrand','#@__goods','brandid'); ?>
+                    <?php
+					$dosql->Execute("SELECT id,classname FROM `#@__goodstype` WHERE parentid=0 and checkinfo='true' ORDER BY orderid asc ,id ASC");
+					while($r_pid = $dosql->GetArray()){
+					?>
+                    <optgroup label="<?php echo $r_pid['classname']?>">
+                    <?php
+                    $dosql->Execute("SELECT * FROM `#@__goodsbrand` WHERE parentid='".$r_pid['id']."' and checkinfo='true' ORDER BY `orderid` ASC",$r_pid['id']);
+					while($r_bid = $dosql->GetArray($r_pid['id'])){
+					?>
+                    <option value="<?php echo $r_bid['id']?>" <?php if($row['brandid']==$r_bid['id']){echo ' selected="selected"';}?>><?php echo $r_bid['classname']?></option>
+                    <?php
+					}
+					?>
+                    </optgroup>
+                    <?php
+					}
+					?>
 				</select></td>
 		</tr>
 		<tr>
 			<td height="40" align="right">商品产地：</td>
-			<td><select name="brandid" id="brandid" onchange="GetAttr(this.value)">
+			<td><select name="shop_addressid" id="shop_addressid">
 					<option value="-1">请选择所属品牌</option>
-					<?php GetAllType('#@__goodsbrand','#@__goods','brandid'); ?>
+					<?php GetAllType('#@__goodsaddress','#@__goods','shop_addressid'); ?>
 				</select></td>
 		</tr>        
-		<tr>
-			<td height="40" align="right">商品名称：</td>
-			<td><input type="text" name="title" id="title" class="input" value="<?php echo $row['title']; ?>" <?php echo 'style="color:'.$row['colorval'].';font-weight:'.$row['boldval'].';"'; ?> />
-				<span class="maroon">*</span>
-				<div class="titlePanel">
-					<input type="hidden" name="colorval" id="colorval" value="<?php echo $row['colorval']; ?>" />
-					<input type="hidden" name="boldval" id="boldval" value="<?php echo $row['boldval']; ?>" />
-					<span onclick="colorpicker('colorpanel','colorval','title');" class="color" title="标题颜色"> </span> <span id="colorpanel"></span> <span onclick="blodpicker('boldval','title');" class="blod" title="标题加粗"> </span> <span onclick="clearpicker()" class="clear" title="清除属性">[#]</span> &nbsp; </div></td>
-		</tr>
+		
+		
 		<tr class="nb">
-			<td height="40" align="right">属　性：</td>
-			<td class="attrArea"><?php
-			$flagarr = explode(',',$row['flag']);
-
-			$dosql->Execute("SELECT * FROM `#@__goodsflag` ORDER BY orderid ASC");
-			while($r = $dosql->GetArray())
-			{
-				echo '<span><input type="checkbox" name="flag[]" id="flag[]" value="'.$r['flag'].'"';
-
-				if(in_array($r['flag'],$flagarr))
-				{
-					echo 'checked="checked"';
-				}
-
-				echo ' />'.$r['flagname'].'['.$r['flag'].']</span>';
-			}
-			?></td>
+			<td height="40" align="right">商品状态：</td>
+			<td><input type="radio" name="issale" value="true" <?php if($row['issale'] == 'true') echo 'checked="checked"'; ?> />
+				上架 &nbsp;
+				<input type="radio" name="issale" value="false" <?php if($row['issale'] == 'false') echo 'checked="checked"'; ?> />
+				下架<td>
 		</tr>
+        
+		
 		<tr class="nb">
 			<td colspan="2" height="26"><div class="line"> </div></td>
 		</tr>
-		<tr class="nb">
-			<td colspan="2" height="26" id="getattr"><?php
-			
-			//将商品属性id与值组成数组
-			$rowattr = String2Array($row['attrstr']);
-			$row2 = $dosql->Execute('SELECT * FROM `#@__goodsattr` WHERE `goodsid`='.$row['typeid']);
-			if($dosql->GetTotalRow() > 0)
-			{
-				echo '<table width="100%" border="0" cellspacing="0" cellpadding="0">';
-				$i = 0;
-				while($row2 = $dosql->GetArray())
-				{
-			?>
-		<tr>
-			<td width="25%" height="40" align="right"><?php echo $row2['attrname']; ?>：</td>
-			<td><input type="text" name="attrvalue[]" id="attrvalue[]" class="input" value="<?php if(!empty($rowattr[$row2['id']])) echo $rowattr[$row2['id']]; ?>" />
-				<input type="hidden" name="attrid[]" id="attrid[]" value="<?php echo $row2['id']; ?>">
-				<?php if($i == 0){echo '<span class="cnote">不同属性值用 <span class="red">|</span> 隔开，例如：黑色|白色 等</span>';} ?></td>
-		</tr>
-		<?php
-				$i++;
-			}
-			echo '</table>';
-		}
-		else
-		{
-			echo '<div style="text-align:center;color:#9C0;">暂无自定义属性，您可以在商品分类中进行添加</div>';
-		}
-		?>
-		<tr class="nb">
-			<td colspan="2" height="26"><div class="line"></div></td>
-		</tr>
-		<tr class="nb">
-			<td colspan="2" height="0" id="df"><?php
-			echo GetDiyField('4',$row['classid'],$row);
-			?></td>
-		</tr>
-		<tr>
-			<td width="25%" height="40" align="right">运费承担：</td>
-			<td><input type="radio" name="payfreight" value="0" <?php if($row['payfreight'] == '0') echo 'checked="checked"'; ?> />
-				买家承担&nbsp;
-				<input type="radio" name="payfreight" value="1" <?php if($row['payfreight'] == '1') echo 'checked="checked"'; ?> />
-				卖家承担</td>
-		</tr>
-		<tr>
-			<td height="40" align="right">商品价格：</td>
-			<td><input name="marketprice" type="text" id="marketprice" class="inputs" value="<?php echo $row['marketprice']; ?>" style="width:50px;" />
-				市场价
-				&nbsp;&nbsp;
-				<input name="salesprice" type="text" id="salesprice" class="inputs" value="<?php echo $row['salesprice']; ?>" style="width:50px;" />
-				销售价</td>
-		</tr>
-		<tr>
-			<td height="40" align="right">商品编号：</td>
-			<td><input type="text" name="goodsid" id="goodsid" class="input" value="<?php echo $row['goodsid']; ?>" /></td>
-		</tr>
-		<tr>
-			<td height="40" align="right">商品重量：</td>
-			<td><input type="text" name="weight" id="weight" class="input" value="<?php echo $row['weight']; ?>" />
-				kg</td>
-		</tr>
-		<tr>
-			<td height="40" align="right">库存数量：</td>
-			<td><input type="text" name="housenum" id="housenum" class="input" value="<?php echo $row['housenum']; ?>" /></td>
-		</tr>
-		<tr>
-			<td height="40" align="right">库存警告：</td>
-			<td><input type="radio" name="housewarn" id="housewarn" value="true" <?php if($row['housewarn'] == 'true') echo 'checked="checked"'; ?> />
-				是
-				&nbsp;
-				<input type="radio" name="housewarn" id="housewarn" value="false" <?php if($row['housewarn'] == 'false') echo 'checked="checked"'; ?> />
-				否</td>
-		</tr>
-		<tr>
-			<td height="40" align="right">警告数量：</td>
-			<td><input type="text" name="warnnum" id="warnnum" class="input" value="<?php echo $row['warnnum']; ?>" /></td>
-		</tr>
-		<tr class="nb">
-			<td height="40" align="right">返点积分：</td>
-			<td><input type="text" name="integral" id="integral" class="input" value="<?php echo $row['integral']; ?>" /></td>
-		</tr>
-		<tr class="nb">
-			<td colspan="2" height="26"><div class="line"> </div></td>
-		</tr>
-		<tr>
-			<td height="40" align="right">文章来源：</td>
-			<td><input type="text" name="source" id="source" class="input" value="<?php echo $row['source']; ?>" />
-				<span class="srcArea"> <span class="infosrc">选择
-				<ul>
-					<?php
-					$dosql->Execute("SELECT * FROM `#@__infosrc` ORDER BY `orderid` ASC");
-					if($dosql->GetTotalRow() > 0)
-					{
-						while($row2 = $dosql->GetArray())
-						{
-					?>
-					<li><a href="javascript:;" title="<?php echo $row2['linkurl']; ?>" onclick="GetSrcName('<?php echo $row2['srcname']; ?>');"><?php echo $row2['srcname']; ?></a></li>
-					<?php
-						}
-					}
-					else
-					{
-						echo '<li>暂无来源 <a href="infosrc.php">[添加]</a></li>';
-					}
-					?>
-				</ul>
-				</span> </span></td>
-		</tr>
-		<tr>
-			<td height="40" align="right">作者编辑：</td>
-			<td><input type="text" name="author" id="author" class="input" value="<?php echo $row['author']; ?>" /></td>
-		</tr>
+		
 		<tr>
 			<td height="40" align="right">缩略图片：</td>
 			<td><input type="text" name="picurl" id="picurl" class="input" value="<?php echo $row['picurl']; ?>" />
@@ -217,21 +137,7 @@ $row = $dosql->GetOne("SELECT * FROM `#@__goods` WHERE `id`=$id");
 				<input type="checkbox" name="rempic" id="rempic" value="true" />
 				远程</span> <span class="cutPicTxt"><a href="javascript:;" onclick="GetJcrop('jcrop','picurl');return false;">裁剪</a></span> </span></td>
 		</tr>
-		<tr>
-			<td height="40" align="right">跳转链接：</td>
-			<td><input type="text" name="linkurl" id="linkurl" class="input" value="<?php echo $row['linkurl']; ?>" /></td>
-		</tr>
-		<tr>
-			<td height="40" align="right">关键词：</td>
-			<td><input type="text" name="keywords" class="input" id="keywords" value="<?php echo $row['keywords']; ?>" />
-				<span class="cnote">多关键词之间用空格或者“,”隔开</span></td>
-		</tr>
-		<tr>
-			<td height="104" align="right">摘　要：</td>
-			<td><textarea name="description" class="textdesc" id="description"><?php echo $row['description']; ?></textarea>
-				<div class="hr_5"> </div>
-				最多能输入 <strong>255</strong> 个字符</td>
-		</tr>
+		
 		<tr>
 			<td height="340" align="right">详细内容：</td>
 			<td><textarea name="content" id="content" class="kindeditor"><?php echo $row['content']; ?></textarea>
@@ -248,22 +154,7 @@ $row = $dosql->GetOne("SELECT * FROM `#@__goods` WHERE `id`=$id");
 					});
 				});
 				</script>
-				<div class="editToolbar">
-					<input type="checkbox" name="remote" id="remote" value="true" />
-					下载远程图片和资源
-					&nbsp;
-					<input type="checkbox" name="autothumb" id="autothumb" value="true" />
-					提取第一个图片为缩略图
-					&nbsp;
-					<input type="checkbox" name="autodesc" id="autodesc" value="true" />
-					提取
-					<input type="text" name="autodescsize" id="autodescsize" value="200" size="3" class="inputls" />
-					字到摘要
-					&nbsp;
-					<input type="checkbox" name="autopage" id="autopage" value="true" />
-					自动分页
-					<input type="text" name="autopagesize" id="autopagesize" value="5" size="6" class="inputls" />
-					KB</div></td>
+				</td>
 		</tr>
 		<tr class="nb">
 			<td height="124" align="right">组　图：</td>
@@ -288,17 +179,19 @@ $row = $dosql->GetOne("SELECT * FROM `#@__goods` WHERE `id`=$id");
 		<tr class="nb">
 			<td colspan="2" height="26"><div class="line"> </div></td>
 		</tr>
-		<tr>
-			<td height="40" align="right">点击次数：</td>
-			<td><input type="text" name="hits" id="hits" class="inputos" value="<?php echo $row['hits']; ?>" /></td>
+		
+		
+        <tr class="nb">
+			<td height="40" align="right">商品促销：</td>
+			<td><input type="radio" name="promotions" value="true" <?php if($row['promotions'] == 'true') echo 'checked="checked"'; ?> />
+				是 &nbsp;
+				<input type="radio" name="promotions" value="false" <?php if($row['promotions'] == 'false') echo 'checked="checked"'; ?> />
+				否</td>
 		</tr>
+        
 		<tr>
-			<td height="40" align="right">排列排序：</td>
-			<td><input type="text" name="orderid" id="orderid" class="inputos" value="<?php echo $row['orderid']; ?>" /></td>
-		</tr>
-		<tr>
-			<td height="40" align="right">更新时间：</td>
-			<td><input name="posttime" type="text" id="posttime" class="inputms" value="<?php echo GetDateTime($row['posttime']); ?>" readonly="readonly" />
+			<td height="40" align="right">促销开始时间：</td>
+			<td><input name="promotions_starttime" type="text" id="posttime" class="inputms" value="<?php echo GetDateTime($row['promotions_starttime']); ?>" readonly="readonly" />
 				<script type="text/javascript">
 				date = new Date();
 				Calendar.setup({
@@ -309,13 +202,28 @@ $row = $dosql->GetOne("SELECT * FROM `#@__goods` WHERE `id`=$id");
 				});
 				</script></td>
 		</tr>
-		<tr class="nb">
-			<td height="40" align="right">审　核：</td>
+        <tr>
+			<td height="40" align="right">促销结束时间：</td>
+			<td><input name="promotions_endtime" type="text" id="posttime2" class="inputms" value="<?php echo GetDateTime($row['promotions_endtime']); ?>" readonly="readonly" />
+				<script type="text/javascript">
+				date = new Date();
+				Calendar.setup({
+					inputField     :    "posttime2",
+					ifFormat       :    "%Y-%m-%d %H:%M:%S",
+					showsTime      :    true,
+					timeFormat     :    "24"
+				});
+				</script></td>
+		</tr>
+		
+        <tr class="nb">
+			<td height="40" align="right">审核：</td>
 			<td><input type="radio" name="checkinfo" value="true" <?php if($row['checkinfo'] == 'true') echo 'checked="checked"'; ?> />
 				是 &nbsp;
 				<input type="radio" name="checkinfo" value="false" <?php if($row['checkinfo'] == 'false') echo 'checked="checked"'; ?> />
 				否<span class="cnote">选择“否”则该信息暂时不显示在前台</span></td>
 		</tr>
+        
 	</table>
 	<div class="formSubBtn">
 		<input type="submit" class="submit" value="提交" />

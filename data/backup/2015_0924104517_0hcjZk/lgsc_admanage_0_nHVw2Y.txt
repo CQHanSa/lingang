@@ -12,3 +12,6 @@ INSERT INTO `lgsc_admanage` VALUES('11','1','8','3','0,','首页六格广告五'
 INSERT INTO `lgsc_admanage` VALUES('12','1','9','3','0,','首页六格广告六','image','uploads/image/20150906/1441512780.jpg','','','12','1441505064','true');
 INSERT INTO `lgsc_admanage` VALUES('13','1','10','0','0,','首页通栏广告一','image','uploads/image/20150906/1441509390.jpg','','','13','1441507152','true');
 INSERT INTO `lgsc_admanage` VALUES('14','1','11','0','0,','首页通栏广告二','image','uploads/image/20150906/1441512250.jpg','','','14','1441507202','true');
+INSERT INTO `lgsc_admanage` VALUES('15','1','14','13','0,','1楼广告','image','images/ncp_02.png','','','15','1443062442','true');
+INSERT INTO `lgsc_admanage` VALUES('16','1','15','13','0,','2楼广告','image','images/sp_02.png','','','16','1443062512','true');
+INSERT INTO `lgsc_admanage` VALUES('17','1','16','13','0,','3楼广告','image','images/xsp_02.png','','','17','1443062524','true');
