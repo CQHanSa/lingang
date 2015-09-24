@@ -152,7 +152,39 @@ $(function(){
 	$(".spfl_ul li div").click(function(){
 		$(this).siblings().slideToggle('fast');
 	});
+	
+	//弹出信息
+	$(".socketSroll-title .show").click(function(){
+			alert(111);
+	})
 })
+
+function socketShow(obj)
+{
+		var Aheight = $(".socketSroll").height();
+		var Theight = $(".socketSroll-title").height();
+		var Cheight = $(".socketSroll-content").height();
+		var height = Aheight - Theight;
+/*		console.log($(".socketSroll-content").height());
+		console.log($(".socketSroll-title").height());
+		console.log($(".socketSroll").height());*/
+		if($(obj).text() == '-收缩')
+		{
+			if( height > Cheight )
+			{
+				$(".socketSroll").animate({'bottom':-height});	
+			}else
+			{
+				$(".socketSroll").animate({'bottom':-Cheight});	
+			}
+			$(obj).text('+展开');
+		}else
+		{
+			$(".socketSroll").animate({'bottom':0});	
+			$(obj).text('-收缩');
+		}
+		
+}
 
 //跳转翻页面
 function page(url)
