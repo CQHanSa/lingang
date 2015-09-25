@@ -109,7 +109,7 @@ $(function(){
 	});
 	
 	/* 全选 */
-	$(".gwc_splb thead td div").click(function(){
+/*	$(".gwc_splb thead td div").click(function(){
 		$(this).toggleClass('on');
 		$(".gwc_splb").find('samp').toggleClass('on');
 		$(".gwc_js span.t_left div").toggleClass('on');
@@ -119,18 +119,9 @@ $(function(){
 		$(this).toggleClass('on');
 		$(".gwc_splb").find('samp').toggleClass('on');
 		$(".gwc_splb thead td div").toggleClass('on');
-	});
+	});*/
 	
-	/* 单选 */
-	$(".gwc_splb tbody tr:nth-child(1) td samp").click(function(){
-		$(this).toggleClass('on');
-		$(this).parent().parent().siblings().find('samp').toggleClass('on');
-	});
-	/* 单选 */
-	$(".gwc_splb tbody tr:nth-child(2) td samp").click(function(){
-		$(this).toggleClass('on');
-		$(this).parent().parent().parent().siblings().find('samp').toggleClass('on');
-	});
+
 	
 	/* 首页 菜单栏 */
 	$(".all_sp").hover(function(){

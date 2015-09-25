@@ -41,6 +41,7 @@ if($type == 'changePrice')
 <script type="text/javascript" src="js/jquery.jqzoom.js"></script>
 <script type="text/javascript" src="js/base.js"></script>
 <script type="text/javascript" src="js/countdown.js"></script>
+<script type="text/javascript" src="js/style.buy.js"></script>
 <script>
 window.onload = function(){
 	<?php
@@ -54,7 +55,11 @@ window.onload = function(){
 	<?php
 	}
 	?>
-	
+	$("#city").change(function(){
+		$(".send-content").text('该区域暂无货源');
+		$(".detail_btn span").removeClass();
+		$(".detail_btn span").addClass('cur1');
+	})
 	$("#county").change(function(){
 		$.ajax({
 			url : "/ajax.php?a=showcommunity&value="+$("#county").val(),
@@ -83,10 +88,13 @@ window.onload = function(){
 										$(".send-content span").text(' 无货');
 										$(".detail_btn span").removeClass();
 										$(".detail_btn span").addClass('cur1');
+										$(".detail_btn a").removeAttr('state');
 									}else{
 										$(".send-content span").html(' '+data+'');
 										$(".detail_btn span").removeClass();
 										$(".detail_btn span").addClass('cur2');
+										$(".detail_btn a").eq(0).attr('state','on');
+										$(".detail_btn a").eq(1).attr('state','on');
 									}
 								
 							}
@@ -123,6 +131,7 @@ function changePrice(num)
 	
 <!-- 顶部 -->
 <?php require_once(dirname(__FILE__).'/public/header.php'); ?> 
+<script type="text/javascript" src="/js/styel.buy.js"></script>
 
 <!-- 选择分类 搜索 -->
 <div class="icontent">
@@ -169,7 +178,7 @@ function changePrice(num)
                         	</div>
                         </dt>
                         <?php }else{ ?>
-                        <dt class="price">店铺价：<i>¥<label style=" font-size:24px;"><?=$price[0]?></label></i>
+                        <dt class="promotions_price">店铺价：<i>¥<label style=" font-size:24px;"><?=$price[0]?></label></i>
                         <?php } ?>
                         <!--<dt>本店活动：<em>满79元，包邮</em></dt>-->
                          <dt>配送至：
@@ -210,8 +219,8 @@ function changePrice(num)
                     <span>库存：5874</span>
                 </div>
                 <div class="detail_btn">
-                    <span class="cur1"><a onclick="addBuy(<?=$id?>,'nowBuy','this')" >立即购买</a></span>
-                    <span class="cur1"><a onclick="addBuy(<?=$id?>,'addBuyCar','this')">加入购物车</a></span>
+                    <span class="cur1"><a onclick="buyCar(this,<?=$id?>,<?=$shop['id']?>,'nowBuy')">立即购买</a></span>
+                    <span class="cur1"><a onclick="buyCar(this,<?=$id?>,<?=$shop['id']?>,'addBuyCar')">加入购物车</a></span>
                 </div>
                 <div class="detail_fxsc">
                     <a>分享</a>
@@ -264,7 +273,7 @@ function changePrice(num)
                                         <dl>
                                             <dt>[!--title--]</dt>
                                             <dt><i>¥[!--salesprice--]</i></dt>
-                                            <dt>销量：105笔</dt>
+                                            <dt>销量：[!--salenum--] 笔</dt>
                                         </dl>
                                         
                                     </span>
@@ -296,7 +305,7 @@ function changePrice(num)
                                 <dl>
                                 	<dt><i>¥[!--salesprice--]</i></dt>
                                     <dt>[!--title--]</dt>
-                                    <dd>销量：100笔</dd>
+                                    <dd>销量：[!--salenum--] 笔</dd>
                                 </dl>
                             </a></li>';
 							 echo listTemp($temp2,'lgsc_goods',"shopid=$r[shopid] and flag like '%r%' and issale = 'true' order by posttime desc",$limit='5');
@@ -374,7 +383,7 @@ function changePrice(num)
                             <dl>
                             	<dt>[!--title--]</dt>
                                 <dt>¥[!--salesprice--]</dt>
-                                <dd>售出：195523</dd>
+                                <dd>售出：：[!--salenum--] </dd>
                             </dl>
                         </a></li>
 						';

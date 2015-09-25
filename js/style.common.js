@@ -6,7 +6,7 @@ $(function(){
 		setInterval("queryMessage()",10000);
 	}
 })
-
+//查询关键词
 function CheckKeyword()
 {
 	if($("#keyword").val() == "")
@@ -40,7 +40,7 @@ function queryMessage()
 		}
 	})
 }
-
+//打开新窗口
 function Open(url)
 {
 	var agent = navigator.userAgent.toLowerCase() ;
@@ -58,7 +58,7 @@ function Open(url)
 		return true;
 	}
 }
-
+//判断浏览器版本
 function webVersion()
 {
 	var agent = navigator.userAgent.toLowerCase() ;
@@ -75,7 +75,7 @@ function webVersion()
 		return 'firefox';
 	}
 }
-
+//获取当前详细时间
 function getNowFormatDate() {
     var date = new Date();
     var seperator1 = "-";
@@ -92,4 +92,21 @@ function getNowFormatDate() {
             + " " + date.getHours() + seperator2 + date.getMinutes()
             + seperator2 + date.getSeconds();
     return currentdate;
-} 
+}
+
+//获取get参
+var $_GET = (function(){
+    var url = window.document.location.href.toString();
+    var u = url.split("?");
+    if(typeof(u[1]) == "string"){
+        u = u[1].split("&");
+        var get = {};
+        for(var i in u){
+            var j = u[i].split("=");
+            get[j[0]] = j[1];
+        }
+        return get;
+    } else {
+        return {};
+    }
+})(); 
