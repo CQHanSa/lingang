@@ -1,0 +1,1 @@
+INSERT INTO `lgsc_admin` VALUES('1','admin','dadf6a69f44c909451b60ee4c7abdba6','','0','','1','true','127.0.0.1','1443062713');

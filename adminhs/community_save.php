@@ -45,7 +45,7 @@ if($action == 'add')
 	$regtime  = time();
 	$regip    = GetIP();
 
-	$dosql->ExecNoneQuery("INSERT INTO `#@__member` (username, usertype, password, cnname, telephone, address_prov, address_city, address_country, address, expval, integral, regtime, regip, logintime, loginip, checkinfo) VALUES ('$username', '$usertype', '$password', '$cname', '$phone', '$address_prov', '$address_city', '$address_country', '$address', '0', '0', '$regtime', '$regip', '$regtime', '$regip','$checkinfo')");
+	$dosql->ExecNoneQuery("INSERT INTO `#@__member` (username, usertype, password, cnname, telephone, address_prov, address_city, address_country, address, expval, integral, regtime, regip, logintime, loginip, checkinfo) VALUES ('$username', '2', '$password', '$cname', '$phone', '$address_prov', '$address_city', '$address_country', '$address', '0', '0', '$regtime', '$regip', '$regtime', '$regip','$checkinfo')");
 		
 	$userid=$dosql->GetLastID();
 	

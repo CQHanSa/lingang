@@ -1,0 +1,4 @@
+INSERT INTO `lgsc_shopstype` VALUES('1','1','0','','水果类','','','1','true');
+INSERT INTO `lgsc_shopstype` VALUES('2','1','0','','蔬菜类','','','2','true');
+INSERT INTO `lgsc_shopstype` VALUES('3','1','0','','海鲜水产','','','3','true');
+INSERT INTO `lgsc_shopstype` VALUES('4','1','1','','苹果','','','4','true');

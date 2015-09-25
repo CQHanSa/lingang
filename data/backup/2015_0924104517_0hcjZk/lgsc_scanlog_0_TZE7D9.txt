@@ -1,0 +1,6 @@
+INSERT INTO `lgsc_scanlog` VALUES('5','6','4','1442803315');
+INSERT INTO `lgsc_scanlog` VALUES('7','6','0','1442570311');
+INSERT INTO `lgsc_scanlog` VALUES('8','6','1','1442996868');
+INSERT INTO `lgsc_scanlog` VALUES('9','6','6','1442803997');
+INSERT INTO `lgsc_scanlog` VALUES('10','6','3','1443059127');
+INSERT INTO `lgsc_scanlog` VALUES('11','13','1','1442996868');

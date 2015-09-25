@@ -594,9 +594,44 @@ else if($action == 'update')
 	{
 		ImageResize(PHPMYWIND_ROOT.'/'.$picurl, $r['picwidth'], $r['picheight']);
 	}
+	
+	
+	for($i=0,$n=count($price);$i<$n;$i++)
+	{
+		$price[$i] = number_format(floatval($price[$i]),2);
+		$marketprice[$i] = number_format(floatval($marketprice[$i]),2);
+		$promotions_price[$i] = number_format(floatval($promotions_price[$i]),2);
+		if($price[$i] > 0)
+		{
+			
+			$sqlprice .= $price[$i].",";
+			$sqlmarketprice .= $marketprice[$i].",";
+			$sqlpromotions_price .= $promotions_price[$i].",";
+			$sqlguige .= $guige[$i].",";
+		}else
+		{
+			message('输入价格有误','javascript:history.go(-1)');		
+		}
+	}
+	$sqlprice = substr($sqlprice,0,'-1');
+	$sqlmarketprice = substr($sqlmarketprice,0,'-1');
+	$sqlpromotions_price = substr($sqlpromotions_price,0,'-1');
+	$sqlguige = substr($sqlguige,0,'-1');
+	
+	if($promotions_starttime!=''){
+		$promotions_starttime = strtotime($promotions_starttime);
+	}
+	
+	if($promotions_endtime!=''){
+		$promotions_endtime = strtotime($promotions_endtime);
+	}
+	
+	if($promotions_endtime < $promotions_starttime){
+		ShowMsg('结束时间必须大于开始时间！','-1');
+		exit();	
+	}
 
-
-	$sql = "UPDATE `$tbname` SET classid='$classid', parentid='$parentid', parentstr='$parentstr', typeid='$typeid', typepid='$typepid', typepstr='$typepstr', brandid='$brandid', brandpid='$brandpid', brandpstr='$brandpstr', title='$title', colorval='$colorval', boldval='$boldval', flag='$flag', goodsid='$goodsid', payfreight='$payfreight', weight='$weight', attrstr='$attrstr', marketprice='$marketprice', salesprice='$salesprice', housenum='$housenum', housewarn='$housewarn', warnnum='$warnnum', integral='$integral', source='$source', author='$author', linkurl='$linkurl', keywords='$keywords', description='$description', content='$content', picurl='$picurl', picarr='$picarr', hits='$hits', orderid='$orderid', posttime='$posttime', checkinfo='$checkinfo' {$fieldstr} WHERE id=$id";
+	$sql = "UPDATE `$tbname` SET classid='$classid', parentid='$parentid', parentstr='$parentstr', typeid='$typeid', typepid='$typepid', typepstr='$typepstr', brandid='$brandid', brandpid='$brandpid', brandpstr='$brandpstr', title='$title', flag='$flag', housenum='$housenum', content='$content', picurl='$picurl', picarr='$picarr',  checkinfo='$checkinfo', promotions='$promotions', promotions_price='$sqlpromotions_price', promotions_starttime='$promotions_starttime', promotions_endtime='$promotions_endtime', price='$sqlprice', guige='$sqlguige', issale='$issale', marketprice='$sqlmarketprice' WHERE id=$id";
 	if($dosql->ExecNoneQuery($sql))
 	{
 		header("location:$gourl");

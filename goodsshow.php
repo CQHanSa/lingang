@@ -267,7 +267,7 @@ function changePrice(num)
                             <?php
 							$temp='
                             <li>
-                                <a href="/goodsshow.php?id=[!--id--]">
+                                <a href="/goodsshow.php?id=[!--id--]" target="_blank">
                                     <span class="t_left"><img src="[!--picurl--]" width="57" height="57"></span>
                                     <span class="t_right">
                                         <dl>
@@ -301,7 +301,7 @@ function changePrice(num)
                     	<ul>
                         	<?php
 							$temp2='
-                        	<li><a href="/goodsshow.php?id=[!--id--]"><img src="[!--picurl--]" width="173" height="173">
+                        	<li><a href="/goodsshow.php?id=[!--id--]" target="_blank"><img src="[!--picurl--]" width="173" height="173">
                                 <dl>
                                 	<dt><i>¥[!--salesprice--]</i></dt>
                                     <dt>[!--title--]</dt>
@@ -378,7 +378,7 @@ function changePrice(num)
                 	<ul class="pde_rul">
                         <?php
 						$temp3='
-						<li><a href="/goodsshow.php?id=[!--id--]">
+						<li><a href="/goodsshow.php?id=[!--id--]" target="_blank">
                         	<img src="[!--picurl--]" width="135" height="135">
                             <dl>
                             	<dt>[!--title--]</dt>
