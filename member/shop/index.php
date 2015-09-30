@@ -304,9 +304,12 @@ elseif($action=="goods_saveedit"){
 	}
 	
 	//文章属性
-	if(is_array($flag))
+	
+	if(isset($flag) && is_array($flag))
 	{
 		$flag = implode(',',$flag);
+	}else{
+		$flag = '';	
 	}
 	
 

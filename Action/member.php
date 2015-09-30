@@ -150,7 +150,7 @@ if($type == 'socketShowDay')
 
 //全站显示会员聊天信息
 if($type == 'queryMessage')
-{
+{	if(is_user('islogin')){
 	$user['userid']  = AuthCode($_COOKIE['userid'],'DECODE');
 	$socket = MysqlRowSelect('lgsc_socket','userid,toshopid',"touserid = '$user[userid]' and state = '0' group by userid",'1000');
 	if($socket == '-1') { echo 'error'; exit();}
@@ -168,6 +168,7 @@ if($type == 'queryMessage')
         <?=$name?><font color="#FF0000">(<?=$socketTotal?>条未读消息)</font></a>
     </li>
     <?php
-    }        
+    } 
+	}
 }
 ?>

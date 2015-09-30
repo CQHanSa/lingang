@@ -76,7 +76,7 @@ if($tid > 0){
         	<span class="t_right">
             	<span><?php echo $r_shop['shopname']?></span>
             	<span><a class="on"></a><a class="on"></a><a class="on"></a><a class="on"></a><a class="on"></a><a></a> 4.8分</span>
-            	<span><a><i>+收藏店铺</i></a></span>
+            	<span><a href="javascript:;" onclick="addShopCollcetion(<?=$sid?>)"><i>+收藏店铺</i></a></span>
                 <?php if(isset($_COOKIE['userid'])  ){  
 					if($r_shop['userid'] == $user['userid']){?>
                   <span><a class="hand" onclick="alert('店主请不要找自己咨询')"><i>在线客服</i></a></span>
@@ -208,7 +208,7 @@ if($tid > 0){
                     <ul>
                     	<?php
 						$temp2='
-                        <li><a href="/goodsshow.php?id=[!--id--]" title="[!--title--]"><img src="[!--picurl--]" width="173" height="173">
+                        <li><a href="/goodsshow.php?id=[!--id--]" title="[!--title--]" target="_blank"><img src="[!--picurl--]" width="173" height="173">
                             <dl>
                             	<dt><i>¥[!--salesprice--]</i></dt>
                                 <dt>[!--title--]</dt>
@@ -302,7 +302,7 @@ if($tid > 0){
                     <ul>
                     	<?php
 						$temp2='
-                        <li><a href="/goodsshow.php?id=[!--id--]" title="[!--title--]">
+                        <li><a href="/goodsshow.php?id=[!--id--]" title="[!--title--]" target="_blank">
                             <div class="sp_pic"><img src="[!--picurl--]" width="200" height="200" /></div>
                             <div class="sp_jg">¥[!--salesprice--]</div>
                             <div class="sp_wb">[!--title--]</div>
@@ -327,7 +327,7 @@ if($tid > 0){
                     <ul>
                     	<?php
 						$temp2='
-                        <li><a href="/goodsshow.php?id=[!--id--]" title="[!--title--]">
+                        <li><a href="/goodsshow.php?id=[!--id--]" title="[!--title--]" target="_blank">
                             <div class="sp_pic"><img src="[!--picurl--]" width="200" height="200" /></div>
                             <div class="sp_jg">¥[!--salesprice--]</div>
                             <div class="sp_wb">[!--title--]</div>

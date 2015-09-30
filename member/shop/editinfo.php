@@ -199,8 +199,8 @@ while($row = $dosql->GetArray())
 			<div class="shrow">
             	<span>选择城市：</span>
                              <select name="community_prov" id="city"  onchange="showCity(this)"><option value="-1">请选择</option><?=list_cas('-1','area')?></select>
-                        	<select name="community_city" id="county"><option value="-1">请选择</option></select>
-                            <select name="community_town" id="town" style="display:none;"><option value="-1">请选择</option></select>
+                        	<select name="community_city" id="county" onchange="showCounty(this)" ><option value="-1">请选择</option></select>
+                            <select name="community_town" id="town" ><option value="-1">请选择</option></select>
             </div>
     		<div class="shrow">
             	<span>选择送货点：</span>
@@ -255,10 +255,60 @@ $(function(){
 		});
 	});
 	
+	$("#city").change(function(){
+		$(".community_list").html('请选择社区');
+	});
+	
 	$("#county").change(function(){
 		
 		$.ajax({
 		url : "/ajax.php?a=selectcommunity&value="+$("#county").val()+"&selectval="+$('#delivery_area').val(),
+		type:'get',
+		dataType:'html',
+		success:function(data){
+			$(".community_list").html(data);
+			
+			if($('#delivery_area').val() !=''){			
+				temp = $('#delivery_area').val().split(",");
+			}else{
+				temp=[];	
+			}
+			
+			$('.shrow ul li a').each(function(index, element) {
+				if($.inArray($(this).attr('value'), temp) !=-1){
+					$(this).parent().addClass('on');
+				}
+			});
+			
+			
+			$('.shrow ul li').click(function(){
+				
+				if($(this).hasClass('on')){
+					$(this).removeClass('on');
+				}else{
+					$(this).addClass('on');
+				}
+				
+				var txt = $(this).find('a').attr('value');
+				if($.inArray(txt, temp)==-1){
+					temp.push(txt);	
+				}else{
+					temp.splice($.inArray(txt,temp),1); 
+				}
+				
+				$('#delivery_area').val(temp.join());
+			});
+			
+		}
+	});
+		
+	});
+	
+	
+	$("#town").change(function(){
+		
+		$.ajax({
+		url : "/ajax.php?a=selectcommunity1&value="+$("#town").val()+"&selectval="+$('#delivery_area').val(),
 		type:'get',
 		dataType:'html',
 		success:function(data){

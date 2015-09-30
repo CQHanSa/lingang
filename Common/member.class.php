@@ -312,7 +312,7 @@ function row_cas($hotdata='-1',$where,$floor='',$revalue='',$list='option')
 	$rest = mysql_query($sql);
 	if(!$rest){ die("查询出错.$sql");}
 	$cwrite = '<option value="-1">请选择</option>';
-	$cwrite = '';
+	//$cwrite = '';
 	while($row = mysql_fetch_array($rest))
 	{
 		$selected = '';

@@ -288,7 +288,7 @@ i,em{ font-style:normal;}
 .gwc_dplb>thead tr td:nth-child(1){ width:80px; line-height:45px; text-align:left;}
 .gwc_dplb>thead tr td:nth-child(1) div{ background:url(../images/checkbox_bg1.png) no-repeat left center; padding-left:15px; margin-left:20px;}
 .gwc_dplb>thead tr td:nth-child(1) div.on{ background:url(../images/checkbox_bg2.png) no-repeat left center; padding-left:15px; margin-left:20px;}
-input[type=checkbox]{ display:none;}
+.gwc_dplb input[type=checkbox]{ display:none;}
 .gwc_dplb>thead tr td:nth-child(2){ width:260px; line-height:45px;}
 .gwc_dplb>thead tr td:nth-child(3){ width:180px; line-height:45px;}
 .gwc_dplb>thead tr td:nth-child(4){ width:180px; line-height:45px;}

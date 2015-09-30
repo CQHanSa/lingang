@@ -131,7 +131,6 @@ function changePrice(num)
 	
 <!-- 顶部 -->
 <?php require_once(dirname(__FILE__).'/public/header.php'); ?> 
-<script type="text/javascript" src="/js/styel.buy.js"></script>
 
 <!-- 选择分类 搜索 -->
 <div class="icontent">

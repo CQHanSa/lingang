@@ -1,21 +1,21 @@
 @charset "utf-8";
 /* CSS Document */
-.contain{ width:1200px; height:573px; margin:0 auto;}
+.contain{ width:1200px; height:auto; margin:0 auto;}
 .contain_t{ width:1200px; height:33px;}
-.contain_l{ width:201px; height:389px; float:left;}
+.contain_l{ width:201px; height:auto; float:left;}
 .contain_l li{ width:200px; height:53px; border:1px solid #dbdbdb;}
 #con{ width:200px; height:95px;}
 #con p{ color:#7a7a7a; font-size:12px; font-weight:normal; padding-top:11px;}
 .contain_l p{ padding-top:15px;padding-left: 50px;padding-top: 23px; color:#343434; font-size:14px; font-weight:bold;}
-.contain_r{width:983px; height:437px; float:right;}
+.contain_r{width:983px; height:auto; float:right;}
 .contain_rt{ width:983px; height:187px; background:url(../images/zhongxin1.png) no-repeat;}
 .contain_rl{ width:315px; height:110px; padding-top:50px; padding-left:20px; float:left;}
 .t_right p{ padding-top:10px; color:#434343;}
-.contain_rr{ width:304px; height:110px; float:left;padding-left: 101px;padding-top: 52px;}
-.contain_rr li{ float:left; width:85px; height:101px;}
+.contain_rr{ width:350px; height:110px; float:left;padding-left: 101px;padding-top: 52px;}
+.contain_rr li{ float:left; width:85px; height:101px; margin-right:25px; display:inline;}
 .contain_rr p{ padding-top:5px; color:#5d5d5d;}
 .contain_rr font{ font-size:14px; color:#dc251f; font-weight:bold; }
-.contain_ra{ width:156px; height:110px; float: right;padding-top: 49px;}
+.contain_ra{ width:170px; height:110px; float: right;padding-top: 49px;}
 .contain_ra font{ color:#519409; font-size:14px; font-weight:bold;}
 .contain_ra p{ color:#636363;padding-top: 12px;}
 .contain_rm{ width:825px; height:117px;}
@@ -28,6 +28,7 @@
 .contain_rf font{ color:#0048b5;}
 .contain_rf a{ color:#0048b5;}
 .contain_rf  i{ color:#dd2823;}
+.clear{clear:both;}
 
 
 .conter{ width:1200px; height:478px; margin:0 auto;}
@@ -38,3 +39,14 @@
 .conter_rm p{ font-size:14px; font-weight:bold; color:#4c4c4c;}
 .conter_rm font{ font-size:12px; color:#4c4c4c; font-weight:normal;}
 .conter_rf{padding-top: 76px;padding-left: 16px;}
+
+
+/*2015-9-25-ccy*/
+.contain_rl .avatar{width:100px; height:100px; border-radius:50px; overflow:hidden;}
+.contain_rl .avatar img{width:100px;height:100px;}
+
+.shopinfo_title{font-size:14px; font-family:"微软雅黑"; line-height:40px; color:#343434; font-weight:bold; padding-left:25px;}
+.shopinfo_list{width:933px; padding:10px 25px; background:#f5f5f5; line-height:25px; }
+.shopinfo_list_title{font-size:12px; font-family:"微软雅黑"; color:#343434; font-weight:bold;}
+.shopinfo_list_info{ font-family:"微软雅黑"; color:#0048b5; line-height:30px;}
+.shopinfo_list_info span{color:#F00;}

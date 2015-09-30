@@ -82,7 +82,7 @@ if($r_user['birthday'] != ''){
                     <dt>
                     	<label>生日：</label>
                         <input type="text" name="birthday" class="class_input Wdate" onClick="WdatePicker()" value="<?php echo $birthday?>" />
-                        <span class="Validform_checktip">时间格式：<?php echo date('Y-m-d')?></span>
+                        <span class="Validform_checktip"></span>
                     </dt>
                     
                     <dt>

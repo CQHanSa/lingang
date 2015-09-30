@@ -31,7 +31,8 @@
             </span>
         	<span class="itop_gwc t_right">
             	<a class="t_left" href="/member.php">我的临港</a>
-                <a class="t_right" href="/member/buy/mybuycar.php"><span><?=getBuyCarNum($user)?></span>我的购物车</a>
+                <a class="t_right gwc_ico" href="/member/buy/mybuycar.php"><span><?=getBuyCarNum($user)?></span>我的购物车</a>
+
                 <div class="divclear"></div>
             </span>
             <div class="divclear"></div>
