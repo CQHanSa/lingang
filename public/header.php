@@ -6,7 +6,7 @@ if(is_array($row)){
 	if($row['linkurl'] != ''){
 		$gourl = $row['linkurl'];
     }
-echo '<div class="itop_title" style="background:url('.$row['picurl'].') no-repeat center top"><a href="'.$gourl.'"></a></div>';
+echo '<div class="itop_title" style="background:url(/'.$row['picurl'].') no-repeat center top"><a href="'.$gourl.'"></a></div>';
 }
 ?>
 

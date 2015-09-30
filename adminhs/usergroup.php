@@ -18,7 +18,7 @@
 			<td width="30%">用户组名称</td>
 			<td width="20%">用户组经验值</td>
 			<td width="15%">星星数</td>
-			<td width="10%">头衔颜色</td>
+			<td width="10%">积分兑换比例（%）</td>
 			<td width="12%" class="endCol">操作</td>
 		</tr>
 		<?php
@@ -38,7 +38,7 @@
 				~
 				<input type="text" name="expvalb[]" id="expvalb[]" class="inputls"  style="width:50px;" value="<?php echo $row['expvalb']; ?>" /></td>
 			<td><input type="text" name="stars[]" id="stars[]" class="inputls" value="<?php echo $row['stars']; ?>" /></td>
-			<td><input type="text" name="color[]" id="color[]" class="inputs" value="<?php echo $row['color']; ?>" /></td>
+			<td><input type="text" name="color[]" id="color[]" class="inputs" value="<?php echo $row['color']; ?>" />%</td>
 			<td class="action endCol"><a href="usergroup_save.php?action=del2&id=<?php echo $row['id'] ?>" onclick="return ConfDel(0);">删除</a></td>
 		</tr>
 		<?php

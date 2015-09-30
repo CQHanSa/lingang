@@ -26,11 +26,11 @@
 .xinxi_mk{ width:235px; height:30px; float:right;}
 .xinxi_mk a{ color:#2f50ad;}
 .xinxi_f{ padding-top:25px; padding-left:16px;border-bottom:1px solid #dbdbdb;}
-.qindan{ width:1182px; height:560px; margin:0 auto;padding-top: 35px;}
-.qindan_t{ width:1168px; height:39px;}
-.qindan_m{ width:1168px; height:241px;}
-.qindan_ml{ width:340px; height:241px; background:#f7f7f7;float:left;}
-.qindan_mr{ width:828px; height:241px; background:#f3fbfe; float:right;}
+.qindan{ width:1182px; margin:0 auto;padding-top: 35px; background:##f7f7f7;}
+.qindan_t{ width:1168px; min-height:39px;}
+.qindan_m{ width:1168px; min-height:241px;}
+.qindan_ml{ width:340px; min-height:241px; background:#f7f7f7;float:left;}
+.qindan_mr{ width:828px;  background:#f3fbfe; float:right;}
 .qindan_mk{ width:140px; height:30px; border:1px solid #d6d6d6; float:left; margin-left:18px; line-height:30px;}
 .qindan_mk p{ text-align:center; color:#5a5a5a;}
 .qindan_mq p{ text-align:center; color:#5a5a5a;}
@@ -45,14 +45,14 @@
 
 .qindan_qh div.on{ width:138px; height:28px; line-height:28px; border:2px solid #f00; background:url(../images/jiesuan4.png) no-repeat right bottom;}
 
-.qindan_ma{ width:830px; height:207px;padding-left: 75px;}
-.qindan_ma ul{ width:66px; height:186px; float:left;padding-left: 73px;}
-.qindan_ma li{ float:left; width:66px; height:71px; padding-top:20px;}
-#first{ width:346px; height:186px; padding-left:0px;}
-#first li{width:346px;height:71px;}
+.qindan_ma{ width:830px; padding-left: 75px;}
+.qindan_ma ul{ width:66px;  float:left;padding-left: 73px;}
+.qindan_ma li{ float:left; width:66px;  padding-top:20px; padding-bottom:5px; min-height:88px;}
+#first{ width:346px;  padding-left:0px;}
+#first li{width:346px;}
 #first p{ float:right;width: 238px;}
 .first_tt{float:right;width: 238px;padding-top: 14px;}
-.qindan_n{ width:1168px; height:180px; padding-top:18px;}
+.qindan_n{ width:1168px;  margin-top:18px; margin-bottom:10px; background:#f7f7f7;}
 .qindan_nl{ width:340px; height:180px; background:#f7f7f7;float:left;}
 .qindan_nr{ width:828px; height:180px; background:#f3fbfe;float:right;}
 .qindan_nf{padding-left:18px;padding-top: 5px;}

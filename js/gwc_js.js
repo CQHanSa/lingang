@@ -25,11 +25,24 @@ $(document).ready(function(){
 			$('samp').addClass('on');
 			$('samp input').attr("checked","checked");
 			unit_price();
+			
+			//console.log($(this).parent().parent().parent().parent().find('tbody tbody tr .gwc_sp_img').html());
+			//增加ID
+			$(this).parent().parent().parent().parent().find('tbody tbody tr .gwc_sp_img input').each(function(){
+                 var checkedGoods = stringMatch($("#checkedGoods").text(),$(this).val(),',');
+				$("#checkedGoods").text(checkedGoods[1]);
+            });
+			
 		}else
 		{
 			$(this).find('input').removeAttr("checked");
 			$('samp').removeClass('on');
 			$('samp input').removeAttr("checked");
+			//删除ID
+			$(this).parent().parent().parent().parent().find('tbody tbody tr .gwc_sp_img input').each(function(){
+                 var checkedGoods = stringMatch($("#checkedGoods").text(),$(this).val(),',');
+				$("#checkedGoods").text(checkedGoods[1]);
+            });			
 		}
 		var total = total_price();
 		$('#total_price').html(total);
@@ -45,7 +58,17 @@ $(document).ready(function(){
 		{
 			$(this).find('input').attr("checked","checked");
 			$(this).parent().parent().parent().siblings().find('samp').addClass('on');
-			$(this).parent().parent().parent().siblings().find('input').prop("checked","checked");
+			$(this).parent().parent().parent().siblings().find('input').attr("checked","checked");
+			
+			//console.log($(this).parent().parent().parent().parent().find('tbody tr .gwc_sp_img input').html());
+			//增加ID			
+			$(this).parent().parent().parent().parent().find('tbody tr .gwc_sp_img input').each(function() {
+               //alert($(this).val());
+			   var checkedGoods = stringMatch($("#checkedGoods").text(),$(this).val(),',');
+				$("#checkedGoods").text(checkedGoods[1]);
+            });
+
+			
 		}else
 		{
 			$(this).find('input').removeAttr("checked");
@@ -53,6 +76,13 @@ $(document).ready(function(){
 			$(this).parent().parent().parent().siblings().find('input').prop("checked",false);
 			$('.all_check').removeClass('on');
 			$(this).find('input').removeAttr("checked");
+			
+			//去除ID
+			$(this).parent().parent().parent().parent().find('tbody tr .gwc_sp_img input').each(function() {
+               //alert($(this).val());
+			   var checkedGoods = stringMatch($("#checkedGoods").text(),$(this).val(),',');
+				$("#checkedGoods").text(checkedGoods[1]);
+            });			
 		}
 		var total = total_price();
 		$('#total_price').html(total);
@@ -60,11 +90,17 @@ $(document).ready(function(){
 	
 	//点击商品列表
 	$(".sp_check").click(function(){
+		
+		//增加ID
+		var checkedGoods = stringMatch($("#checkedGoods").text(),$(this).find('input').val(),',');
+		$("#checkedGoods").text(checkedGoods[1]);
+		
 		$(this).toggleClass('on');
 		if($(this).hasClass('on'))
 		{
 			$(this).find('input').attr("checked",'checked');
 			unit_price();
+		
 		}else
 		{
 			//店铺全选状态
@@ -109,14 +145,13 @@ $(document).ready(function(){
 });
 	
 
-function updatedProducts(num,ev){
+function updatedProducts(num,ev,id){
 	var ret_num ='';
 	var num = parseInt(num);
 	var numObj = $(ev).parent().find('input.num');
 	var unit_price_obj = $(ev).parent().parent('td').next().find('.small_j');
 	var price =parseFloat($(ev).parents('tr').children().eq(2).find(".price").html()).toFixed(2);
 	var buyNum = parseInt(numObj.val());
-
 	
 	if( num == -1) {
 		ret_num = buyNum+num < 1 ? 1 : buyNum+num;
@@ -125,6 +160,11 @@ function updatedProducts(num,ev){
 	} 
 	//alert( oldNum);
 	numObj.val(ret_num);
+	
+	//修改产品数量
+	$.post('/Action/buy.php',"type=editorBuyCarNum&num="+ret_num+"&id="+id);
+	
+	
 	price = unit_price(ret_num,price);
 	unit_price_obj.html(price);
 	var total = total_price();
@@ -156,36 +196,51 @@ function total_price() {
 }
 
 //删除商品
-function delRow(ev)
+function delRow(ev,id)
 {
-	var total = total_price();
-	var shop = $(ev).parent().parent().parent().parent().find("tbody tr").length
-	if(shop == 1)
+	if(confirm('确定删除该商品？'))
 	{
+		var total = total_price();
+		var shop = $(ev).parent().parent().parent().parent().find("tbody tr").length
+		if(shop == 1)
+		{
+			$(ev).parent().parent().parent().parent().find('thead').remove();
+		}
+		$(ev).parent().parent().remove();
 		
+		//删除商品
+		$.post('/Action/buy.php',"type=delBuyCarGoods&id="+id);
+		
+		var total = total_price();
+		$('#total_price').html(total);
 	}
-	$(ev).parent().parent().remove();
-	var total = total_price();
-	$('#total_price').html(total);
 }
 //删除选中的商品
 function delRows()
 {
-	$('#cartTable>tbody>tr').each(function(){
-		$('tbody>tr',this).each(function(){
-			if($(".sp_check input",this).attr('checked') == 'checked')
-			{
-				if($(this).parent().parent().find('tr').length == 2)
+	if(confirm('确定删除选中的商品？'))
+	{
+		var delID = '';
+		$('#cartTable>tbody>tr').each(function(){
+			$('tbody>tr',this).each(function(){
+				if($(".sp_check input",this).attr('checked') == 'checked')
 				{
-					$(this).parent().parent().find('thead').remove();
+					delID = delID + $(".sp_check input",this).val() + ','; 
+					if($(this).parent().parent().find('tr').length == 2)
+					{
+						$(this).parent().parent().find('thead').remove();
+					}
+					//console.log($(this).parent().parent().find('thead').length);
+					$(this).remove();
 				}
-				console.log($(this).parent().parent().find('thead').length);
-				$(this).remove();
-			}
-			//console.log($(".sp_check input",this).attr('checked'));
+				//console.log($(".sp_check input",this).attr('checked'));
+			});
+			if($(".dp_check input",this).attr('checked') == 'checked'){$("thead",this).remove();}
 		});
-		if($(".dp_check input",this).attr('checked') == 'checked'){$("thead",this).remove();}
-	});
-	var total = total_price();
-	$('#total_price').html(total);
+		delID = delID.substr(0,delID.length-1);
+		console.log(delID);
+		$.post('/Action/buy.php',"type=delBuyCarGoods&id="+delID);
+		var total = total_price();
+		$('#total_price').html(total);
+	}
 }

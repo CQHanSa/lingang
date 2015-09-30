@@ -193,8 +193,8 @@ function changePrice(num)
                 </div>
                 <div class="detail_xl">
                 <span>销量：<i>2864</i></span>|
-                <span>累计评价：<i>5684</i></span>|
-                <span class="integral">赠送积分：<i>30</i></span></div>
+                <span>累计评价：<i>5684</i></span><!--|
+                <span class="integral">赠送积分：<i>30</i></span>--></div>
                 <div class="detail_guige"><span>选择规格：</span>
                     <ul>
                     	<?Php 
@@ -221,6 +221,7 @@ function changePrice(num)
                 <div class="detail_btn">
                     <span class="cur1"><a onclick="buyCar(this,<?=$id?>,<?=$shop['id']?>,'nowBuy')">立即购买</a></span>
                     <span class="cur1"><a onclick="buyCar(this,<?=$id?>,<?=$shop['id']?>,'addBuyCar')">加入购物车</a></span>
+                    <p style="line-height:45px;">*请先选择配送区域/规格</p>
                 </div>
                 <div class="detail_fxsc">
                     <a>分享</a>

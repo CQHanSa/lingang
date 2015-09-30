@@ -138,6 +138,19 @@ function arr_foreach ($arr)
   return $tmp;
 }
 
+//二维数组去掉重复值
+function array_unique_fb($array2D){
+	foreach ($array2D as $v){
+		$v=join(',',$v);  //降维,也可以用implode,将一维数组转换为用逗号连接的字符串
+		$temp[]=$v;
+	}
+	$temp=array_unique($temp);    //去掉重复的字符串,也就是重复的一维数组
+	foreach ($temp as $k => $v){
+		$temp[$k]=explode(',',$v);   //再将拆开的数组重新组装
+	}
+	return $temp;
+}
+
 // 模拟提交数据函数
 function curl_post($url,$data){ // 模拟提交数据函数
         $curl = curl_init(); // 启动一个CURL会话

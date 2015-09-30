@@ -358,17 +358,6 @@ function member_complete($post,$where)
 	return sprintf('%.2f',$i/$n)*100; 
 }
 
-//计算购物车数量
-function buyCarNum($user='')
-{
-	if(empty($user)){ $buyCarNum =0;  }
-	else
-	{
-		$buyCar=MysqlOneSelect('lgsc_buycar','count(*) as num',"userid=$user[userid]");
-		$buyCarNum = $buyCar == '-1' ? '0' : $buyCar['num'];
-	}
-	return $buyCarNum;
-}
 
 //计算订单数量
 function DDnum($user ='')
@@ -492,7 +481,7 @@ function getsScanlog($user)
 		if(!isset($_COOKIE['goodsid'])){ return false; }
 		$goodsid = AuthCode($_COOKIE['goodsid'],'DECODE');
 		$goodsid = " id in (".substr($goodsid,0,'-1').")";
-		echo $goodsid;
+		//echo $goodsid;
 		return $goodsid;
 	}else
 	{
@@ -562,6 +551,25 @@ function goodsShowAI($user,$table='lgsc_scanlog')
 		}
 	
 }
+//
+function getBuyCarNum($user)
+{
+	if($user != '')
+	{
+		$r = MysqlOneSelect('lgsc_mybuycar','count(*) as total',"userid='$user[userid]'");
+		if($r == '-1')
+			$total = 0;
+		else
+			$total = $r['total'];
+	}else
+	{
+		if(isset($_COOKIE['buyCar']))
+			$total = count($_COOKIE['buyCar']);
+		else
+			$total = 0;
+	}
+	return $total;
+}
 //切割订单信息
 function cutDDInfo($value)
 {
@@ -581,6 +589,21 @@ function cutDDInfo($value)
 	//print_r($r);
 	return $r;
 }
+
+//积分兑换
+function Redeem($price,$user)
+{
+	if($user == ''){ $addsql = 'stars = 1';}
+	else
+	{
+		$r = MysqlOneSelect('lgsc_member','expval',"id = '$user[userid]'");
+		$addsql = "expvalb >= '$r[expval]' order by id asc";
+	}
+	$group = MysqlOneSelect('lgsc_usergroup','color',$addsql,'1');
+	$integral = floor($price * ( $group['color'] / 100 ));
+	return $integral;
+}
+
 //判断订单执行状态
 function isClientState($value,$id='')
 {

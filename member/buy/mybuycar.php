@@ -10,6 +10,7 @@ require_once('../../Common/index.php');
 
 <?php include_once($path.'/Public/js.php'); ?>
 <script type="text/javascript" src="/js/gwc_js.js"></script>
+<script type="text/javascript" src="/js/style.buy.js"></script>
 
 </head>
 
@@ -68,49 +69,128 @@ require_once('../../Common/index.php');
                     <td>操作</td></tr>
                 </thead>
                 <tbody>
-                <?php 
+            <?php 
+			//会员状态
+			if($user != '')
+			{
 				$rows = MysqlRowSelect('lgsc_mybuycar',"*","userid='$user[userid]' group by shopid order by createTime desc");
 				if($rows != '-1'){
 					//print_r($rows);
 					for($i=0,$n=count($rows);$i<$n;$i++)
 					{
 						$shop = MysqlOneSelect('lgsc_shops','shopname',"id=".$rows[$i]["shopid"]);
-				?>
-                	<tr>
-                    	<td colspan="7">
-                        	<!-- table 店铺商品列表 -->
-                            <table class="gwc_splb" cellpadding="0" cellspacing="0" border="0">
-                            <thead><tr><td colspan="7"><samp class="dp_check"><label><input type="checkbox" ><?=$shop['shopname']?></label></samp></td></tr></thead>
-                             <tbody>
-                <?php
+						echo 
+						'<tr>
+							<td colspan="7">
+								<!-- table 店铺商品列表 -->
+								<table class="gwc_splb" cellpadding="0" cellspacing="0" border="0">
+								<thead><tr><td colspan="7"><samp class="dp_check"><label><input type="checkbox" >'.$shop['shopname'].'</label></samp></td></tr></thead>
+								<tbody>';
 						$goods = MysqlRowSelect('lgsc_mybuycar,lgsc_goods','lgsc_goods.id,lgsc_goods.picurl,lgsc_goods.title,lgsc_mybuycar.price,lgsc_mybuycar.weight,lgsc_mybuycar.num',"lgsc_mybuycar.goodsid = lgsc_goods.id and lgsc_mybuycar.userid = '$user[userid]'");
 						for($j=0,$k=count($goods);$j<$k;$j++)
 						{
-				?>
-                                    <tr>
+							//echo $k;
+								echo '
+                                <tr>
                                     	<td colspan="2">
-                                        <div class="gwc_sp_img">
-                                            <samp class="sp_check"><label><input type="checkbox" autocomplete="off" ></label></samp>
-                                            <span><img src="/<?=$goods[$j]['picurl']?>"></span>
+                                        	<div class="gwc_sp_img">
+                                            <samp class="sp_check"><label><input type="checkbox" autocomplete="off" value="'.$goods[$j]['id'].'" ></label></samp>
+                                            <span><img src="/'.$goods[$j]['picurl'].'"></span>
                                             <div class="t_right">
                                                 <dl>
-                                                    <dt style="text-align:left"><?=$goods[$j]['title']?></dt>
-                                                    <dd><a href="/goods.php?id=<?=$goods[$j]['id']?>">［查看详情］</a></dd>
+                                                    <dt style="text-align:left">'.$goods[$j]['title'].'</dt>
+                                                    <dd><a href="/goods.php?id='.$goods[$j]['id'].'">［查看详情］</a></dd>
                                                 </dl>
                                             </div>
                                             <div class="divclear"></div>
                                         </div>
                                     </td>
-                                    	<td><font><?=$goods[$j]['weight']?></font></td>
+                                    	<td><font>'.$goods[$j]['weight'].'</font></td>
                                         <td>
                                             <div class="gwc_dj">
-                                                <div class="price"><?=$goods[$j]['price']?></div>
-                                                <span>赠30积分</span>
+                                                <div class="price">'.$goods[$j]['price'].'</div>
+                                                <span>赠'.Redeem($goods[$j]['price'],$user).'积分</span>
+                                            </div>
+                                        </td>
+                                        <td><div class="gwc_sp_num">
+                                            <span onclick="updatedProducts(-1, this,'.$goods[$j]['id'].');" class="reduce">-</span>
+                                            <input type="text" value="'.$goods[$j]['num'].'" class="num" autocomplete="off" ">
+                                            <span onclick="updatedProducts(1, this,'.$goods[$j]['id'].');" class="add">+</span>
+                                            <div class="divclear"></div>
+                                        </div></td>
+                                        <td><i class="small_j">0.00</i></td>
+                                        <td><a class="hand" onclick="delRow(this,'.$goods[$j]['id'].')">删除商品</a></td>
+                                    </tr>';
+							}
+					?>
+                        </tbody>
+                        </table>
+				<?php
+                       }
+                	}
+				}
+				//非会员 --- statr
+				else
+				{
+					if(isset($_COOKIE['buyCar']))
+					{
+					$buycar = $_COOKIE['buyCar'];		
+					foreach($buycar as $k => $v)
+					{
+						$i=0;
+						$tempShopid = $v['shopid'];
+						if(isset($shops)){
+							foreach($shops as $k2 => $v2)
+							{
+								if(AuthCode($v2) == AuthCode($tempShopid)){$i++;}
+							}
+						}
+						if($i < 1 || !is_array($shops))
+						{
+							$shops[] = $v['shopid'];
+						}
+					}
+					foreach($shops as $k => $v)
+					{
+						$shop = MysqlOneSelect('lgsc_shops',"*","id = ".AuthCode($v));
+						
+				?>
+                    <tr>
+                    <td colspan="7">
+                        <!-- table 店铺商品列表 -->
+                        <table class="gwc_splb" cellpadding="0" cellspacing="0" border="0">
+                        <thead><tr><td colspan="7"><samp class="dp_check"><label><input type="checkbox" ><?=$shop['shopname']?></label></samp></td></tr></thead>
+                         <tbody>
+                 <?php
+						for($i=0,$n=count($buycar);$i<$n;$i++)
+						{
+							//print_r($buycar[$i]['id']."<br/>");
+							$goods = MysqlOneSelect('lgsc_goods','*',"id=".AuthCode($buycar[$i]['id'])." and shopid = '".AuthCode($v)."'");
+				?>
+                                    <tr>
+                                    	<td colspan="2">
+                                        <div class="gwc_sp_img">
+                                            <samp class="sp_check"><label><input type="checkbox" autocomplete="off" ></label></samp>
+                                            <span><img src="/<?=$goods['picurl']?>"></span>
+                                            <div class="t_right">
+                                                <dl>
+                                                    <dt style="text-align:left"><?=$goods['title']?></dt>
+                                                    <dd><a href="/goods.php?id=<?=$goods['id']?>">［查看详情］</a></dd>
+                                                </dl>
+                                            </div>
+                                            <div class="divclear"></div>
+                                        </div>
+                                    </td>
+                                    	<td><font><?=AuthCode($buycar[$i]['weight'])?></font></td>
+                                        <td>
+                                            <div class="gwc_dj">
+                                                <div class="price"><?=AuthCode($buycar[$i]['price'])?></div>
+                                                <span>赠<?=Redeem($buycar[$i]['price'],$user)?>积分</span>
                                             </div>
                                         </td>
                                         <td><div class="gwc_sp_num">
                                             <span onclick="updatedProducts(-1, this);" class="reduce">-</span>
-                                            <input type="text" value="<?=$goods[$j]['num']?>" class="num" autocomplete="off">
+                                            <input type="text" value="<?=AuthCode($buycar[$i]['num'])?>" class="num" autocomplete="off">
                                             <span onclick="updatedProducts(1, this);" class="add">+</span>
                                             <div class="divclear"></div>
                                         </div></td>
@@ -118,132 +198,17 @@ require_once('../../Common/index.php');
                                         <td><a>删除商品</a></td>
                                     </tr>
                         
-                			<tr>
                    	<?php
-							}
+						}
 					?>
 						</tr>
                         </tbody>
                         </table>
-					<?php
+				<?php
 						}
-                    }					
-					?>
-                    <tr>
-                    	<td colspan="7">
-                        	<!-- table 店铺商品列表 -->
-                        	<table class="gwc_splb" cellpadding="0" cellspacing="0" border="0">
-                        <thead><tr><td colspan="7"><samp class="dp_check"><label><input type="checkbox" >山之风生鲜旗舰店</label></samp></td></tr></thead>
-                        <tbody>
-                        <tr>
-                                    	<td colspan="2">
-                                        <div class="gwc_sp_img">
-                                            <samp class="sp_check"><label><input type="checkbox" ></label></samp>
-                                            <span><img src="images/cp_02.png"></span>
-                                            <div class="t_right">
-                                                <dl>
-                                                    <dt>鲜佰客冷冻蔬果黄秋葵 即食果蔬脆片 羊角菜 绿色健康有机蔬菜 500g</dt>
-                                                    <dd><a>［查看详情］</a></dd>
-                                                </dl>
-                                            </div>
-                                            <div class="divclear"></div>
-                                        </div>
-                                    </td>
-                                    	<td><font>500g</font></td>
-                                        <td>
-                                            <div class="gwc_dj">
-                                                <div class="price">98.00</div>
-                                                <span>赠30积分</span>
-                                            </div>
-                                        </td>
-                                        <td><div class="gwc_sp_num">
-                                            <span onclick="updatedProducts(-1, this);" class="reduce">-</span>
-                                            <input type="text" value="1" class="num" autocomplete="off">
-                                            <span onclick="updatedProducts(1, this);" class="add">+</span>
-                                            <div class="divclear"></div>
-                                        </div></td>
-                                        <td><i class="small_j">0.00</i></td>
-                                        <td><a>删除商品</a></td>
-                                    </tr></tbody>
-                    </table>
-                    	</td>
-                    </tr>
-                	<tr>
-                    	<td colspan="7">
-                        	<!-- table 店铺商品列表 -->
-                        	<table class="gwc_splb" cellpadding="0" cellspacing="0" border="0">
-                        <thead><tr><td colspan="7"><samp class="dp_check"><label><input type="checkbox" >山之风生鲜旗舰店</label></samp></td></tr></thead>
-                        <tbody><tr>
-                                    	<td colspan="2">
-                                        <div class="gwc_sp_img">
-                                            <samp class="sp_check"><label><input type="checkbox" ></label></samp>
-                                            <span><img src="images/cp_02.png"></span>
-                                            <div class="t_right">
-                                                <dl>
-                                                    <dt>鲜佰客冷冻蔬果黄秋葵 即食果蔬脆片 羊角菜 绿色健康有机蔬菜 500g</dt>
-                                                    <dd><a>［查看详情］</a></dd>
-                                                </dl>
-                                            </div>
-                                            <div class="divclear"></div>
-                                        </div>
-                                    </td>
-                                    	<td><font>500g</font></td>
-                                        <td>
-                                            <div class="gwc_dj">
-                                                <div class="price">98.07</div>
-                                                <span>赠30积分</span>
-                                            </div>
-                                        </td>
-                                        <td><div class="gwc_sp_num">
-                                            <span onclick="updatedProducts(-1, this);" class="reduce">-</span>
-                                            <input type="text" value="1" class="num" autocomplete="off">
-                                            <span onclick="updatedProducts(1, this);" class="add">+</span>
-                                            <div class="divclear"></div>
-                                        </div></td>
-                                        <td><i class="small_j">0.00</i></td>
-                                        <td><a>删除商品</a></td>
-                                    </tr></tbody>
-                    </table>
-                    	</td>
-                    </tr>
-                	<tr>
-                    	<td colspan="7">
-                        	<!-- table 店铺商品列表 -->
-                        <table class="gwc_splb" cellpadding="0" cellspacing="0" border="0">
-                        <thead><tr><td colspan="7"><samp class="dp_check"><label><input type="checkbox" >山之风生鲜旗舰店end</label></samp></td></tr></thead>
-                        <tbody><tr>
-                                    	<td colspan="2">
-                                        <div class="gwc_sp_img">
-                                            <samp class="sp_check"><label><input type="checkbox" autocomplete="off"  ></label></samp>
-                                            <span><img src="images/cp_02.png"></span>
-                                            <div class="t_right">
-                                                <dl>
-                                                    <dt>鲜佰客冷冻蔬果黄秋葵 即食果蔬脆片 羊角菜 绿色健康有机蔬菜 500g</dt>
-                                                    <dd><a>［查看详情］</a></dd>
-                                                </dl>
-                                            </div>
-                                            <div class="divclear"></div>
-                                        </div>
-                                    </td>
-                                    	<td><font>500g</font></td>
-                                        <td>
-                                            <div class="gwc_dj">
-                                                <div class="price">98.50</div>
-                                                <span>赠30积分</span>
-                                            </div>
-                                        </td>
-                                        <td><div class="gwc_sp_num">
-                                            <span onclick="updatedProducts(-1, this);" class="reduce">-</span>
-                                            <input type="text" value="1" class="num" autocomplete="off" >
-                                            <span onclick="updatedProducts(1, this);" class="add">+</span>
-                                            <div class="divclear"></div>
-                                        </div></td>
-                                        <td><i class="small_j">0.00</i></td>
-                                        <td><a class="hand" onClick="delRow(this)">删除商品</a></td>
-                                    </tr></tbody>
-                    </table>
-                    	</td>
-                    </tr>
+					}
+				}
+				?>
                 </tbody>
             </table>
             <div class="gwc_js">
@@ -255,7 +220,8 @@ require_once('../../Common/index.php');
                     	已选择<i class="totalNum">0</i>件商品<br/>
 						总价（不含运费）：<em id="total_price">0.00</em>
                     </span>
-                    <a>立即结算</a>
+                    <div style="display:none" id="checkedGoods"></div>
+                    <a class="hand" onClick="Clearing()">立即结算</a>
                 </span>
                 <div class="divclear"></div>
             </div>
@@ -268,78 +234,51 @@ require_once('../../Common/index.php');
         </div>
         <div class="splb_tjls_cont">
             <ul style="display:block;">
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
+            	<?php
+				$temp2='
+                <li><a href="/goodsshow.php?id=[!--id--]" target="_blank">
+                	<div><img src="/[!--picurl--]" width="208" height="200"></div>
                     	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥85.6</dd>
+                        	<dt>[!--title--]</dt>
+                            <dd>￥[!--salesprice--]</dd>
                         </dl>
-                </a></li>
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
-                    	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥85.6</dd>
-                        </dl>
-                </a></li>
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
-                    	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥85.6</dd>
-                        </dl>
-                </a></li>
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
-                    	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥85.6</dd>
-                        </dl>
-                </a></li>
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
-                    	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥85.6</dd>
-                        </dl>
-                </a></li>
+                </a></li>';
+				$r = MysqlOneSelect("lgsc_goods","count(*) as total"," id != ''");
+				$total = $r['total'];
+				$rand = array();
+				$randID = 'id in (';
+				if($total > 5)
+				{
+					for($i=0;$i<5;$i++)
+					{
+						$k=count($rand);
+						$num = rand(1,$total);
+						for($j=0;$j<$k;$j++)
+						{
+							if($num == $rand[$j])
+							{
+								$num = rand(1,$total);
+								$j=0;
+							}
+						}
+						if($k == 0 ){  $rand[] = $num; }else{ $rand[] = $num; }
+						$randID .= $num.",";
+					}
+					$randID = substr($randID,0,'-1').")";
+					$addsql = $randID;	
+				}else
+				{
+					$addsql ='';
+				}
+				//print_r($randID);
+				echo listTemp($temp2,'lgsc_goods',$addsql,$limit='6');
+				?>
             </ul>
             <ul style="display:none;">
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
-                    	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥35.6</dd>
-                        </dl>
-                </a></li>
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
-                    	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥85.6</dd>
-                        </dl>
-                </a></li>
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
-                    	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥85.6</dd>
-                        </dl>
-                </a></li>
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
-                    	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥85.6</dd>
-                        </dl>
-                </a></li>
-                <li><a href="#">
-                	<div><img src="images/sp_pic.png"></div>
-                    	<dl>
-                        	<dt>大地仓 有机蔬菜 甘蓝 500g 非转基因无农药 农场直供......</dt>
-                            <dd>￥85.6</dd>
-                        </dl>
-                </a></li>
+            <?php
+            	$sqlRest = getsScanlog($user);
+				if($sqlRest){ echo listTemp($temp2,'lgsc_goods',$sqlRest,$limit='6');}
+			?>
             </ul>
             <div class="divclear"></div>
         </div>

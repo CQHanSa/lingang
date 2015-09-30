@@ -69,6 +69,13 @@ $(function(){
 	
 	$(".xinxi_m ul li").click(function(){
 		$(this).addClass('on').siblings().removeClass('on');
+		$(".last_l .prov").text($('.prov',this).text());
+		$(".last_l .city").text($('.city',this).text());
+		$(".last_l .country").text($('.country',this).text());
+		$(".last_l .address").text($('.address',this).text());
+		$(".last_l .username").text($('.username',this).text());
+		$(".last_l .usermobile").text($('.usermobile',this).text());
+		//console.log($('.prov',this).text());
 	});
 	
 	$(".xinxi_f").click(function(){

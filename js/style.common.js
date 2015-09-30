@@ -93,6 +93,35 @@ function getNowFormatDate() {
             + seperator2 + date.getSeconds();
     return currentdate;
 }
+//字符串匹配
+function stringMatch(string,matchString,sym)
+{
+	var cwrite = '';
+	var temp = new Array();
+	temp[0] = false;
+	if(sym != ''){ var tempArr =  string.split(sym);}
+	for(i=0,n=tempArr.length;i<n;i++)
+	{
+		if(tempArr[i] == matchString){ temp[0] = true; }
+		else
+		{
+			cwrite = cwrite + tempArr[i] + sym;
+		}
+	}
+	if(!temp[0])
+	{
+		if(string != '')
+		{
+			cwrite = string + sym + matchString + sym;
+		}else{
+			cwrite = matchString + sym;
+		}
+	}
+	temp[1] = cwrite.substr(0,cwrite.length-1);
+	return temp;
+}
+
+console.log(stringMatch('','1',','));
 
 //获取get参
 var $_GET = (function(){
@@ -110,3 +139,4 @@ var $_GET = (function(){
         return {};
     }
 })(); 
+
