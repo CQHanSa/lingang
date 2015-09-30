@@ -2,6 +2,12 @@
 
 $web_name="收货地址";
 
+$dosql->Execute("SELECT * FROM `#@__cascadedata` WHERE `datagroup`='area' ORDER BY orderid ASC, datavalue ASC");
+while($row = $dosql->GetArray())
+{
+	$areaArr[$row['datavalue']]=$row['dataname'];
+}
+
 //初始化数据
 $action='shipping_address_add';
 $r['id']="";
@@ -75,10 +81,10 @@ if($id>0){
                                     <select name="address_prov" id="address_prov"  onchange="showCity(this)"  datatype="*" nullmsg="请选择所在地区！">
                                         <option value="-1">请选择</option><?=list_cas($r['address_prov'],'area')?>
                                     </select>
-                                    <select name="address_city" onchange="showCounty(this)"  datatype="*" nullmsg="请选择所在地区！" >
+                                    <select name="address_city" onchange="showCounty(this)" id="address_city"  datatype="*" nullmsg="请选择所在地区！" >
                                         <option value="-1">请选择</option><?=row_cas($r['address_city'],'',$floor='2',$r['address_prov'])?>
                                     </select>
-                            		<select name="address_country" <?=$r['address_country'] == '-1' ? 'style="display:none;"' : ''?>  datatype="*" nullmsg="请选择所在地区！" >
+                            		<select name="address_country" id="address_country"  <?=$r['address_country'] == '-1' ? 'style="display:none;"' : ''?>  datatype="*" nullmsg="请选择所在地区！" >
                                         <option value="-1">请选择</option><?=row_cas($r['address_country'],'',$floor='3',$r['address_city'])?>
                                     </select>           
                                 
@@ -92,7 +98,24 @@ if($id>0){
                             </li> 
                             <li>
                             	<label>社区名称：</label>
-                                <input type="text" name="communityid" value="<?php echo $r['communityid']?>" />
+                                <!--<input type="text" name="communityid" value="<?php echo $r['communityid']?>" />-->
+                                <select  name="communityid" id="communityid" >
+                                	<option value="-1">请选择社区</option>
+                                    <?php
+									if($r['communityid'] != ''){
+									$dosql->Execute("SELECT id,title FROM `#@__community` WHERE address_city='".$r['address_city']."' and  checkinfo='true' ORDER BY id desc");
+									while($row2 = $dosql->GetArray())
+									{
+										if($row2['id'] === $r['communityid'])
+											$selected = 'selected="selected"';
+										else
+											$selected = '';
+				
+										echo '<option value="'.$row2['id'].'" '.$selected.'>'.$row2['title'].'</option>';
+									}
+									}
+									?>
+                                </select>
                             </li>  
 							<li>
                             	<label>邮政编码：</label>
@@ -142,7 +165,18 @@ if($id>0){
                         ?>
                         <li><h1 class="f14"><?php echo $row['title']?></h1>
                         <p>收货人：<?php echo $row['username']?></p>
-                        <p>所在地区：<?php echo $row['title']?>
+                        <p>所在地区：<?php
+						if($row['address_prov']!='-1'){
+							echo $areaArr[$row['address_prov']].' ';	
+						}
+						if($row['address_city']!='-1'){
+							echo $areaArr[$row['address_city']].' ';	
+						}
+						if($row['address_country']!='-1'){
+							echo $areaArr[$row['address_country']].' ';	
+						}
+						?>
+                        </p>
                         <p>地址：<?php echo $row['address']?></p>
                         <p>手机：<?php echo $row['usermobile']?></p>
                         <p>固定电话：<?php echo $row['userphone']?></p>
@@ -191,6 +225,34 @@ $(function(){
 			}	
 		}
 	});  //就这一行代码！
+	
+	$("#address_prov").change(function(){
+		$("#communityid").html('<option value="-1">请选择社区</option>');
+	});
+	
+	$("#address_city").change(function(){
+		
+		$.ajax({
+		url : "/ajax.php?a=selectcommunity2&value="+$("#address_city").val(),
+		type:'get',
+		dataType:'html',
+		success:function(data){
+			$("#communityid").html(data);
+		}
+		});
+	});
+	
+	$("#address_country").change(function(){
+		
+		$.ajax({
+		url : "/ajax.php?a=selectcommunity3&value="+$("#address_country").val(),
+		type:'get',
+		dataType:'html',
+		success:function(data){
+			$("#communityid").html(data);
+		}
+		});
+	});
 })
 </script>
 </body>

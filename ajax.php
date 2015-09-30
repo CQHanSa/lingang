@@ -1,4 +1,5 @@
-<?php	
+<?php
+header("Content-type: text/html; charset=utf-8"); 	
 require_once(dirname(__FILE__).'/Common/index.php');
 
 	//$_POST["param"] 获取文本框的值;
@@ -57,7 +58,7 @@ if($regtype=="username"){
 	}
 }
 
-//手机验证码
+//注册验证码
 if($a=="sendnum"){
 	$mobilecode=GetRandNum(); //验证码
 	if(!isset($_SESSION)) session_start();
@@ -65,9 +66,39 @@ if($a=="sendnum"){
 	//发送验证码		
 	//echo $mobilecode; 
 	if(!empty($mobile)){
-		echo $mobilecode; 	
+		//echo $mobilecode; 
+		$mobile_data=array();
+		$mobile_data['Mobile']=$mobile; //手机号
+		$mobile_data['Content']='尊敬的顾客：您好！欢迎注册成为临港大市场会员，您本次操作的验证码为：'.$mobilecode.'。【临港大市场】'; //内容
+		mobile_send($mobile_data);
 	}else if(!empty($email)){
-		echo $mobilecode;	
+		//echo $mobilecode;
+		$email_title='临港大市场';//邮件名称
+		$email_content='尊敬的用户：<br />您好！欢迎注册成为临港大市场会员，您本次操作的验证码为：<span style="color:#F00">'.$mobilecode.'</span>。';//邮件内容
+		email_send($email,$email_title,$email_content);
+			
+	}
+}
+
+//找回密码验证码
+if($a=="sendnum2"){
+	$findpwd_code=GetRandNum(); //验证码
+	if(!isset($_SESSION)) session_start();
+	$_SESSION['findpwd_code']=$findpwd_code;//保存在session中
+	//发送验证码		
+	//echo $mobilecode; 
+	if(!empty($mobile)){
+		//echo $mobilecode; 
+		$mobile_data=array();
+		$mobile_data['Mobile']=$mobile; //手机号
+		$mobile_data['Content']='尊敬的顾客：您好！您正在使用短信找回密码功能，您本次操作的验证码为：'.$findpwd_code.'。【临港大市场】'; //内容
+		mobile_send($mobile_data);
+	}else if(!empty($email)){
+		//echo $mobilecode;
+		$email_title='临港大市场';//邮件名称
+		$email_content='尊敬的用户：<br />您好！您正在使用邮箱找回密码功能，您本次操作的验证码为：<span style="color:#F00">'.$findpwd_code.'</span>。';//邮件内容
+		email_send($email,$email_title,$email_content);
+			
 	}
 }
 
@@ -139,6 +170,83 @@ if($a=='selectcommunity'){
 	
 	exit();	
 }
+
+
+//社区选择
+if($a=='selectcommunity1'){
+	
+	$v = isset($value) ? $value : '0';
+	$selectval=isset($selectval) ? $selectval:'';
+	
+	$selectarr = explode(',',$selectval);	
+
+	if($v > 0)
+	{
+		$str='';
+		
+		$sql = "SELECT id,title FROM `#@__community` WHERE `address_country`='$v' and checkinfo='true' ORDER BY id desc";
+		$dosql->Execute($sql);
+		while($row = $dosql->GetArray())
+		{
+			
+			if(in_array($row['id'],$selectarr))
+			{
+				$select_on='class="on"';
+			}else{
+				$select_on='';	
+			}
+				
+			$str .= '<li '.$select_on.'><a href="javascript:;"; value="'.$row['id'].'" title="'.$row['title'].'">'.ReStrLen($row['title'],10).'</a></li>';
+		}
+		
+		if($str!=''){
+			echo '<ul>'.$str.'</ul>';	
+		}else{
+			echo '该区域暂时社区';
+		}		
+	}else{
+		echo '该区域暂时社区';
+	}
+	
+	exit();	
+}
+
+
+//社区选择
+if($a=='selectcommunity2'){
+	
+	$v = isset($value) ? $value : '0';
+	$str='<option value="-1">请选择社区</option>';
+	if($v > 0)
+	{
+		$sql = "SELECT id,title FROM `#@__community` WHERE `address_city`=$v and checkinfo='true' ORDER BY id desc";
+		$dosql->Execute($sql);
+		while($row = $dosql->GetArray())
+		{
+			$str .= '<option value="'.$row['id'].'">'.$row['title'].'</option>';
+		}
+	}
+	echo $str;
+	exit();	
+}
+//社区选择
+if($a=='selectcommunity3'){
+	
+	$v = isset($value) ? $value : '0';
+	$str='<option value="-1">请选择社区</option>';
+	if($v > 0)
+	{
+		$sql = "SELECT id,title FROM `#@__community` WHERE `address_country`='$v' and checkinfo='true' ORDER BY id desc";
+		$dosql->Execute($sql);
+		while($row = $dosql->GetArray())
+		{
+			$str .= '<option value="'.$row['id'].'">'.$row['title'].'</option>';
+		}
+	}
+	echo $str;
+	exit();	
+}
+
 
 //社区列表
 if($a=='communitylist'){
@@ -315,6 +423,24 @@ if($a == 'getcoupon')
 		echo '4';	
 	}
 	exit();
+}
+
+//改变地区
+if($a == 'changecity')
+{
+	//初始化参数
+	$v  = isset($val)   ? intval($val)  : '';
+	if($v>0){
+		$row = $dosql->GetOne("SELECT id FROM `#@__cascadedata` WHERE `datagroup`='area' and level='0' and datavalue='$v'");
+		if(!isset($row['id']) or !is_array($row)){
+			echo '0';
+			exit;
+		}else{
+			setcookie('city', AuthCode($v ,'ENCODE'), time()+14*24*60*60);
+			echo '1';
+			exit;	
+		}
+	}
 }
 
 ?>

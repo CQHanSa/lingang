@@ -157,7 +157,7 @@ $userinfo = MysqlOneSelect('lgsc_member','money',"id='$user[userid]'");
                 <div class="hytj">
                 	<ul>
                     	<?php
-                    	$temp='<li><a href="/goodsshow.php?id=[!--id--]" title="[!--title--]"><img src="/[!--picurl--]" width="112" height="67"><span>[!--title--]</span></a></li>';
+                    	$temp='<li><a href="/goodsshow.php?id=[!--id--]" title="[!--title--]"><img src="/[!--picurl--]" width="67" height="67"><span>[!--title--]</span></a></li>';
 						$sql = goodsShowAI($user,"lgsc_goodscollection");
 						if($sql != '-1'){
 							echo listTemp($temp,'lgsc_goods',$sql);

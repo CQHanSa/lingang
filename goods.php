@@ -31,7 +31,7 @@ $brand = isset($_GET['brand']) ? intval(get('brand')) : '';
 $m = isset($_GET['m']) ? intval(get('m')) : '';
 $x = isset($_GET['x']) ? intval(get('x')) : '';
 $order = isset($_GET['order']) ? intval(get('order')) : '';
-$addsql = "typetid='$oncid'";
+$addsql = "typetid='$oncid' $wherecity ";
 if($oncid == ''){ $addsql = "typetid !=''";}
 
 if(isset($_GET['keyword']))

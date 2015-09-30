@@ -337,7 +337,7 @@ CREATE TABLE `lgsc_goodscollection` (
   `status` varchar(100) NOT NULL DEFAULT '0',
   `createTime` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `lgsc_goodsflag`;
 
@@ -428,7 +428,7 @@ CREATE TABLE `lgsc_infoclass` (
   `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `lgsc_infoflag`;
 
@@ -625,7 +625,7 @@ CREATE TABLE `lgsc_member` (
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核',
   `paypswd` varchar(50) NOT NULL COMMENT '支付密码',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `lgsc_message`;
 
@@ -645,6 +645,20 @@ CREATE TABLE `lgsc_message` (
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `lgsc_mybuycar`;
+
+CREATE TABLE `lgsc_mybuycar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` varchar(150) NOT NULL,
+  `goodsid` varchar(150) NOT NULL,
+  `price` varchar(150) NOT NULL COMMENT '价格',
+  `num` varchar(150) NOT NULL,
+  `weight` varchar(150) NOT NULL COMMENT '规格',
+  `shopid` varchar(150) NOT NULL,
+  `createTime` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `lgsc_nav`;
 
@@ -690,9 +704,9 @@ CREATE TABLE `lgsc_scanlog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
   `goodsid` int(11) NOT NULL,
-  `createTime` varchar(150) NOT NULL,
+  `createTime` varchar(150) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `lgsc_shopad`;
 
@@ -720,7 +734,7 @@ CREATE TABLE `lgsc_shopcollection` (
   `status` varchar(50) NOT NULL DEFAULT '1' COMMENT '状态',
   `createTime` varchar(100) NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='店铺收藏';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='店铺收藏';
 
 DROP TABLE IF EXISTS `lgsc_shops`;
 
@@ -798,7 +812,7 @@ CREATE TABLE `lgsc_socket` (
   `touserid` varchar(150) NOT NULL COMMENT '收信息ID',
   `state` varchar(10) NOT NULL DEFAULT '0' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COMMENT='聊天记录';
+) ENGINE=MyISAM AUTO_INCREMENT=76 DEFAULT CHARSET=utf8 COMMENT='聊天记录';
 
 DROP TABLE IF EXISTS `lgsc_soft`;
 
@@ -854,7 +868,7 @@ CREATE TABLE `lgsc_sysevent` (
   `posttime` int(10) NOT NULL COMMENT '操作时间',
   `ip` varchar(20) NOT NULL COMMENT '操作ip',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=646 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=893 DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `lgsc_uploads`;
 
@@ -878,6 +892,7 @@ CREATE TABLE `lgsc_user_address` (
   `userphone` varchar(50) NOT NULL COMMENT '坐机',
   `address_prov` varchar(10) NOT NULL DEFAULT '-1' COMMENT '省',
   `address_city` varchar(10) NOT NULL DEFAULT '-1' COMMENT '市',
+  `address_country` varchar(10) NOT NULL DEFAULT '-1' COMMENT '县',
   `address` varchar(200) NOT NULL COMMENT '地址',
   `postcode` varchar(10) NOT NULL COMMENT '邮编',
   `isdefault` enum('true','false') NOT NULL COMMENT '默认地址',
@@ -1025,16 +1040,4 @@ CREATE TABLE `lgsc_weblinktype` (
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
-DROP TABLE IF EXISTS `zsm_cascadedata`;
-
-CREATE TABLE `zsm_cascadedata` (
-  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '级联数据id',
-  `dataname` char(30) NOT NULL COMMENT '级联数据名称',
-  `datavalue` char(20) NOT NULL COMMENT '级联数据值',
-  `datagroup` char(20) NOT NULL COMMENT '所属级联组',
-  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
-  `level` tinyint(1) unsigned NOT NULL COMMENT '级联数据层次',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20020 DEFAULT CHARSET=utf8;
 

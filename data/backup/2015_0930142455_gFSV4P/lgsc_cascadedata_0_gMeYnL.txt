@@ -1,6 +1,6 @@
-INSERT INTO `lgsc_cascadedata` VALUES('20019','澳门特别行政区','17500','area','17500','0');
-INSERT INTO `lgsc_cascadedata` VALUES('20018','香港特别行政区','17000','area','17000','0');
-INSERT INTO `lgsc_cascadedata` VALUES('20017','台湾省','16500','area','16500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('20019','澳门','17500','area','17500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('20018','香港','17000','area','17000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('20017','台湾','16500','area','16500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('20016','图木舒克市','16015.3','area','16015','2');
 INSERT INTO `lgsc_cascadedata` VALUES('20015','阿拉尔市','16015.2','area','16015','2');
 INSERT INTO `lgsc_cascadedata` VALUES('20014','石河子市','16015.1','area','16015','2');
@@ -114,7 +114,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19907','新市区','16001.3','area','1600
 INSERT INTO `lgsc_cascadedata` VALUES('19906','沙依巴克区','16001.2','area','16001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19905','天山区','16001.1','area','16001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19904','乌鲁木齐市','16001','area','16001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19903','新疆维吾尔自治区','16000','area','16000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19903','新疆','16000','area','16000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19902','海原县','15505.3','area','15505','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19901','中宁县','15505.2','area','15505','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19900','沙坡头区','15505.1','area','15505','2');
@@ -141,7 +141,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19880','金凤区','15501.3','area','1550
 INSERT INTO `lgsc_cascadedata` VALUES('19879','西夏区','15501.2','area','15501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19878','兴庆区','15501.1','area','15501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19877','银川市','15501','area','15501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19876','宁夏回族自治区','15500','area','15500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19876','宁夏','15500','area','15500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19875','天峻县','15008.5','area','15009','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19874','都兰县','15008.4','area','15008','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19873','乌兰县','15008.3','area','15008','2');
@@ -193,7 +193,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19828','城西区','15001.3','area','1500
 INSERT INTO `lgsc_cascadedata` VALUES('19827','城中区','15001.2','area','15001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19826','城东区','15001.1','area','15001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19825','西宁市','15001','area','15001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19824','青海省','15000','area','15000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19824','青海','15000','area','15000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19823','夏河县','14514.8','area','14515','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19822','碌曲县','14514.7','area','14515','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19821','玛曲县','14514.6','area','14515','2');
@@ -294,7 +294,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19727','西固区','14501.3','area','1450
 INSERT INTO `lgsc_cascadedata` VALUES('19726','七里河区','14501.2','area','14501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19725','城关区','14501.1','area','14501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19724','兰州市','14501','area','14501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19723','甘肃省','14500','area','14500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19723','甘肃','14500','area','14500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19722','柞水县','14010.7','area','14011','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19721','镇安县','14010.6','area','14011','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19720','山阳县','14010.5','area','14011','2');
@@ -412,7 +412,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19609','莲湖区','14001.3','area','1400
 INSERT INTO `lgsc_cascadedata` VALUES('19608','碑林区','14001.2','area','14001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19607','新城区','14001.1','area','14001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19606','西安市','14001','area','14001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19605','陕西省','14000','area','14000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19605','陕西','14000','area','14000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19604','朗　县','13507.7','area','13508','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19603','察隅县','13507.6','area','13508','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19602','波密县','13507.5','area','13508','2');
@@ -493,7 +493,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19528','当雄县','13501.3','area','1350
 INSERT INTO `lgsc_cascadedata` VALUES('19527','林周县','13501.2','area','13501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19526','城关区','13501.1','area','13501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19525','拉萨市','13501','area','13501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19524','西藏自治区','13500','area','13500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19524','西藏','13500','area','13500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19523','维西傈僳族自治县','13016.3','area','13016','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19522','德钦县','13016.2','area','13016','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19521','香格里拉县','13016.1','area','13016','2');
@@ -638,7 +638,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19383','官渡区','13001.3','area','1300
 INSERT INTO `lgsc_cascadedata` VALUES('19382','盘龙区','13001.2','area','13001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19381','五华区','13001.1','area','13001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19380','昆明市','13001','area','13001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19379','云南省','13000','area','13000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19379','云南','13000','area','13000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19378','三都水族自治县','12509.12','area','12509','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19377','惠水县','12509.11','area','12509','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19376','龙里县','12509.10','area','12509','2');
@@ -735,7 +735,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19286','花溪区','12501.3','area','1250
 INSERT INTO `lgsc_cascadedata` VALUES('19285','云岩区','12501.2','area','12501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19284','南明区','12501.1','area','12501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19283','贵阳市','12501','area','12501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19282','贵州省','12500','area','12500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19282','贵州','12500','area','12500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19281','雷波县','12021.17','area','12021','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19280','美姑县','12021.16','area','12021','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19279','甘洛县','12021.15','area','12021','2');
@@ -938,7 +938,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19083','金牛区','12001.3','area','1200
 INSERT INTO `lgsc_cascadedata` VALUES('19082','青羊区','12001.2','area','12001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19081','锦江区','12001.1','area','12001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19080','成都市','12001','area','12001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19079','四川省','12000','area','12000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19079','四川','12000','area','12000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19078','南川市','11540','area','11540','1');
 INSERT INTO `lgsc_cascadedata` VALUES('19077','永川市','11539','area','11539','1');
 INSERT INTO `lgsc_cascadedata` VALUES('19076','合川市','11538','area','11538','1');
@@ -979,7 +979,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19042','大渡口区','11504','area','115
 INSERT INTO `lgsc_cascadedata` VALUES('19041','渝中区','11503','area','11503','1');
 INSERT INTO `lgsc_cascadedata` VALUES('19040','涪陵区','11502','area','11502','1');
 INSERT INTO `lgsc_cascadedata` VALUES('19039','万州区','11501','area','11501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19038','重庆市','11500','area','11500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19038','重庆','11500','area','11500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19037','中沙群岛的岛礁及其海域','11003.19','area','11003','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19036','南沙群岛','11003.18','area','11003','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19035','西沙群岛','11003.17','area','11003','2');
@@ -1006,7 +1006,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('19015','琼山区','11001.3','area','1100
 INSERT INTO `lgsc_cascadedata` VALUES('19014','龙华区','11001.2','area','11001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19013','秀英区','11001.1','area','11001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19012','海口市','11001','area','11001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('19011','海南省','11000','area','11000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('19011','海南','11000','area','11000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('19010','凭祥市','10514.7','area','10515','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19009','天等县','10514.6','area','10515','2');
 INSERT INTO `lgsc_cascadedata` VALUES('19008','大新县','10514.5','area','10515','2');
@@ -1130,7 +1130,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('18891','江南区','10501.3','area','1050
 INSERT INTO `lgsc_cascadedata` VALUES('18890','青秀区','10501.2','area','10501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18889','兴宁区','10501.1','area','10501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18888','南宁市','10501','area','10501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('18887','广西壮族自治区','10500','area','10500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('18887','广西','10500','area','10500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('18886','罗定市','10021.5','area','10022','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18885','云安县','10021.4','area','10021','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18884','郁南县','10021.3','area','10021','2');
@@ -1272,7 +1272,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('18749','越秀区','10001.3','area','1000
 INSERT INTO `lgsc_cascadedata` VALUES('18748','荔湾区','10001.2','area','10001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18747','东山区','10001.1','area','10001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18746','广州市','10001','area','10001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('18745','广东省','10000','area','10000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('18745','广东','10000','area','10000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('18744','龙山县','9514.8','area','9515','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18743','永顺县','9514.7','area','9515','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18742','古丈县','9514.6','area','9515','2');
@@ -1409,7 +1409,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('18612','岳麓区','9501.3','area','9501'
 INSERT INTO `lgsc_cascadedata` VALUES('18611','天心区','9501.2','area','9501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18610','芙蓉区','9501.1','area','9501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18609','长沙市','9501','area','9501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('18608','湖南省','9500','area','9500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('18608','湖南','9500','area','9500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('18607','神农架林区','9014.4','area','9014','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18606','天门市','9014.3','area','9014','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18605','潜江市','9014.2','area','9014','2');
@@ -1526,7 +1526,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('18495','乔口区','9001.3','area','9001'
 INSERT INTO `lgsc_cascadedata` VALUES('18494','江汉区','9001.2','area','9001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18493','江岸区','9001.1','area','9001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18492','武汉市','9001','area','9001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('18491','湖北省','9000','area','9000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('18491','湖北','9000','area','9000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('18490','新蔡县','8517.10','area','8517','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18489','遂平县','8517.9','area','8518','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18488','汝南县','8517.8','area','8518','2');
@@ -1703,7 +1703,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('18318','管城回族区','8501.3','area',
 INSERT INTO `lgsc_cascadedata` VALUES('18317','二七区','8501.2','area','8501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18316','中原区','8501.1','area','8501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18315','郑州市','8501','area','8501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('18314','河南省','8500','area','8500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('18314','河南','8500','area','8500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('18313','东明县','8016.9','area','8017','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18312','定陶县','8016.8','area','8017','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18311','鄄城县','8016.7','area','8017','2');
@@ -1855,7 +1855,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('18166','槐荫区','8001.3','area','8001'
 INSERT INTO `lgsc_cascadedata` VALUES('18165','市中区','8001.2','area','8001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18164','历下区','8001.1','area','8001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18163','济南市','8001','area','8001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('18162','山东省','8000','area','8000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('18162','山东','8000','area','8000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('18161','德兴市','7511.12','area','7511','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18160','婺源县','7511.11','area','7511','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18159','万年县','7511.10','area','7511','2');
@@ -1966,7 +1966,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('18055','青云谱区','7501.3','area','75
 INSERT INTO `lgsc_cascadedata` VALUES('18054','西湖区','7501.2','area','7501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18053','东湖区','7501.1','area','7501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18052','南昌市','7501','area','7501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('18051','江西省','7500','area','7500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('18051','江西','7500','area','7500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('18050','福鼎市','7009.9','area','7010','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18049','福安市','7009.8','area','7010','2');
 INSERT INTO `lgsc_cascadedata` VALUES('18048','柘荣县','7009.7','area','7010','2');
@@ -2061,7 +2061,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17960','仓山区','7001.3','area','7001'
 INSERT INTO `lgsc_cascadedata` VALUES('17959','台江区','7001.2','area','7001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17958','鼓楼区','7001.1','area','7001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17957','福州市','7001','area','7001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17956','福建省','7000','area','7000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17956','福建','7000','area','7000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17955','宁国市','6517.7','area','6518','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17954','旌德县','6517.6','area','6518','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17953','绩溪县','6517.5','area','6518','2');
@@ -2184,7 +2184,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17837','蜀山区','6501.3','area','6501'
 INSERT INTO `lgsc_cascadedata` VALUES('17836','庐阳区','6501.2','area','6501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17835','瑶海区','6501.1','area','6501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17834','合肥市','6501','area','6501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17833','安徽省','6500','area','6500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17833','安徽','6500','area','6500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17832','龙泉市','6011.9','area','6012','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17831','景宁畲族自治县','6011.8','area','6012','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17830','庆元县','6011.7','area','6012','2');
@@ -2286,7 +2286,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17735','江干区','6001.3','area','6001'
 INSERT INTO `lgsc_cascadedata` VALUES('17734','下城区','6001.2','area','6001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17733','上城区','6001.1','area','6001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17732','杭州市','6001','area','6001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17731','浙江省','6000','area','6000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17731','浙江','6000','area','6000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17730','泗洪县','5513.5','area','5514','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17729','泗阳县','5513.4','area','5513','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17728','沭阳县','5513.3','area','5513','2');
@@ -2406,7 +2406,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17615','秦淮区','5501.3','area','5501'
 INSERT INTO `lgsc_cascadedata` VALUES('17614','白下区','5501.2','area','5501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17613','武区','5501.1','area','5501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17612','南京市','5501','area','5501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17611','江苏省','5500','area','5500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17611','江苏','5500','area','5500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17610','崇明县','5019','area','5019','1');
 INSERT INTO `lgsc_cascadedata` VALUES('17609','奉贤区','5018','area','5018','1');
 INSERT INTO `lgsc_cascadedata` VALUES('17608','南汇区','5017','area','5017','1');
@@ -2426,7 +2426,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17595','长宁区','5004','area','5004','
 INSERT INTO `lgsc_cascadedata` VALUES('17594','徐汇区','5003','area','5003','1');
 INSERT INTO `lgsc_cascadedata` VALUES('17593','卢湾区','5002','area','5002','1');
 INSERT INTO `lgsc_cascadedata` VALUES('17592','黄浦区','5001','area','5001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17591','上海市','5000','area','5000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17591','上海','5000','area','5000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17590','漠河县','4513.3','area','4513','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17589','塔河县','4513.2','area','4513','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17588','呼玛县','4513.1','area','4513','2');
@@ -2569,7 +2569,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17452','道外区','4501.3','area','4501'
 INSERT INTO `lgsc_cascadedata` VALUES('17451','南岗区','4501.2','area','4501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17450','道里区','4501.1','area','4501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17449','哈尔滨市','4501','area','4501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17448','黑龙江省','4500','area','4500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17448','黑龙江','4500','area','4500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17447','安图县','4009.8','area','4010','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17446','汪清县','4009.7','area','4010','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17445','和龙市','4009.6','area','4010','2');
@@ -2639,7 +2639,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17382','朝阳区','4001.3','area','4001'
 INSERT INTO `lgsc_cascadedata` VALUES('17381','宽城区','4001.2','area','4001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17380','南关区','4001.1','area','4001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17379','长春市','4001','area','4001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17378','吉林省','4000','area','4000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17378','吉林','4000','area','4000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17377','兴城市','3514.6','area','3515','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17376','建昌县','3514.5','area','3515','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17375','绥中县','3514.4','area','3514','2');
@@ -2754,7 +2754,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17267','大东区','3501.3','area','3501'
 INSERT INTO `lgsc_cascadedata` VALUES('17266','沈河区','3501.2','area','3501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17265','和平区','3501.1','area','3501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17264','沈阳市','3501','area','3501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17263','辽宁省','3500','area','3500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17263','辽宁','3500','area','3500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17262','额济纳旗','3012.3','area','3012','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17261','阿拉善右旗','3012.2','area','3012','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17260','阿拉善左旗','3012.1','area','3012','2');
@@ -2868,7 +2868,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17153','玉泉区','3001.3','area','3001'
 INSERT INTO `lgsc_cascadedata` VALUES('17152','回民区','3001.2','area','3001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17151','新城区','3001.1','area','3001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17150','呼和浩特市','3001','area','3001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17149','内蒙古自治区','3000','area','3000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17149','内蒙古','3000','area','3000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17148','汾阳市','2511.13','area','2511','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17147','孝义市','2511.12','area','2511','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17146','交口县','2511.11','area','2511','2');
@@ -3000,7 +3000,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('17021','杏花岭区','2501.3','area','25
 INSERT INTO `lgsc_cascadedata` VALUES('17020','迎泽区','2501.2','area','2501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17019','小店区','2501.1','area','2501','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17018','太原市','2501','area','2501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('17017','山西省','2500','area','2500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('17017','山西','2500','area','2500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('17016','河间市','2011.16','area','2011','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17015','黄骅市','2011.15','area','2011','2');
 INSERT INTO `lgsc_cascadedata` VALUES('17014','任丘市','2011.14','area','2011','2');
@@ -3185,7 +3185,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('16836','桥西区','2001.3','area','2001'
 INSERT INTO `lgsc_cascadedata` VALUES('16835','桥东区','2001.2','area','2001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('16834','长安区','2001.1','area','2001','2');
 INSERT INTO `lgsc_cascadedata` VALUES('16833','石家庄市','2001','area','2001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('16832','河北省','2000','area','2000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('16832','河北','2000','area','2000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('16831','蓟　县','1518','area','1518','1');
 INSERT INTO `lgsc_cascadedata` VALUES('16830','静海县','1517','area','1517','1');
 INSERT INTO `lgsc_cascadedata` VALUES('16829','宁河县','1516','area','1516','1');
@@ -3204,7 +3204,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('16817','南开区','1504','area','1504','
 INSERT INTO `lgsc_cascadedata` VALUES('16816','河西区','1503','area','1503','1');
 INSERT INTO `lgsc_cascadedata` VALUES('16815','河东区','1502','area','1502','1');
 INSERT INTO `lgsc_cascadedata` VALUES('16814','和平区','1501','area','1501','1');
-INSERT INTO `lgsc_cascadedata` VALUES('16813','天津市','1500','area','1500','0');
+INSERT INTO `lgsc_cascadedata` VALUES('16813','天津','1500','area','1500','0');
 INSERT INTO `lgsc_cascadedata` VALUES('16812','延庆县','1018','area','1018','1');
 INSERT INTO `lgsc_cascadedata` VALUES('16811','密云县','1017','area','1017','1');
 INSERT INTO `lgsc_cascadedata` VALUES('16810','平谷区','1016','area','1016','1');
@@ -3223,7 +3223,7 @@ INSERT INTO `lgsc_cascadedata` VALUES('16798','宣武区','1004','area','1004','
 INSERT INTO `lgsc_cascadedata` VALUES('16797','崇文区','1003','area','1003','1');
 INSERT INTO `lgsc_cascadedata` VALUES('16796','西城区','1002','area','1002','1');
 INSERT INTO `lgsc_cascadedata` VALUES('16795','东城区','1001','area','1001','1');
-INSERT INTO `lgsc_cascadedata` VALUES('16794','北京市','1000','area','1000','0');
+INSERT INTO `lgsc_cascadedata` VALUES('16794','北京','1000','area','1000','0');
 INSERT INTO `lgsc_cascadedata` VALUES('1','白羊座','1','astro','1','0');
 INSERT INTO `lgsc_cascadedata` VALUES('2','金牛座','2','astro','2','0');
 INSERT INTO `lgsc_cascadedata` VALUES('3','双子座','3','astro','3','0');

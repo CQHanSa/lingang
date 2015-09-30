@@ -1,4 +1,4 @@
-<?php	require_once(dirname(__FILE__).'/include/config.inc.php');
+<?php	require_once(dirname(__FILE__).'/Common/index.php'); 
 
 /*
 **************************
@@ -393,19 +393,23 @@ else if($a == 'reg')
 		ShowMsg('用户名已存在！','?c=reg');
 		exit();
 	}
-
+	
+	if($email !=''){
 	$r = $dosql->GetOne("SELECT `id` FROM `#@__member` WHERE `email`='$email'");
 	if(isset($r['id']))
 	{
 		ShowMsg('您填写的邮箱已被注册！','?c=reg');
 		exit();
 	}
+	}
 	
+	if($mobile !=''){
 	$r = $dosql->GetOne("SELECT `id` FROM `#@__member` WHERE `mobile`='$mobile'");
 	if(isset($r['id']))
 	{
 		ShowMsg('您填写的手机已被注册！','?c=reg');
 		exit();
+	}
 	}
 
 	$password_strength=CheckPassword($oldpassword);
@@ -472,12 +476,13 @@ else if($a == 'findpwd2')
 	}
 	else
 	{
-		$r = $dosql->GetOne("SELECT `id` FROM `#@__member` WHERE `username`='$username'");
+		$r = $dosql->GetOne("SELECT id,username FROM `#@__member` WHERE `username`='$username' or `mobile`='$username' or `email`='$username' ");
 		if(!isset($r['id']))
 		{
 			ShowMsg('请输入正确的账号信息！','?c=findpwd');
 			exit();
 		}
+		$find_username=$r['username'];
 	}
 }
 
@@ -485,44 +490,36 @@ else if($a == 'findpwd2')
 //找回密码
 else if($a == 'quesfind')
 {
+	
 	if(!isset($_POST['uname']))
 	{
 		header('location:?c=findpwd');
 		exit();
 	}
 
-
-	//验证输入数据
-	if($question == '-1' or $answer == '')
+	
+	if(!isset($_SESSION)) session_start();
+	
+	//验证数据准确性
+	if(!isset($_SESSION['findpwd_code']) || $validate != $_SESSION['findpwd_code'])
 	{
-		header('location:?c=findpwd');
+		ShowMsg('验证码不正确！','?c=findpwd');
 		exit();
-	}
-
-
-	$r = $dosql->GetOne("SELECT `question`,`answer` FROM `#@__member` WHERE `username`='$uname'");
-	if($r['question']==0 or !isset($r['answer']))
-	{
-		ShowMsg('此账号未填写验证问题，请选择其他方式找回！','?c=findpwd');
-		exit();
-	}
-	else if($question != $r['question'] or $answer != $r['answer'])
-	{
-		ShowMsg('您填写的验证问题或答案不符！','?c=findpwd');
-		exit();
-	}
-	else
-	{
+	}else{
+		unset($_SESSION['findpwd_code']);
 		//验证通过，采用SESSION存储用户名
-		@session_start();
-		$_SESSION['fid_'.$uname] = $uname;
+		$_SESSION['fid_'.$uname] = $uname;		
 	}
+	
+	
+	
 }
 
 
 //设置新密码
 else if($a == 'setnewpwd')
 {
+
 	@session_start();
 
 	if(isset($_SESSION['fid_'.$_POST['uname']]))
@@ -540,31 +537,25 @@ else if($a == 'setnewpwd')
 		header('location:?c=findpwd');
 		exit();
 	}
-
-
+	
 	//初始化参数
-	$uname      = empty($uname)      ? '' : $uname;
-	$password   = empty($password)   ? '' : md5(md5($password));
-	$repassword = empty($repassword) ? '' : md5(md5($repassword));
+	$oldpassword   = empty($password)   ? '' : $password;
+	$password      = empty($password)   ? '' : md5(md5($password));
+	$repassword    = empty($repassword) ? '' : md5(md5($repassword));
 
-
+	
 	//验证输入数据
-	if($uname == '' or
-	   $password == '' or
-	   $repassword == '' or
-	   $password != $repassword or
-	   preg_match("/[^0-9a-zA-Z_-]/",$password))
+	if($password == '' or $repassword == '' or $password != $repassword)
 	{
 		header('location:?c=findpwd');
 		exit();
 	}
 
+	$password_strength=CheckPassword($oldpassword);
 
-	if($dosql->ExecNoneQuery("UPDATE `#@__member` SET password='$password' WHERE username='$uname'"))
+	if($dosql->ExecNoneQuery("UPDATE `#@__member` SET password='$password', password_strength='$password_strength' WHERE username='$uname'"))
 	{
-		header("location:?c=login&d=".md5('newpwd'));
 		unset($_SESSION['fid_'.$_POST['uname']]);
-		exit();
 	}
 }
 
@@ -1304,6 +1295,14 @@ else if($c == 'findpwd3')
 	exit();
 }
 
+//找回密码
+else if($c == 'findpwd4')
+{
+	
+		require_once(PHPMYWIND_TEMP.'/default/member/findpwd4.php');
+
+
+}
 
 else
 {
@@ -1313,18 +1312,4 @@ else
 
 
 
-//验证码获取函数
-function GetCkVdValue()
-{
-	if(!isset($_SESSION)) session_start();
-	return isset($_SESSION['ckstr']) ? $_SESSION['ckstr'] : '';
-}
-
-
-//验证码重置函数
-function ResetVdValue()
-{
-	if(!isset($_SESSION)) session_start();
-	$_SESSION['ckstr'] = '';
-}
 

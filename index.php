@@ -13,20 +13,7 @@ require_once(dirname(__FILE__).'/Common/index.php');
 </head>
 
 
-<?php 
-	$shop = MysqlRowSelect('lgsc_shops','id',"shop_prov='$city'",'9999');
-	$shopid = '';
-	$where = '';
-	if($shop != '-1')
-	{
-		for($i=0,$n=count($shop);$i<$n;$i++)
-		{
-			$shopid .= $shop[$i]['id'].",";
-		}
-		$shopid = substr($shopid,0,-1);
-		$where = "and shopid in ( $shopid )";
-	}
-?>	
+	
 <body>
 <!--顶部公共-->
 <?php require_once(dirname(__FILE__).'/public/header.php'); ?>
@@ -356,7 +343,7 @@ require_once(dirname(__FILE__).'/Common/index.php');
                 <div>
                     <ul class="type_qhul">
                     	<?php
-						$dosql->Execute("SELECT id,title,description,salesprice,marketprice,linkurl,picurl FROM `#@__goods` WHERE `flag` LIKE '%t%' and checkinfo='true' and `delstate`='' $where ORDER BY orderid desc, id desc limit 12");
+						$dosql->Execute("SELECT id,title,description,salesprice,marketprice,linkurl,picurl FROM `#@__goods` WHERE `flag` LIKE '%t%' and checkinfo='true' and `delstate`='' $wherecity ORDER BY orderid desc, id desc limit 12");
 						while($row = $dosql->GetArray())
 						{
 							if(!empty($row['linkurl'])){
@@ -392,7 +379,7 @@ require_once(dirname(__FILE__).'/Common/index.php');
                 <div style="display:none;">
                     <ul class="type_qhul">
                         <?php
-						$dosql->Execute("SELECT id,title,description,salesprice,marketprice,linkurl,picurl FROM `#@__goods` WHERE  `flag` LIKE '%r%' and checkinfo='true' and `delstate`='' $where ORDER BY orderid desc, id desc  limit 12");
+						$dosql->Execute("SELECT id,title,description,salesprice,marketprice,linkurl,picurl FROM `#@__goods` WHERE  `flag` LIKE '%r%' and checkinfo='true' and `delstate`='' $wherecity ORDER BY orderid desc, id desc  limit 12");
 						while($row = $dosql->GetArray())
 						{
 							if(!empty($row['linkurl'])){
@@ -428,7 +415,7 @@ require_once(dirname(__FILE__).'/Common/index.php');
                 <div style="display:none;">
                     <ul class="type_qhul">
                         <?php
-						$dosql->Execute("SELECT id,title,description,salesprice,marketprice,linkurl,picurl FROM `#@__goods` WHERE  checkinfo='true' and `delstate`='' $where ORDER BY rand() limit 12");
+						$dosql->Execute("SELECT id,title,description,salesprice,marketprice,linkurl,picurl FROM `#@__goods` WHERE  checkinfo='true' and `delstate`='' $wherecity ORDER BY rand() limit 12");
 						while($row = $dosql->GetArray())
 						{
 							if(!empty($row['linkurl'])){
@@ -487,7 +474,7 @@ require_once(dirname(__FILE__).'/Common/index.php');
 							$picurl='/images/nopic.jpg';	
 						}
 					?>
-                	<li><a href="/shops.php?id=<?php echo $row['id']?>"><img src="<?php echo $picurl;?>"></a></li>
+                	<li><a href="/shops.php?sid=<?php echo $row['id']?>"><img src="<?php echo $picurl;?>"></a></li>
                     <?php
 					}
 					?>

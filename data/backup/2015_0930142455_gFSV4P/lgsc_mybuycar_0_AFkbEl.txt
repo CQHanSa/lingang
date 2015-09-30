@@ -1,0 +1,2 @@
+INSERT INTO `lgsc_mybuycar` VALUES('4','13','1','12.00','3','500g','1','1443172463');
+INSERT INTO `lgsc_mybuycar` VALUES('5','13','6','12.00','2','500g','1','1443172557');

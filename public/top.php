@@ -5,24 +5,23 @@
 	?>
 	<div class="itop_login">
     	<div class="itop_loginc">
-        	<span class="t_left">送货至&nbsp; <span class="send_address"><span>重庆</span>
+        	<span class="t_left">送货至&nbsp; <span class="send_address"><span><?php
+            $row = $dosql->GetOne("SELECT dataname FROM `#@__cascadedata` WHERE `datagroup`='area' and level='0' and datavalue='$city'");
+			if(isset($row['dataname']) && is_array($row)){
+				echo ReStrLen($row['dataname'],3,''); 	
+			}
+			?></span>
             <div class="ads_lb">
                 	<ul>
-                    	<li><a href="javascript:;">北京</a></li>
-                    	<li><a href="javascript:;">上海</a></li>
-                    	<li><a href="javascript:;">天津市</a></li>
-                    	<li class="on"><a href="javascript:;">重庆</a></li>
-                    	<li><a href="javascript:;">河北</a></li>
-                    	<li><a href="javascript:;">江苏</a></li>
-                    	<li><a href="javascript:;">四川</a></li>
-                    	<li><a href="javascript:;">湖南</a></li>
-                    	<li><a href="javascript:;">江苏</a></li>
-                    	<li><a href="javascript:;">四川</a></li>
-                    	<li><a href="javascript:;">湖南</a></li>
-                    	<li><a href="javascript:;">湖北</a></li>
-                    	<li><a href="javascript:;">云南</a></li>
-                    	<li><a href="javascript:;">湖北</a></li>
-                    	<li><a href="javascript:;">云南</a></li>
+                    	<?php
+                        $dosql->Execute("SELECT datavalue,dataname FROM `#@__cascadedata` WHERE `datagroup`='area' and level='0'  ORDER BY orderid ASC, datavalue ASC");
+						while($row = $dosql->GetArray())
+						{
+						?>
+                    	<li <?php if($city==$row['datavalue']){echo ' class="on"';}?>><a href="javascript:;" onclick="changecity(<?php echo $row['datavalue']?>)"><?php echo ReStrLen($row['dataname'],3,''); ?></a></li>
+                        <?php
+						}
+						?>
                     </ul>
                     <div class="divclear"></div>
                 </div>
@@ -56,3 +55,19 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+function changecity(val){
+	$.ajax({
+		url : "/ajax.php?a=changecity&val="+val+"",
+		type:'get',
+		dataType:'html',
+		success:function(data){
+			if(data==1){
+				window.location.reload();
+			}else{
+				alert("参数错误！");	
+			}	
+		}
+	})
+}
+</script>

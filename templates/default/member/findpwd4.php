@@ -28,7 +28,7 @@ $web_title="找回密码";
 <div class="warpper">
 	<div class="mt40">
     	<div id="sflex04" class="stepflex ">
-            <dl class="first doing">
+            <dl class="first">
                 <dt class="s-num">1</dt>
                 <dd class="s-text">填写账户名<s></s><b></b></dd>
                 <dd></dd>
@@ -41,30 +41,14 @@ $web_title="找回密码";
                 <dt class="s-num">3</dt>
                 <dd class="s-text">设置新密码<s></s><b></b></dd>
             </dl>
-            <dl class="last">
+            <dl class="last doing">
                 <dt class="s-num">&nbsp;</dt>
                 <dd class="s-text">完成<s></s><b></b></dd>
             </dl>
         </div>
         
-        <div class="findpwd_form">
-			<form id="form" method="post" class="findpwd" action="?c=findpwd2" >
-                <input type="hidden" name="a" value="findpwd2" />
-                <div class="reg_row">
-                    <label>用户名：</label>
-                    <input type="text" name="username" id="username" class="class_input" datatype="*" nullmsg="请输入用户名/邮箱/手机号码！" />
-                    <span class="Validform_checktip">请输入用户名/邮箱/手机号码！</span>
-                </div>
-                
-                <div class="reg_row">
-                    <label>验证码：</label>
-                    <input type="text" name="validate" id="validate" class="class_input" datatype="*" nullmsg="请输入验证码！"  style="width:155px" />
-					<span style="margin-left:5px;"><img id="ckstr" src="data/captcha/ckstr.php" title="看不清？点击更换" height="32" align="absmiddle" style="cursor:pointer;" onClick="this.src=this.src+'?'" alt="看不清？点击更换" /></span>
-                    <span class="Validform_checktip"></span>
-                </div>
-                <input type="submit" class="btn1" style="margin-left:100px;" value="下一步" />
-                
-            </form>
+        <div class="findpwd4">
+			您的新密码已设置成功，请<a href="/member.php?c=login">登陆</a>。
         </div>
 	</div>		
 </div>

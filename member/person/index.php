@@ -131,7 +131,7 @@ elseif($action=="shipping_address_add"){
 		$isdefault='false';
 	}
 	
-	$sql = "INSERT INTO `#@__user_address` (userid, username, usermobile, userphone, address_prov, address_city, address, postcode, isdefault, communityid, posttime,title) VALUES ('$r_user[id]', '$username', '$usermobile', '$userphone', '$address_prov', '$address_city', '$address', '$postcode', '$isdefault', '$communityid', '$posttime','$title' )";	
+	$sql = "INSERT INTO `#@__user_address` (userid, username, usermobile, userphone, address_prov, address_city, address_country, address, postcode, isdefault, communityid, posttime,title) VALUES ('$r_user[id]', '$username', '$usermobile', '$userphone', '$address_prov', '$address_city', '$address_country', '$address', '$postcode', '$isdefault', '$communityid', '$posttime','$title' )";	
 	if($dosql->ExecNoneQuery($sql))
 	{
 		ShowMsg('资料更新成功！','?action=shipping_address');
@@ -154,7 +154,7 @@ elseif($action=="shipping_address_edit"){
 		$isdefault='false';
 	}
 	
-	$sql = "UPDATE `#@__user_address` SET username='$username', usermobile='$usermobile', userphone='$userphone', address_prov='$address_prov', address_city='$address_city', address='$address', postcode='$postcode', isdefault='$isdefault', communityid='$communityid', posttime='$posttime',title='$title' where id='$id'";	
+	$sql = "UPDATE `#@__user_address` SET username='$username', usermobile='$usermobile', userphone='$userphone', address_prov='$address_prov', address_city='$address_city', address_country='$address_country', address='$address', postcode='$postcode', isdefault='$isdefault', communityid='$communityid', posttime='$posttime',title='$title' where id='$id'";	
 	if($dosql->ExecNoneQuery($sql))
 	{
 		ShowMsg('资料更新成功！','?action=shipping_address');

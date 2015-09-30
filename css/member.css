@@ -47,7 +47,7 @@
 
 .hytj{}
 .hytj ul{ padding-left:10px; padding-bottom:10px; float:left;}
-.hytj ul li{ float:left; width:113px; padding:10px; background:#dedede; margin:10px 5px 0px;}
+.hytj ul li{ float:left; width:113px; padding:10px; background:#dedede; margin:10px 5px 0px; text-align:center;}
 .hytj ul li span{display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 
 .mycollect{}

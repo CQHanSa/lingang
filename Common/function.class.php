@@ -160,4 +160,41 @@ function curl_post($url,$data){ // 模拟提交数据函数
         return $tmpInfo; // 返回数据
 }
 
+//短信发送
+function mobile_send($mobile_data){
+	//输入参数：CorpID-帐号，Pwd-密码，Mobile-发送手机号，Content-发送内容，Cell-子号(可为空），SendTime-定时发送时间(固定14位长度字符串，比如：20060912152435代表2006年9月12日15时24分35秒，可为空)		
+	//输出参数：整数，0，发送成功；-1、帐号未注册；-2、其他错误；-3、密码错误；-4、手机号格式不对；-5、余额不足；-6、定时发送时间不是有效的时间格式；-7、禁止2小时以内向同一手机号发送相同短信
+	$mobile_url='http://www.ht3g.com/htWS/Send.aspx';
+	$mobile_data['CorpID']='HTEK07948';
+	$mobile_data['Pwd']='778877';
+	$mobile_data['Cell']='';
+	$mobile_data['SendTime']='';
+	$mobile_data['Content']=iconv("UTF-8","GBK//IGNORE",$mobile_data['Content']);
+	//print_r($mobile_data);
+	curl_post($mobile_url,$mobile_data);
+}
+
+
+//email_reg(收件人邮箱，邮件主题，邮件内容)
+function email_send($smtpemailto='', $mailsubject='', $mailbody=''){
+	require_once(dirname(__FILE__).'/email.class.php');
+	
+	##########################################
+	$smtpserver = "smtp.qq.com";//SMTP服务器
+	$smtpserverport = 25;//SMTP服务器端口
+	$smtpusermail = "1120255610@qq.com";//SMTP服务器的用户邮箱
+	$smtpuser = "1120255610@qq.com";//SMTP服务器的用户帐号
+	$smtppass = "loveccy@20100215";//SMTP服务器的用户密码
+	
+	//$smtpemailto = "366617187@qq.com";//发送给谁
+	//$mailsubject = "主题";//邮件主题
+	//$mailbody = "内容";//邮件内容
+	
+	$mailtype = "HTML";//邮件格式（HTML/TXT）,TXT为文本邮件
+	##########################################
+	$smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//这里面的一个true是表示使用身份验证,否则不使用身份验证.
+	$smtp->debug = false;//是否显示发送的调试信息
+	$smtp->sendmail($smtpemailto, $smtpusermail, $mailsubject, $mailbody, $mailtype);	
+}
+
 ?>
