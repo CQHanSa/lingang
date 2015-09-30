@@ -182,9 +182,9 @@ function email_send($smtpemailto='', $mailsubject='', $mailbody=''){
 	##########################################
 	$smtpserver = "smtp.qq.com";//SMTP服务器
 	$smtpserverport = 25;//SMTP服务器端口
-	$smtpusermail = "1120255610@qq.com";//SMTP服务器的用户邮箱
-	$smtpuser = "1120255610@qq.com";//SMTP服务器的用户帐号
-	$smtppass = "loveccy@20100215";//SMTP服务器的用户密码
+	$smtpusermail = "";//SMTP服务器的用户邮箱
+	$smtpuser = "";//SMTP服务器的用户帐号
+	$smtppass = "";//SMTP服务器的用户密码
 	
 	//$smtpemailto = "366617187@qq.com";//发送给谁
 	//$mailsubject = "主题";//邮件主题
