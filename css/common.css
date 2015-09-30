@@ -67,6 +67,7 @@
 .itop_gwc .t_left{ padding-left:35px; width:65px;}
 .itop_gwc .t_right{ padding-left:35px; width:65px; position:relative;}
 .itop_gwc .t_right span{ position:absolute; top:5px; left:20px; display:inline-block; width:auto; padding:0px 3px; height:12px; text-align:center; line-height:12px; color:#fff; border-radius:50%; background:#f00; font-size:10px; }
+.itop_gwc a.gwc_ico{background:url(../images/bg2.png) no-repeat #eeeeee 5px center;}
 
 
 /* 菜单 */
