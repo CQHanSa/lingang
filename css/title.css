@@ -72,8 +72,8 @@
 .fapiao_l{ width:75px; height:24px;line-height:24px;margin-top: 6px;}
 .fapiao_l p{ color:#FFF; font-size:12px;padding-left: 12px;}
 
-.youhui{ width:1150px; height:183px;padding-top: 14px; padding-left: 53px;border-bottom:1px solid #dbdbdb;}
-.youhui_f{ width:305px; height:94px;padding-top: 20px;}
+.youhui{ width:1150px; min-height:150px;padding-top: 14px; padding-left: 53px;border-bottom:1px solid #dbdbdb;}
+.youhui_f{ width:305px; min-height:94px;padding-top: 20px;padding-bottom: 20px;}
 .youhui_tt{ width:13px; height:13px; background:#FFF; border-radius:25px; border: 1px solid #619e1f; float:left;}
 .youhui_tt a{ font-size:12px;height:13px; line-height:13px; display:block; color:#619e1f; text-align:center;}
 .youhui_ff{ width:286px; height:77px; border:1px solid #d8d8d8; padding-top:25px; padding-left:20px;margin-top: 5px;}
@@ -130,3 +130,4 @@ background: url(../images/jiesuan4.png) no-repeat scroll right bottom;}
 .shform input[type='button']{ border:solid 1px #ccc; background:#f5f5f5; color:#000; padding:3px 10px; text-align:center; margin-right:5px;}
 
 .endword { text-indent:100px;}
+

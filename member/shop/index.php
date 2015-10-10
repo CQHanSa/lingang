@@ -668,6 +668,10 @@ elseif($action=="shopad_del"){
 	}
 	
 }
+//店铺订单
+elseif($action=="order"){		
+	require_once('./order.php');	
+}
 
 
 else{

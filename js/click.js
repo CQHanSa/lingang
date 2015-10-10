@@ -259,3 +259,110 @@ function jsmarkprice(obj)
 	$(obj).next('input').val(markprice);
 	$(obj).next().next('input').val(cxprice);	
 }
+//订单显示优惠卷
+function tage(ev)
+{
+	if($(ev).text() == '+'){
+		if($(ev).parent().next().text() == '使用优惠券')
+		{
+			$(ev).parent().parent().find('.counplist ul').css('display','block');
+			$(ev).text('-');
+		}
+		if($(ev).parent().next().text() == '使用积分')
+		{
+			$(".youhui_ff").css('display','block');
+			$(ev).text('-');
+		}
+		//console.log($(ev).parent().next().text());
+	}else
+	{
+		if($(ev).parent().next().text() == '使用优惠券')
+		{
+			$(ev).parent().parent().find('.counplist ul').css('display','none');
+			$(ev).text('+');
+		}
+		if($(ev).parent().next().text() == '使用积分')
+		{
+			$(".youhui_ff").css('display','none');
+			$(ev).text('+');
+		}
+	}
+}
+//使用优惠卷
+function useCoupon(ev)
+{
+	var name = $(ev).attr('name');
+	var li = $(ev).parent().parent();
+	
+	
+	li.parent().find('input').each(function() {
+		
+		var li = $(this).parent().parent();
+		var price = li.find('.coupon_price span').text();
+		var usePrice = parseFloat(li.find('.coupon_tj span').text());
+		var sum = parseFloat($(".second_l .sum").text());		
+		
+       if($(this).prop('checked') == true && $(this).attr('name') == name )
+	   {
+		   	//满足使用条件
+			if(usePrice <= sum)
+			{
+				sum = (sum - price).toFixed(2);
+				$(".sum").text(sum);
+			}else
+			{
+				alert('总金额不足，不可使用');
+				$(ev).removeAttr('checked');
+			}	
+	   }
+	   else if( $(this).prop('checked') == true && $(this).attr('name') != name)
+	   {
+			sum =( parseFloat(sum) + parseFloat(price) ).toFixed(2);
+			$(".sum").text(sum);
+			$(this).removeAttr('checked'); 
+		}
+		else if( $(this).prop('checked') == false && $(this).attr('name') == name )
+		{
+			sum =( parseFloat(sum) + parseFloat(price) ).toFixed(2);
+			$(".sum").text(sum);
+		}
+    });
+	
+	//console.log(sum);
+}
+//商家发货
+function SendGoods(id,state,ev)
+{
+	//最后一步不操作;
+	var text = $(ev).text();
+	if(state == 4){ return false;}
+	if(confirm('确定该商'+text+'？'))
+	{
+		$.post('/Action/buy.php','type=SendGoods&id='+id,function(data){
+			if(data != ''){ 
+				alert('该商品'+data.GoodsState);
+				$(ev).text(data.NextState); 
+			}
+		},'json')
+	}
+}
+//钱包支付
+function walletPay(id)
+{
+	var payMoney 	= parseFloat($(".sum").text());
+	var walletMoney = parseFloat($(".walletMoney").text());
+	var password =  $(".qb_pwd").val();
+	if(password == '' ){ alert('密码不能为空'); return false;}
+	if(walletMoney == 0 || payMoney > walletMoney ){ alert('余额不足,请先充值,或使用在线支付方式'); return false;}
+	$.post('/Action/buy.php','type=walletPay&id='+id+"&paypswd="+password+"&payMoney="+payMoney,function(data){
+		if(data != 'success')
+		{
+			alert(data);
+		}
+		else if(data == 'success')
+		{
+			alert('支付成功');
+			window.location.href='/member/person/?action=order';
+		}
+	})
+}

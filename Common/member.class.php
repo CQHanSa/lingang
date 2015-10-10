@@ -551,7 +551,7 @@ function goodsShowAI($user,$table='lgsc_scanlog')
 		}
 	
 }
-//
+//购物车数量
 function getBuyCarNum($user)
 {
 	if($user != '')
@@ -605,13 +605,16 @@ function Redeem($price,$user)
 }
 
 //判断订单执行状态
-function isClientState($value,$id='')
+function isClientState($value,$id='',$paypost='')
 {
 	switch($value)
 	{
 		case -1:
 			$r['tag'] = '立即支付';
-			$r['url'] = "/Member/pay.php?id=$id";
+			if($paypost == '在线支付')
+				$r['url'] = "/data/api/unionpay/unionpay.config2.php?id=$id";
+			elseif($paypost == '钱包支付')
+				$r['url'] = "/member/buy/wallet.php?id=$id";
 			break;
 		case 1:
 			$r['tag'] = '确认收货';
@@ -651,6 +654,7 @@ function DDAdminState($value)
 	return $r;
 }
 
+
 //判断订单状态
 function isGoodsState($value)
 {
@@ -669,7 +673,7 @@ function isGoodsState($value)
 			$r['url'] = 'javascript:video(0)';
 			break;			
 		case 3:
-			$r['tag'] = '物流运输中';
+			$r['tag'] = '已到达';
 			$r['url'] = 'javascript:video(0)';
 			break;
 		case 4:
@@ -681,5 +685,25 @@ function isGoodsState($value)
 			$r['url'] = 'javascript:video(0)';					
 	}
 	return $r;
+}
+//订单状态数量
+// type => 类型 1买家 | 2卖家
+function CMJ_ddNum($user,$userstate,$type='1')
+{
+	if($type == 1)
+	{
+		$r = MysqlOneSelect('lgsc_dd','count(*) as total',"userid='$user[userid]' and userstate = '$userstate'");
+		if($r == '-1'){ $total = 0; return $total; }
+		$total = $r['total'];
+		return $total;
+	}
+	elseif($type == 2)
+	{
+		$shop =	MysqlOneSelect('lgsc_shops','id',"userid='$user[userid]'");
+		$r = MysqlOneSelect('lgsc_dd','count(*) as total',"goodsshopid REGEXP  '([1-9]*,$shop[id])|$shop[id]' and userstate = '$userstate'");
+		if($r == '-1'){ $total = 0; return $total; }
+		$total = $r['total'];
+		return $total;
+	}
 }
 ?>

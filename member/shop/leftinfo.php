@@ -11,7 +11,7 @@
             	<li>
                 	<dl>
                     	<dt><a href="javascript:;">交易管理</a></dt>
-                    	<dd><a href="?action=goodsorder">订单管理</a></dd>
+                    	<dd><a href="?action=order">订单管理</a></dd>
                     </dl>
                 </li>
             	<li>

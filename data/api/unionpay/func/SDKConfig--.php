@@ -12,16 +12,16 @@ const SDK_PAN_ENC = 0;
 // 签名证书路径
 
 
-const SDK_SIGN_CERT_PATH = 'E:/wamp/www/data/api/unionpay/PM_700000000000001_acp.pfx';
+const SDK_SIGN_CERT_PATH = 'D:/wamp/www/data/api/unionpay/PM_700000000000001_acp.pfx';
 
 // 签名证书密码
  const SDK_SIGN_CERT_PWD = '000000';
 
 // 密码加密证书（这条用不到的请随便配）
-const SDK_ENCRYPT_CERT_PATH = 'E:/wamp/www/data/api/unionpay/verify_sign_acp.cer';
+const SDK_ENCRYPT_CERT_PATH = 'D:/wamp/www/data/api/unionpay/verify_sign_acp.cer';
 
 // 验签证书路径（请配到文件夹，不要配到具体文件）
-const SDK_VERIFY_CERT_DIR = 'E:/wamp/www/data/api/unionpay/';
+const SDK_VERIFY_CERT_DIR = 'D:/wamp/www/data/api/unionpay/';
 
 // 前台请求地址
 const SDK_FRONT_TRANS_URL = 'https://101.231.204.80:5000/gateway/api/frontTransReq.do';
@@ -51,10 +51,10 @@ const SDK_FRONT_NOTIFY_URL = 'http://localhost/data/api/unionpay/Balance_FrontRe
 const SDK_BACK_NOTIFY_URL = 'http://localhost/data/api/unionpay/Balance_BackReceive.php';
 
 //文件下载目录 
-const SDK_FILE_DOWN_PATH = 'E:/wamp/www/file/';
+const SDK_FILE_DOWN_PATH = 'D:/wamp/www/file/';
 
 //日志 目录 
-const SDK_LOG_FILE_PATH = 'E:/wamp/www/logs/';
+const SDK_LOG_FILE_PATH = 'D:/wamp/www/logs/';
 
 //日志级别
 const SDK_LOG_LEVEL = 'INFO';

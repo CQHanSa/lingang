@@ -3,11 +3,24 @@ header ( 'Content-type:text/html;charset=utf-8' );
 
 require_once(dirname(__FILE__).'/../../../Common/index.php');
 
-if(!isset($_SESSION['ddnum']) || !isset($_SESSION['ddsum']) ){ header('location:/'); exit(); }
-
-$money = $_SESSION['ddsum'];
-$ddnum = $_SESSION['ddnum'];
-
+if(isset($_GET['id']))
+{
+	$id = get('id');
+	$dd = MysqlOneSelect('lgsc_dd','sum,ddnum',"id='$id' and userid = '$user[userid]'");
+	$money = $dd['sum'];
+	$ddnum = $dd['ddnum'];
+	$userid = $user['userid'];
+}
+elseif(isset($_SESSION['ddnum']) && isset($_SESSION['ddsum']) )
+{
+	$money = $_SESSION['ddsum'];
+	$ddnum = $_SESSION['ddnum'];
+	$userid = $user['userid'];
+}
+else{
+	header('location:/');
+	exit();	
+}
 if($money<0){
 	header('location:/');
 	exit();	
@@ -36,8 +49,8 @@ $params = array(
 		'txnType' => '01',				//交易类型	
 		'txnSubType' => '01',				//交易子类
 		'bizType' => '000201',				//业务类型
-		'frontUrl' =>  'http://localhost/data/api/unionpay/Balance_FrontReceive.php',  		//前台通知地址
-		'backUrl' => 'http://localhost/data/api/unionpay/Balance_BackReceive.php',		//后台通知地址	
+		'frontUrl' =>  'http://localhost/data/api/unionpay/Pay_FrontReceive.php',  		//前台通知地址
+		'backUrl' => 'http://localhost/data/api/unionpay/Pay_BackReceive.php',		//后台通知地址	
 		'signMethod' => '01',		//签名方法
 		'channelType' => '07',		//渠道类型，07-PC，08-手机
 		'accessType' => '0',		//接入类型

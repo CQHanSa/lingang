@@ -11,10 +11,10 @@
             	<li>
                 	<dl>
                     	<dt><a href="javascript:;">订单中心</a></dt>
-                    	<dd><a href="#">我的订单</a></dd>
+                    	<dd><a href="?action=order">我的订单</a></dd>
                         <dd><a href="#">我的团购</a></dd>
                         <dd><a href="?action=integral">我的积分</a></dd>
-                        <dd><a href="#">我的购物车</a></dd>
+                        <dd><a href="/member/buy/mybuycar.php">我的购物车</a></dd>
                     </dl></li>
             	<li>
                 	<dl>

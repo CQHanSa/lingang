@@ -274,7 +274,12 @@ elseif($action=="shopCollection")
 elseif($action=="goodsCollection")
 {
 	require_once('./goodsCollection.php');	
-}		
+}
+//商品收藏
+elseif($action=="order")
+{
+	require_once('./order.php');	
+}			
 else{
 	require_once('./home.php');	
 }

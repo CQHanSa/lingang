@@ -82,10 +82,10 @@ $userinfo = MysqlOneSelect('lgsc_member','money',"id='$user[userid]'");
                         </dl>
                     </div>
                     <div class="mem_orderdetail fr">
-                    	<ul><li><a><img src="/images/ms01.png"><p>待付款<span class="red-color f14">4</span></p></a></li>
-                        <li><a><img src="/images/ms02.png"><p>待收货<span class="red-color f14">0</span></p></a></li>
-                        <li><a><img src="/images/ms03.png"><p>待自提<span class="red-color f14">0</span></p></a></li>
-                        <li><a><img src="/images/ms04.png"><p>待评价<span class="red-color f14">0</span></p></a></li>
+                    	<ul><li><a href="?action=order&userstate=-1"><img src="/images/ms01.png"><p>待付款<span class="red-color f14"><?=CMJ_ddNum($user,'-1')?></span></p></a></li>
+                        <li><a href="?action=order&userstate=1"><img src="/images/ms02.png"><p>待收货<span class="red-color f14"><?=CMJ_ddNum($user,'1')?></span></p></a></li>
+                        <li><a href="?action=order&userstate=2"><img src="/images/ms03.png"><p>待自提<span class="red-color f14"><?=CMJ_ddNum($user,'2')?></span></p></a></li>
+                        <li><a href="?action=order&userstate=3"><img src="/images/ms04.png"><p>待评价<span class="red-color f14"><?=CMJ_ddNum($user,'3')?></span></p></a></li>
                         </ul>
                         <div class="mem_money">
                         	<p><a href="?action=balance">钱包余额：<?=$userinfo['money']?></a></p>

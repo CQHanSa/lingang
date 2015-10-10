@@ -45,7 +45,7 @@ if($type == 'addGoodsCollection')
 	$post['goodsid'] = post('id');
 	$post['createTime'] = time();
 	//判断是否已添加
-	$r = MysqlOneSelect('lgsc_goodscollection',"shopid","goodsid = '$post[goodsid]'");
+	$r = MysqlOneSelect('lgsc_goodscollection',"shopid","goodsid = '$post[goodsid]' and userid='$user[userid]'");
 	if($r != '-1'){ echo '该商品已收藏';exit();}
 	$rest = MysqlOneExc('lgsc_goodscollection',$post);
 	if($rest){ echo '加入收藏成功'; }

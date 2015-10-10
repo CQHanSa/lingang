@@ -121,7 +121,7 @@ function stringMatch(string,matchString,sym)
 	return temp;
 }
 
-console.log(stringMatch('','1',','));
+//console.log(stringMatch('','1',','));
 
 //获取get参
 var $_GET = (function(){

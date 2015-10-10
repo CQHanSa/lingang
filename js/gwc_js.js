@@ -14,8 +14,6 @@ $(document).ready(function(){
                 });
 		})
 	
-	total_price();
-	
 	/* 购物车全选 */
 	$('.all_check').click(function(){
 		$('.all_check').toggleClass('on');
@@ -192,7 +190,7 @@ function total_price() {
 		})
 	})
 	$(".totalNum").text(totalNum);
-	return total.toFixed(2);
+	return parseFloat(total).toFixed(2);
 }
 
 //删除商品

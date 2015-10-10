@@ -43,3 +43,25 @@ img{ border:0px;}
 .foot_l{ width:491px; height:116px; padding-top:29px; padding-left:50px; line-height:22px; float:left;}
 .botton{ float:right; padding-top:103px; padding-right:50px;}
 .first td{ border:none;}
+
+/* ------钱包支付------ */
+.fk_cont{ width:1198px; border:1px solid #e4e4e4;}
+.order_tj{ background:#f0f0f0; width:1138px; line-height:30px; padding:10px 30px;}
+.order_tjt{ border-bottom:1px solid #dbdbdb;}
+.order_tjt .t_left{ width:500px;}
+.order_tjt .t_left dl dt{ font-size:14px; font-weight:bold; color:#6c6c6c;}
+.order_tjt .t_right div i{ color:#dc241e; font-weight:bold; font-size:16px;}
+.order_tjt .t_right span.clk1{ display:block; width:100px; text-align:right; padding-right:10px; background:url(../images/fk_up.png) no-repeat right center; color:#174bc5; cursor:pointer;}
+.order_tjt .t_right span.clk2{ display:block; width:100px; text-align:right; padding-right:10px; background:url(../images/fk_down.png) no-repeat right center; color:#174bc5; cursor:pointer;}
+.ord_ads{ line-height:20px; padding-top:10px; display:none;}
+.qb_zf{ border:1px solid #b2e0c7; width:1138px; margin:20px auto; padding:25px 0 50px;}
+.qb_zf .t_left{ display:inline-block; width:475px;}
+.qb_zf .t_left dl dt{ background:url(../images/fk_bt.png) no-repeat 40px center; font-size:16px; color:#454545; padding-left:75px;}
+.qb_zf .t_left dl dd{ padding-top:15px; padding-left:75px;}
+.qb_pwd{ width:348px; padding:0 10px 0 40px; border:1px solid #e4e4e4; background:url(../images/fk_in.png) no-repeat 15px center; height:30px; line-height:30px; color:#888;}
+.sub_zf{ float:left; width:180px; padding-left:20px; height:48px; color:#fff; background:url(../images/fk_btn.png) #519409 no-repeat 25px center; font-size:14px; font-weight:bold; border:none; cursor:pointer;}
+.sub_zf:hover{ background:url(../images/fk_btn.png) red no-repeat 25px center;  }
+.clo_zf{ float:right; width:180px; height:48px; color:#fff; background:#bfbfbf; font-size:14px; font-weight:bold; border:none; cursor:pointer;}
+.clo_zf:hover{background:#519409;}
+.qb_zf .t_right{ display:inline-block; width:176px; text-align:right; padding-right:10px;}
+.qb_zf .t_right i{ color:#dc241e; font-size:16px; font-weight:bold;}

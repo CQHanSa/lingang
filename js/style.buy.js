@@ -46,16 +46,20 @@ function Clearing()
 //计算可用积分
 function useIntegral(ev)
 {
-	//alert(111); 
+	SumOrder();
 	var i = parseInt($(".integral").text());
 	var val = parseInt($(ev).val());
-		if (isNaN(val) || val <= 0 || val > i) {
-			val = 0;
-		}
-		if (ev.value != val) {
-			ev.value = val;
-		}
-		$(".useIntegral").text(val);
+	var sum = parseFloat($(".second_l .sum").text());	
+	if (isNaN(val) || val <= 0 || val > i) {
+		val = i;
+	}
+	if (ev.value != val) {
+		ev.value = val;
+	}
+	$(".useIntegral").text(val);
+	sum = parseFloat(sum - val * 0.02).toFixed(2);
+	$('.sum').text(sum);
+		
 }
 //结算订单
 function SumOrder()
@@ -103,11 +107,16 @@ function createDD()
 	var usermobile  	= $('.xinxi_m ul li.on .usermobile').text();
 	var goodsid 		= $("input[name='goodsid']").val();
 	var getintegral 	= $(".second_l ul .getIntegral").text();
-	var useintegral 	= $(".second_l ul .useintegral").text();
+	var useIntegral 	= $(".second_l ul .useIntegral").text();
 	var fare 			= $(".second_l ul .fare").text();
 	var remark 			= $(".qindan_f input").val();
-	//var Coupon 			= $(".second_l ul .getIntegral").text();
 	var sum				= $(".second_l ul .sum").text();
+	var paypost         = $(".first_f .first_ff.on font").text();
+	//获取优惠卷ID
+	var Coupon 			= $(".coupon:checked").val();
+	
+	//console.log(useIntegral);
+	//return false;
 	
 	if(username == ''){ alert('请添加收货地址'); return false;}
 	if(goodsid == ''){ alert('订单有误'); return false;}	
@@ -116,13 +125,19 @@ function createDD()
 	$.ajax({
 		url:"/Action/buy.php",
 		type:'post',
-		data:{'type':'createDD','username':username,'address_prov':address_prov,'address_city':address_city,'address_country':address_country,'address':address,'usermobile':usermobile,'goodsid':goodsid,'getintegral':getintegral,'useintegral':useintegral,'fare':fare,'remark':remark,'sum':sum},
+		data:{'type':'createDD','adress_username':username,'address_prov':address_prov,'address_city':address_city,'address_country':address_country,'address':address,'usermobile':usermobile,'goodsid':goodsid,'getintegral':getintegral,'useintegral':useIntegral,'fare':fare,'remark':remark,'sum':sum,'paypost':paypost,'Coupon':Coupon},
 		beforeSend: function(){},
 		success:function(data)
 		{
-			if(data == 'success');
+			if(data == 'success' && paypost == '在线支付')
+			{	
 				window.location.href='/data/api/unionpay/unionpay.config2.php';	
+			}
+			else  if(data == 'success' && paypost == '钱包支付')
+			{
+				window.location.href='/member/buy/wallet.php';
+			}	
 		}
 	})
-	console.log(sum);
+	//console.log(paypost);
 }

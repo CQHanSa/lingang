@@ -17,6 +17,7 @@ i,em{ font-style:normal;}
 #bord_b{ border:none; padding-left:0px;}
 .hand{ cursor:pointer;}
 .hand:hover{ color:red;}
+.red:hover{ background:red; color:#fff;}
 
 
 

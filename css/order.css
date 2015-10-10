@@ -207,3 +207,23 @@ background:#f3f3f3;}
 .order_set .textarea_content{ float:left; margin-left:3px; }
 
 .order_set .Wdate{border:1px solid #CDCDCD; height:25px}
+
+.goods_order {}
+.goods_order table{ width:100%;}
+.order-hd{ border:solid 1px #ccc;  line-height:40px; text-align:center; background:#fff; }
+.order-bd{ background-color:#f6f6f6;height:40px; border:solid 1px #ccc; border-top:none; border-bottom:none;}
+.ordertime,.ordernum{ margin-left:20px;}
+
+.order_list{ border:solid 1px #ccc;  line-height:30px; margin-bottom:10px; background:#fff;}
+.order_list table td{ text-align:center;}
+.order_list dl{ display:block; height:112px; padding:15px 0px 15px 15px;}
+.order_list dl dt,.order_list dl dd{ float:left; display:inline-block; height:112px;}
+.order_list dl dd{  padding-left:15px;padding-top:20px; width:170px; overflow:hidden;}
+.order_list dl dd a{ float:left; width:170px;}
+.order_list dl dt img{ border:solid 1px #d3d3d3;}
+.order_list dl dd p{ color:#979797;}
+
+.btnpay,.btncancle{ display:inline-block;width:85px; border:none; height:35px; line-height:35px; text-align:center; font-size:14px; background:none; cursor:pointer;}
+.btnpay{  background-color:#ff923a;  color:#fff; border-radius:5px;}
+.btnpay:hover{ background:red;}
+.btncancle:hover{ color:red;}

@@ -11,6 +11,7 @@ $r_user = MysqlOneSelect('lgsc_member','integral',"id='$user[userid]'");
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <?php include_once($path.'/Public/css.php'); ?>
+<link href="/css/member.css" rel="stylesheet" type="text/css" />
 <link href="/css/title.css" rel="stylesheet" type="text/css" />
 
 <?php include_once($path.'/Public/js.php'); ?>
@@ -69,11 +70,11 @@ $(function(){
 <div class="frist">
 <div class="first_t"><P>请仔细填写并核对订单信息</P></div>
 <div class="first_f">
-<p>支付方式</p><div class="first_ff on"><a class="hand"><font>在线支付</font></a></div><div class="first_ft"><a class="hand"><font>钱包支付</font></a></div></div>
+<p>支付方式</p><div class="first_ff on"><a class="hand"><font>在线支付</font></a></div><div class="first_ff"><a class="hand"><font>钱包支付</font></a></div></div>
 </div>
 <div class="xinxi">
 <div class="xinxi_t">
-<div class="t_left"><p>收货人信息</p></div><div class="t_right"><a href="#" ><p>新增收货地址</p></a></div></div>
+<div class="t_left"><p>收货人信息</p></div><div class="t_right"><a href="/member/person/?action=shipping_address" target="_blank" ><p>新增收货地址</p></a></div></div>
 <div class="xinxi_m">
 <ul>
 
@@ -113,7 +114,7 @@ if($address != -1)
 <div class="xinxi_f"><a class="hand">收起地址<img src="/images/jiesuan7.png"></a></div>
 </div>
 <div class="qindan">
-<div class="qindan_t"><div class="t_left"><p>送货清单</p></div><div class="t_right"><a href="#"><p>返回修改购物车</p></a></div></div>
+<div class="qindan_t"><div class="t_left"><p>送货清单</p></div><div class="t_right"><a href="/member/buy/mybuycar.php"><p>返回修改购物车</p></a></div></div>
 <input type="hidden" value="<?=$_SESSION['clearingID']?>" name="goodsid"  />
 <?php
 $idArr = $_SESSION['clearingID'];
@@ -209,8 +210,39 @@ if($shop != '-1')
 </div>
 </div>
 <div class="youhui">
-<div class="youhui_t"><div class="youhui_tt"><a href="#">+</a></div>&nbsp;<font style="color:#164ac1;">使用优惠券</font></div>
-<div class="youhui_f"><div class="youhui_tt"><a href="#">-</a></div>&nbsp;<font style="color:#164ac1;">使用积分</font>
+<div class="youhui_t">
+	<div class="youhui_tt"><a class="hand" onClick="tage(this)">+</a></div>&nbsp;<font style="color:#164ac1;">使用优惠券</font>
+    <div class="counplist" rel="false">
+        <ul style="display:none;">
+        	<?php
+			$coupon = MysqlRowSelect('lgsc_user_coupon,lgsc_coupon','lgsc_user_coupon.id,lgsc_coupon.price,lgsc_coupon.overprice,lgsc_coupon.validity_strat,lgsc_coupon.validity_end,lgsc_coupon.picurl,lgsc_coupon.title',"lgsc_user_coupon.couponid = lgsc_coupon.id and lgsc_user_coupon.userid='$user[userid]' and lgsc_coupon.validity_end >=".time());
+			if($coupon != '-1')
+			{
+				for($i=0,$n=count($coupon);$i<$n;$i++)
+				{
+			?>
+            <li>
+                    <div class="coupon_bj">
+                        <div class="coupon_top">
+                            <div class="coupon_price">￥<span><?=$coupon[$i]['price']?></span></div>
+                        </div>
+                        <div class="coupon_tj">
+                        使用条件：订单满<span><?=$coupon[$i]['overprice']?></span>元可用<br>
+                        使用范围：不限<br>
+                        有效时间：<?=date('Y-m-d',$coupon[$i]['validity_strat'])?>至<?=date('Y-m-d',$coupon[$i]['validity_end'])?>	</div>
+                    </div>
+                    <div class="del"><input type="checkbox" class="coupon" name="coupon[<?=$i?>]" value="<?=$coupon[$i]['id']?>" style="vertical-align:middle;" onClick="useCoupon(this)" >使用</div>
+            </li>
+            <!--<li><img src="/<?=$coupon[$i]['picurl']?>" alt="<?=$coupon[$i]['title']?>" /></li>-->
+            <?php
+				}
+			}
+			?>
+        </ul>
+    </div>
+</div>
+<div class="divclear"></div>
+<div class="youhui_f"><div class="youhui_tt"><a class="hand" onClick="tage(this)">-</a></div>&nbsp;<font style="color:#164ac1;">使用积分</font>
 <div class="youhui_ff">
 
 <font style="font-weight:bold;">本次使用&nbsp;&nbsp;<input type="text" value="" style=" width:70px; height:24px;" class="useIntegral" onKeyUp="useIntegral(this)">&nbsp;&nbsp;积分&nbsp;&nbsp;</font>
@@ -219,6 +251,7 @@ if($shop != '-1')
 
 </div>
 </div>
+<div class="divclear"></div>
 </div>
 
 
